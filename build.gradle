@@ -1,4 +1,14 @@
 /**** gradle root project "build.rockitizer" ****/
+plugins {
+    id 'java'
+    id 'maven'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+ }
+
 
 
 ext.scriptDir = new File("$projectDir/gradle").canonicalFile // directory of gradle extensions
@@ -27,17 +37,10 @@ allprojects {
 
 
 
+dependencies {
+    runtime files(projectDir)
+    compile fileTree(dir: 'lib', include: '*.jar')
+    compile 'com.ibm.mq:com.ibm.mq.allclient:9.1.4.0'
+}
 
 
-
-
-//java
-//task 'create-dirs'  {
-//    sourceSets*.allSource.srcDirs.flatten()*.mkdirs()
-//}
-
-
-
-// IDE integrations
-//apply from: "$scriptDir/plugin-idea.gradle"    , to: project // load "PartnerConnect" specific definitions for IntelliJ Idea IDE
-//apply from: "$scriptDir/plugin-eclipse.gradle" , to: project // load "PartnerConnect" specific definitions for eclipse IDE

@@ -1,0 +1,11 @@
+copy following libs from IIB_HOME/lib:
+
+brokerutil.jar
+IntegrationAPI.jar
+jetty-client.jar
+jetty-http.jar
+jetty-io.jar
+jetty-util.jar
+websocket-api.jar
+websocket-client.jar
+websocket-common.jar
