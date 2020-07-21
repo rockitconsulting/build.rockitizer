@@ -1,0 +1,74 @@
+/*
+*	Copyright 2015 rockit.consulting GbR  (www.rockit.consulting)
+*
+*/
+
+
+ext {
+	
+}
+
+
+
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*        					Create Bars parrallel and sequential                                                  */
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+task createBars(dependsOn:["doCreateBars${parallel}"]) {
+	barToProjects.each { bar, projects  ->
+		if(hasProperty("doCreateBars${parallel}-${bar}")) {
+			logger.lifecycle ext."doCreateBars${parallel}-${bar}" //captured output from console
+		}
+	}
+} 
+
+
+
+
+task doCreateBars(dependsOn:[copyProjectsToBuildTarget, readProjectStructureFromConfig])
+
+barToProjects.each { bar, projects  ->
+	task "createBar-${bar}" << {
+	    new ByteArrayOutputStream().withStream { os ->
+	        def result = exec {
+	        	def cmdArgs = ['/c', "${brokerToolkitDir}${fileSeparator}mqsicreatebar.exe -data  ${brokerProjectsTargetDir}${fileSeparator}${bar} -b ${barTargetOut}${fileSeparator}${bar}.bar -p ${projects.join(' ')} -o ${getFilesProjects(bar, projects,['.mset'])} ${getFilesProjects(bar, projects,['.msgflow'])}"]
+	        	logger.lifecycle cmdArgs.join(' ')
+	            executable = 'cmd'
+	            args = cmdArgs
+	        }
+	        ext."doCreateBars-${bar}" = os.toString()
+	    }
+	}
+	doCreateBars.dependsOn "createBar-${bar}"
+}
+
+
+
+task doCreateBarsParallel(dependsOn:[copyProjectsToBuildTarget , readProjectStructureFromConfig]) << {
+      ant.parallel(threadsPerProcessor: 1) {
+		  barToProjects.each { bar, projects  ->
+		  		def cmdArgs 
+		  		if(config.deployApplicationName) {
+		  			cmdArgs	= "${brokerToolkitDir}${fileSeparator}mqsicreatebar.exe -data ${brokerProjectsTargetDir}${fileSeparator}${bar} -b ${barTargetOut}${fileSeparator}${bar}.bar -a ${config.deployApplicationName} -deployAsSource" //-trace
+		  		} else {
+		  			cmdArgs	= """${brokerToolkitDir}${fileSeparator}mqsicreatebar.exe 
+					-data ${brokerProjectsTargetDir}${fileSeparator}${bar} 
+					-b ${barTargetOut}${fileSeparator}${bar}.bar 
+					-p ${projects.join(' ')} -o ${getFilesProjects(bar, projects,['.mset'])} 
+					${getFilesProjects(bar, projects,['.msgflow'])}""" //-trace
+		  		}
+	        	logger.lifecycle cmdArgs
+
+ 
+				ant.exec(executable: 'cmd') {
+						arg(value: '/c')
+						arg(value: cmdArgs )
+				}
+    	   } 
+     }
+}  
+
+

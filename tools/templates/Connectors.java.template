@@ -1,0 +1,36 @@
+package com.rockit.blackboxtester.generated;
+
+import com.rockit.common.blackboxtester.connector.Connector;
+import com.rockit.common.blackboxtester.connector.impl.MQConnectorIn;
+import com.rockit.common.blackboxtester.connector.impl.MQConnectorOut;
+import com.rockit.common.blackboxtester.connector.impl.MQManager;
+import com.rockit.common.blackboxtester.suite.configuration.Connectors;
+
+
+public class ConnectorsImpl implements Connectors {
+	@Override
+	public MQManager[] getMQManagers() {
+		return new MQManager[] { 
+		@mqManagerList@ 
+		};
+	}
+	
+	
+	@Override
+	public Connector[] getInConnectors() {
+		return new Connector[] { 
+		@inConnectorsList@ 
+		};
+	}
+
+
+	@Override
+	public Connector[] getOutConnectors() {
+		return new Connector[] { 
+		@outConnectorsList@ 
+		};
+		
+	}
+
+}
+  

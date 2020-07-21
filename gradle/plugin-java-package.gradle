@@ -1,0 +1,155 @@
+import java.util.*;
+import java.net.URI;
+import java.nio.file.Path;
+import java.nio.file.*;
+import java.util.zip.ZipEntry
+import java.util.zip.ZipOutputStream
+import java.util.zip.ZipFile
+import java.util.jar.JarEntry
+import java.util.jar.JarFile
+import java.util.jar.JarOutputStream
+
+/*
+*	Copyright 2015 rockit.consulting GbR  (www.rockit.consulting)
+*
+*/
+
+
+ext {
+		
+}
+
+
+def fileFilter(pattern) {
+     new FilenameFilter() {
+	     boolean accept(File path, String filename) {
+		        return filename.matches(pattern)
+	     }
+     }   
+}
+
+
+def toJavaPath ( clazz ) {
+	 
+	 def path = clazz.path
+	 def targets = [ "${File.separator}out${File.separator}","${File.separator}target${File.separator}","${File.separator}classes${File.separator}" ]
+	 
+	 targets.each { target -> 
+	 	if (path.contains( target )) {
+	 		path = path.substring( path.indexOf(target) + target.length() , path.length() )
+	 	}
+	 }
+	 path = path.replace('\\','/')
+	 logger.lifecycle  " class extracted with package ${path}" 
+	 if(clazz.path == path) {
+	 	throw new Exception("Path cannot be enhanced because the classes are not placed in one of the following folders [out, classes, target]")
+	 }
+	 path
+}
+
+
+def createNewFile(path) {
+			def file = new File(path)
+			file.getParentFile().mkdirs()
+			file.createNewFile()
+			file
+}
+
+ 
+def generateJar (targetPath, appzip) {
+
+			def jarFile = createNewFile("${targetPath}${File.separator}${appzip.name}.jar")
+			
+			logger.lifecycle "[repackBars]: creating jar at ${jarFile}"
+			def files = 0
+			JarOutputStream  jarOs = new JarOutputStream (new FileOutputStream( jarFile))
+         	zipTree(appzip).each { appzipEntry ->
+         		if( !appzipEntry.name.endsWith('.class') ) { return }
+				files++
+         		logger.lifecycle "[generateJar]: adding ${appzipEntry} to ${jarFile}"
+         		jarOs.putNextEntry( new JarEntry( toJavaPath( appzipEntry ) ) )  
+				appzipEntry.withInputStream {  
+						    jarOs << it  
+         		}
+         		jarOs.closeEntry()
+         	}
+         	jarOs.close()
+			files ? jarFile: null 
+}
+
+
+def repack ( targetPath, source , enhancements ) {
+        
+    	def newArtefact = createNewFile("${targetPath}${File.separator}${source.name}")
+        
+        ZipOutputStream newArtefactOs = new ZipOutputStream(new FileOutputStream( newArtefact ))
+        
+        ZipFile zip = new ZipFile(source)
+        zip.entries().each { entry ->
+
+	   		if(!enhancements.contains(entry.name)) {
+	       		newArtefactOs.putNextEntry( new ZipEntry( entry.name ) )  
+				def buffer = new byte[1024];
+			    def input = zip.getInputStream(entry)
+	            while (0 < input.available()) {
+	                 int read = input.read(buffer);
+	                 newArtefactOs.write(buffer,0,read);
+	            }
+	            input.close()
+	      		newArtefactOs.closeEntry()
+	  		}
+        }
+        zip.close()
+        
+        enhancements.each { enhancement ->
+	        	logger.lifecycle "enhancing ${source} with ${enhancement} into ${newArtefact}"
+		       	newArtefactOs.putNextEntry( new ZipEntry( enhancement ) )
+			    new File("${targetPath}${File.separator}${enhancement}").withInputStream { 
+					    newArtefactOs << it  
+			    }
+	        	newArtefactOs.closeEntry()
+        }
+        newArtefactOs.close()
+}
+
+
+task repackBars() << {
+	def enhancedBars = []
+	
+	barTargetOut.listFiles( fileFilter(".*bar\$") ).each { bar ->
+			         
+         logger.lifecycle  "[repackBars] >>> processing ${bar}"
+         
+         def targetPath="${barTargetOut}${File.separator}target${File.separator}${bar.name}${File.separator}"
+         def enhancedAppZipps = []
+         
+         zipTree(bar).each { appzip -> 
+         	if(!appzip.name.endsWith('zip')) {
+         	   return
+         	}   
+            logger.lifecycle  "[repackBars]: unpacking appzip ${appzip}"
+	        def jar = generateJar( targetPath , appzip)
+
+	        if(jar) {
+	             enhancedAppZipps << appzip.name
+		         repack (targetPath , appzip , [jar.name])
+		     } else {
+		     	logger.lifecycle  "[repackBars]: no java nature found for ${appzip}"
+		     }    
+		  }       
+		  if(enhancedAppZipps) {
+		  	repack (targetPath, bar, enhancedAppZipps )
+		  	enhancedBars << bar.name
+
+		  }
+	} 	
+	
+	enhancedBars.each { barName ->
+		Files.copy(Paths.get("${barTargetOut}${File.separator}target${File.separator}${barName}${File.separator}${barName}"), 
+						Paths.get("${barTargetOut}${File.separator}${barName}"), StandardCopyOption.REPLACE_EXISTING)
+	}    
+}
+
+
+
+

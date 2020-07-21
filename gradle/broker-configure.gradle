@@ -1,0 +1,55 @@
+/*
+*	Copyright 2015 rockit.consulting GbR  (www.rockit.consulting)
+*
+*/
+
+ext {
+	 decouplePrefix='D'
+	 decoupleTypes = ['queueName','Directory'] 
+}
+
+
+
+
+task configure(dependsOn:prepareBroker) << {
+   description 'Copy config, fill placeholders, check configuration consistency.'
+   copy {
+	    from "${brokerConfDir}${fileSeparator}flows.properties"
+	    into ("${barPropertiesOut}")
+	    def myProps = new Properties()
+	    file("${brokerConfDir}${fileSeparator}${environment}.properties").withInputStream{
+	        myProps.load(it);   
+	    }
+	    filter(org.apache.tools.ant.filters.ReplaceTokens, tokens: myProps)
+	    
+   }
+   def placeholders = new File("${barPropertiesOut}${fileSeparator}flows.properties").text.findAll(/(.*@\w+@.*)/) 
+   if(placeholders) {
+      throw new  TaskExecutionException(it, new Throwable("unconfigured placeholders ${placeholders} in  ${barPropertiesOut}${fileSeparator}flows.properties detected, please enhance your ${configPath}${fileSeparator}${environment}.properties file"))
+   }
+    
+}
+
+
+task configureDecoupled(dependsOn:[configure]) << {
+
+   generateModel()
+   
+   def flowprops = new File("${barPropertiesOut}${fileSeparator}flows.properties")
+   def propsTxt = flowprops.text
+   def decoupleIdx = [:]
+   flowprops.eachLine { line ->
+           if(!line.trim()||line.trim().startsWith('#')) { return }
+   	       def key = line.split('=')[0].trim()
+   	       def value = line.split('=')[1].trim()
+		  
+   	       if (propsTxt.count(value)>1 && key.endsWith('queueName') && qmodel[value].find { it.key==key && ['ComIbmMQInput'].contains(it.type)} ) {
+			    decoupleIdx[value]= (decoupleIdx[value]!=null?decoupleIdx[value]+1:0)
+	   	       	//TODO FIX THE possible BLANKS on = 
+				propsTxt = propsTxt.replaceFirst("${key}=${value}", "${key}=${value}.${decouplePrefix}.${decoupleIdx[value]}")
+   	       }
+   }
+   flowprops.withWriter() { it << propsTxt }
+}
+
+

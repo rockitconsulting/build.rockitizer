@@ -1,0 +1,43 @@
+/**** gradle root project "build.rockitizer" ****/
+
+
+ext.scriptDir = new File("$projectDir/gradle").canonicalFile // directory of gradle extensions
+apply from: "$scriptDir/all-extensions.gradle" , to: project // load all extensions
+
+
+description = "IIB/IBM Message Broker build.rockITizer Application"
+
+
+
+task wrapper(type: Wrapper) {   
+    def jvmOpts = "-Xms512m -Xmx1200m -XX:MaxPermSize=256m"
+    inputs.property("jvmOpts", jvmOpts)
+  
+}
+
+
+// common configuration properties
+ext {
+}
+
+
+
+allprojects {
+} 
+
+
+
+
+
+
+
+//java
+//task 'create-dirs'  {
+//    sourceSets*.allSource.srcDirs.flatten()*.mkdirs()
+//}
+
+
+
+// IDE integrations
+//apply from: "$scriptDir/plugin-idea.gradle"    , to: project // load "PartnerConnect" specific definitions for IntelliJ Idea IDE
+//apply from: "$scriptDir/plugin-eclipse.gradle" , to: project // load "PartnerConnect" specific definitions for eclipse IDE

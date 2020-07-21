@@ -1,0 +1,26 @@
+package com.rockit.blackboxtester.generated;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.rockit.common.blackboxtester.suite.configuration.Routings;
+
+
+public class RoutingsImpl implements Routings  {
+  public static final String environmentIdx="@IDX@";
+  public static final Map<String, String[]> rules = new HashMap<String, String[]>();
+  static {
+@routingsList@
+    }
+    
+  	public String getEnvironemntIndex() {
+		return environmentIdx;
+	}
+
+  	public Map<String, String[]> getRules() {
+  		return rules;
+	}
+    
+    
+}
+  

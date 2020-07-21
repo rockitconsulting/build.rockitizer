@@ -1,0 +1,253 @@
+ ----------------------------------------------------------------------
+|                                                                      |
+|  MODULE NAME      MO71.ZIP                                           |
+|                                                                      |
+|  DESCRIPTIVE NAME WebSphere MQ for Windows GUI Administrator         |
+|                                                                      |
+|  Statement:       Licensed Materials - Property of IBM               |
+|                                                                      |
+|                   MO71 SupportPac                                    |
+|                   (c) Copyright IBM Corp. 1996, 2012.                |
+|                                                                      |
+|                   All rights reserved.                               |
+|                                                                      |
+|                   U.S. Government Users Restricted Rights - use,     |
+|                   duplication or disclosure restricted by GSA        |
+|                   ADP Schedule Contract with IBM Corp.               |
+|                                                                      |
+|  Status:          Version 7 Release 1 Modification 0                 |
+|  Last Modified:   15 February 2012                                   |
+|                                                                      |
+|  15 February 2012 - MQ Version 7.1 Support                           |
+|                   - Network Display Configuration Changes            |
+|                   - Sizeable list dialog areas                       |
+|                   - Foreign location support                         |
+|                   - New compare dialogs                              |
+|                                                                      |
+|  5 July      2011 - MQ Version 7.0.1 Support                         |
+|                   - Multiple Queue Manager list support              |
+|                   - Sizeable list dialog areas                       |
+|                   - Show object name in entryfield not dropdown      |
+|                   - Set default browse message range#                |
+|                   - Auto update of lists on change action            |
+|                   - MO71 Authority changes                           |
+|                   - Browse message selector added                    |
+|                   - New set() filter function                        |
+|                                                                      |
+| 24 January   2009 - MQ Version 7 Support                             |
+|                   - List columns can be sized and reordered by       |
+|                     dragging                                         |
+|                   - New filter functions                             |
+|                       fgcell, bgcell, flash, flashcell               |
+|                   - Console visible over HTTP                        |
+|                   - Queue Load/Unload based on message age           |
+|                                                                      |
+| 13 May       2007 - HTTP Support                                     |
+|                   - Toolbar Support                                  |
+|                   - Improved keyboard support                        |
+|                   - MQSC History across Queue Managers               |
+|                   - Copy/Move messages based on message age          |
+|                   - CFSTRUCT object support                          |
+|                                                                      |
+| 20 March     2006 - Publish/Subscribe Admin Support                  |
+|                   - Write to files from filters                      |
+|                   - Invoke one filter from another                   |
+|                   - Various usability improvements                   |
+|                                                                      |
+| 13 July      2005 - MQ Version 6 Support (incuding authorisations)   |
+|                   - Export all object support                        |
+|                   - Export in CSV and XML format                     |
+|                   - Export from auto refresh                         |
+|                   - Queue load/unload support                        |
+|                   - Compare two Queue Manager object lists and       |
+|                     synchronise                                      |
+|                   - Predefined dialogs can define object type        |
+|                   - Dialog refresh time displayed                    |
+|                                                                      |
+| 21 November  2004 - Improved filters                                 |
+|                   - Improved keyboard support                        |
+|                   - Predfined dialog sizes/positions                 |
+|                   - Autostart of dialog layout                       |
+|                   - Better clipboard support                         |
+|                   - Find string in messages                          |
+|                   - Improved multiple object handling                |
+|                   - MQMONA agent                                     |
+|                                                                      |
+|  2 March     2004 - Event Message Processing                         |
+|                   - Object lists can be split into two panes         |
+|                   - Improved printing                                |
+|                   - Lists are sorted by two fields                   |
+|                   - Filter Manager                                   |
+|                   - Sizeable dialogs                                 |
+|                   - Manual contains hyperlinks/bookmarks             |
+|                                                                      |
+| 12 February  2003 - Cluster objects supported in network view        |
+|                   - Multiple network views                           |
+|                   - Export option extended to include most dialogs   |
+|                   - Better codepage and locale support               |
+|                   - Message browser understands RFH2/XML format      |
+|                   - Various improvements to look and feel            |
+|                                                                      |
+| 22 July      2002 - Added Network View                               |
+|                   - Support for WebSphere MQ 5.3 commands and objects|
+|                   - Export of object and lists                       |
+|                   - Printing support                                 |
+|                   - Put test message(s) dialog                       |
+|                   - Configurable sounds                              |
+|                   - Window management                                |
+|                                                                      |
+|  2 August    2001 - Added support for OS/390 fields and commands     |
+|                     such as STGCLASS, INDEXTYPE, PUTAUTH             |
+|                                                                      |
+| 23 July      2001 - Fixed bug when using HARDENBO attribute in       |
+|                     Queue Definitions to OS/390                      |
+|                                                                      |
+| 11 July      2001 - Message Copy, Move and Delete                    |
+|                   - Horizontal Scrolling Lists                       |
+|                   - Temporary List Attributes                        |
+|                   - Queue Manager Groups                             |
+|                   - Global list settings                             |
+|                   - Single Thread connections                        |
+|                   - Two level monitoring frequency                   |
+|                   - Control over what commands available             |
+|                   - Large Message Support                            |
+|                                                                      |
+|  4 September 2000 - Multiple connected Queue Managers supported      |
+|                   - Local client definitions                         |
+|                   - MQSC Window                                      |
+|                   - Reset Queue Statistics supported                 |
+|                   - Global list settings                             |
+|                                                                      |
+| 14 May       1999 - Cluster Object support                           |
+|                   - Command execution on failed monitor              |
+|                   - Font and Colour support                          |
+|                   - Multi-object support                             |
+|                   - Sort lists by clicking                           |
+|                                                                      |
+|  7 August    1998 - Namelist support added                           |
+|                   - Dynamic command menu                             |
+|                   - Object Double-click support                      |
+|                   - Bug fixes                                        |
+|                       Monitoring support                             |
+|                                                                      |
+| 30 June      1998 - Bug fixes                                        |
+|                       Queue Browser to MVS                           |
+|                       Browse support for MQSTR,MQCMD1,MQCMD2         |
+|                       Config file over-write problem                 |
+|                       Model MQMON Queue support                      |
+|                                                                      |
+| 29 May       1998 - Simple Queue browser added                       |
+|                   - Command support can be switched off for a        |
+|                     particular location                              |
+|                   - Number of bug fixes.  Most notably, the          |
+|                     application will now run as a client to MVS      |
+|                     (V4.0 hung)                                      |
+|                                                                      |
+|  Author:          Paul Clarke                                        |
+|                                                                      |
+|  NOTES :-                                                            |
+|    DEPENDENCIES = Windows NT/2000/XP                                 |
+|                   Either a server or client of                       |
+|                   WebSphere MQ for Windows NT/2000/XP                |
+|    RESTRICTIONS = None                                               |
+|    MODULE TYPE  = InfoZip                                            |
+|    PROCESSOR    = PS/2 and PC                                        |
+|                                                                      |
+ ----------------------------------------------------------------------
+
+WebSphere MQ Monitor Program
+============================
+
+This program provides a Queue administration function by allowing a user
+to issue commands to local and remote Queue Managers by sending PCF
+command messages to them.  This allows a single Windows NT/2000/XP machine
+to configure and monitor Queue Managers on any platform that has a
+command server, such as z/OS, AIX, HP, Windows NT, Linux, AS/400 etc.
+
+It also allows a single machine to periodically send messages to a
+number of other locations and receive their responses.  Whether the
+machine responds or not is shown in a main application window.
+
+Contents
+========
+
+The WebSphere MQ Monitor package consists of a main program and a number
+of additional files.
+
+MQMONNTP.EXE - Main monitor GUI program
+
+               This program can be configured with a number of 'target'
+               locations to which messages are sent and responses
+               collated. The file MQMON.CFG, which is created in the
+               program directory, contains a list of the required
+               locations.
+
+               The program can be used to perform three functions :-
+
+               a) Remote administration
+
+                  By selecting a Queue Manager in the list then
+                  selecting a command a dialog window will be displayed.
+                  In most cases the 'REFRESH' button will need to be
+                  pressed to cause the information to be retrieved. The
+                  main actions are available as dialog buttons, Mouse
+                  button 2 should be pressed for a complete list of
+                  actions that may be performed.
+
+                  The program works by sending either PCF or MQSC
+                  messages to the remote machines command server, it is
+                  therefore necessary to ensure that the command server
+                  is running.
+
+                  An additional format of administration is provided for
+                  each location by the MQSC window. This window allows
+                  the user to enter any MQSC command understood by the
+                  remote command server. The output from the command
+                  server is displayed in a scrollable window. Command
+                  history is kept across invocations of the program.
+
+               b) Browsing,Copying,Moving and Deleting messages
+
+               c) Remote monitoring
+
+                  By enabling monitoring the program will periodically
+                  send messages to the remote location and monitor for
+                  the response.
+
+MQMON.PDF    - A simple user guide to the Administrator in Adobe Acrobat
+               format
+
+MQMONA.C     - A C program which can be used to improve the speed of
+               Administering a Queue Manager across a client connection.
+               Please refer to the MQMON.PDF file for a description.
+
+\html\*      - Various files to provide a basis for Web page access.
+               Files can be modified/augmented to change the display
+               format of the information.
+
+Concept
+=======
+
+Running the program, for example,
+
+ d:\mqmon:>MQMONNTP
+
+presents the user with a main window to which can be added the locations of
+various Queue Manager locations. Each location can either be connected to
+directly or sent messages via one of the other locations.
+
+Command messages are sent to the Queue Manager location command server and
+the responses display in object dialogs.
+
+Each Queue Manager connected to directly will require a queue definition,
+'MQMON' by default, which will receive all the reply messages.
+
+Summary
+=======
+
+This program was written for a particular installation which required
+monitoring of various OS/2 Queue Managers.  It could be of potential use
+to other locations.  It is supplied 'as-is' with no guarantees as to the
+correctness of the code or its reliability. If have comments, suggestions
+or problems using the program then please contact me at
+paulg_clarke@uk.ibm.com

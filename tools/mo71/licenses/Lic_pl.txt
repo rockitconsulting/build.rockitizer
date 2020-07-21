@@ -1,0 +1,168 @@
+MiÍdzynarodowa Umowa Licencyjna na Programy nieobjÍte Gwarancjπ
+
+CzÍúÊ 1 - Warunki ogÛlne
+
+POBIERANIE, INSTALOWANIE, KOPIOWANIE ORAZ UØYWANIE PROGRAMU OZNACZA AKCEPTACJ  WARUNK”W NINIEJSZEJ UMOWY. ZAAKCEPTOWANIE PRZEZ UØYTKOWNIKA WARUNK”W NINIEJSZEJ UMOWY W IMIENIU OSOBY TRZECIEJ (FIZYCZNEJ LUB PRAWNEJ) OZNACZA, ØE UØYTKOWNIK GWARANTUJE POSIADANIE UPRAWNIE— DO PODPORZ•DKOWANIA TAKIEJ OSOBY (FIZYCZNEJ LUB PRAWNEJ) NINIEJSZYM WARUNKOM. JEåLI UØYTKOWNIK NIE WYRAØA ZGODY NA NINIEJSZE WARUNKI,
+
+- NIE B DZIE POBIERA∆, INSTALOWA∆, KOPIOWA∆ ANI UØYWA∆ TEGO PROGRAMU ORAZ 
+
+- NATYCHMIAST ZWR”CI PROGRAM ORAZ DOKUMENT PROOF OF ENTITLEMENT OSOBIE, OD KT”REJ NABY£ PROGRAM, ABY UZYSKA∆ ZWROT ZAP£ACONEJ KWOTY. W PRZYPADKU POBRANIA PROGRAMU DROG• ELEKTRONICZN• UØYTKOWNIK WINIEN SKONTAKTOWA∆ SI  ZE èR”D£EM, Z KT”REGO POBRA£ PROGRAM.
+
+Termin "IBM" lub "firma IBM" oznacza firmÍ International Business Machines Corporation lub jedno z jej przedsiÍbiorstw podporzπdkowanych.
+
+Termin "Informacje licencyjne" oznacza dokument zawierajπcy informacje specyficzne dla Programu. Informacje licencyjne dla Programu sπ dostÍpne pod adresem http://www.ibm.com/software/sla/. Informacje licencyjne moøna teø znaleüÊ w pliku umieszczonym w katalogu Programu, uøywajπc komend systemowych. Dokument ten moøe byÊ rÛwnieø do≥πczony do Programu w postaci broszury.
+
+Termin "Program" oznacza orygina≥ oraz pe≥ne lub czÍúciowe kopie: 1) instrukcji i danych w formie zapisu maszynowego,  2) komponentÛw, 3) zapisÛw audiowizualnych (takich jak obrazy, tekst, nagrania lub ilustracje), 4) odnoszπcych siÍ do Programu materia≥Ûw licencjonowanych oraz 5) dokumentÛw dotyczπcych licencjonowanego uøywania i kluczy oraz innej dokumentacji. 
+
+Termin "Dokument Proof of Entitlement" ("Dokument PoE") oznacza dokument stanowiπcy dowÛd posiadania przez Uøytkownika prawa do uøywania Programu na okreúlonym poziomie. Poziom ten jest wyznaczony na przyk≥ad przez liczbÍ procesorÛw lub uøytkownikÛw. Dokument PoE stanowi rÛwnieø dowÛd uprawniajπcy Uøytkownika do korzystania z cen obowiπzujπcych na kolejne aktualizacje, jeúli takowe majπ zastosowanie, oraz specjalnych ofert i promocji. Jeúli IBM nie udostÍpni Uøytkownikowi dokumentu PoE, wÛwczas IBM moøe zaakceptowaÊ oryginalny op≥acony rachunek lub inny dokument potwierdzajπcy sprzedaø, otrzymany od podmiotu, od ktÛrego Uøytkownik naby≥ Program (IBM lub reselera IBM) pod warunkiem, øe na dokumencie takim wyszczegÛlniona jest nazwa nabytego Programu oraz poziom wykorzystania.
+
+Termin "Uøytkownik", wystÍpujπcy w rÛønych przypadkach, oznacza albo osobÍ fizycznπ, albo osobÍ prawnπ.
+
+Niniejsza Umowa sk≥ada siÍ z CzÍúci 1 - Warunki ogÛlne, CzÍúci 2 - Warunki specyficzne dla poszczegÛlnych krajÛw (jeúli majπ zastosowanie), Informacji licencyjnych oraz dokumentu Proof of Entitlement, ktÛre tworzπ kompletnπ umowÍ miÍdzy Uøytkownikiem i IBM dotyczπcπ uøywania Programu. Umowa ta zastÍpuje wszelkie wczeúniejsze ustne lub pisemne ustalenia dokonane miÍdzy Uøytkownikiem i IBM w zakresie uøywania Programu. Warunki zawarte w CzÍúci 2 oraz warunki dokumentu Informacje licencyjne mogπ zastπpiÊ lub zmodyfikowaÊ warunki CzÍúci 1. W zakresie, w jakim pojawiajπ siÍ sprzecznoúci miÍdzy warunkami niniejszej Umowy i MiÍdzynarodowej Umowy IBM Passport Advantage, warunki MiÍdzynarodowej Umowy IBM Passport Advantage majπ znaczenie rozstrzygajπce.
+
+1. Uprawnienia
+
+Licencja
+
+Program ten jest w≥asnoúciπ IBM lub dostawcy IBM. Program ten jest chroniony prawem autorskim i stanowi przedmiot umowy licencyjnej, a nie umowy sprzedaøy.
+
+IBM udziela Uøytkownikowi niewy≥πcznej licencji na Program, jeúli Program ten zosta≥ nabyty legalnie.
+
+Uøytkownik ma prawo 1) uøywaÊ Programu do poziomu wykorzystania, okreúlonego w dokumencie PoE oraz 2) wykonywaÊ i instalowaÊ kopie, w tym kopiÍ zapasowπ, potrzebne do takiego uøywania. Warunki niniejszej licencji majπ zastosowanie do kaødej wykonanej przez Uøytkownika kopii Programu. Uøytkownik odtworzy wszelkie uwagi dotyczπce praw autorskich oraz wszelkie informacje o prawach w≥asnoúci na kaødej pe≥nej lub czÍúciowej kopii Programu.
+
+Jeúli Uøytkownik nabÍdzie Program jako aktualizacjÍ, to po zainstalowaniu takiej aktualizacji Uøytkownik traci prawo do uøywania Programu bÍdπcego przedmiotem aktualizacji oraz prawo do przeniesienia takiego Programu na osobÍ trzeciπ.
+
+Uøytkownik zapewnia, øe jakakolwiek osoba korzystajπca z Programu (lokalnie lub zdalnie) dokonuje tego jedynie w ramach posiadanej autoryzacji na uøywanie oraz przestrzega warunkÛw niniejszej Umowy.
+
+Uøytkownik nie moøe 1) uøywaÊ, kopiowaÊ, modyfikowaÊ ani dystrybuowaÊ Programu z wyjπtkiem sytuacji przewidzianych w niniejszej Umowie; 2) deasemblowaÊ, dekompilowaÊ Programu ani dokonywaÊ jego translacji w inny sposÛb, z wyjπtkiem sytuacji dozwolonych przez bezwzglÍdnie obowiπzujπce przepisy prawa; ani teø 3) udzielaÊ dalszych licencji na Program, wynajmowaÊ go ani wydzierøawiaÊ.
+
+IBM ma prawo wypowiedzieÊ licencjÍ udzielonπ Uøytkownikowi w przypadku niewype≥nienia przez Uøytkownika warunkÛw niniejszej Umowy. W razie wypowiedzenia umowy przez IBM Uøytkownik jest zobowiπzany do zniszczenia wszelkich egzemplarzy Programu oraz odnoszπcych siÍ do nich dokumentÛw PoE.
+
+Gwarancja zwrotu pieniÍdzy
+
+Jeúli z jakiegokolwiek powodu Uøytkownik nie jest zadowolony z Programu, a jest pierwotnym licencjobiorcπ, wÛwczas moøe uzyskaÊ zwrot kwoty zap≥aconej za ten Program pod warunkiem zwrotu Programu oraz odnoszπcego siÍ do Programu dokumentu PoE do osoby, od ktÛrej Program zosta≥ nabyty, w ciπgu 30 dni do daty faktury. W przypadku pobrania Programu drogπ elektronicznπ Uøytkownik moøe skontaktowaÊ siÍ ze ürÛd≥em, z ktÛrego pobra≥ Program, aby dowiedzieÊ siÍ, w jaki sposÛb uzyskaÊ zwrot kwoty.
+
+Przeniesienie Programu
+
+Uøytkownik moøe przenieúÊ Program oraz wszelkie przys≥ugujπce mu prawa i obowiπzki licencyjne na osobÍ trzeciπ pod warunkiem, øe osoba taka zaakceptuje warunki niniejszej Umowy. Wraz z przeniesieniem Programu Uøytkownik jest zobowiπzany do przeniesienia egzemplarza niniejszej Umowy wraz z dokumentem PoE dla Programu. Uøytkownik nie moøe uøywaÊ Programu po dokonaniu przeniesienia.
+
+2. Op≥aty
+
+Op≥ata za licencjÍ na Program jest op≥atπ jednorazowπ.
+
+Op≥aty jednorazowe sπ naliczane w oparciu o nabyty poziom wykorzystania, okreúlony w dokumencie PoE. IBM nie zwraca wczeúniej wniesionych lub naleønych op≥at ani nie uwzglÍdnia ich w rozliczeniach, chyba øe niniejsza Umowa stanowi inaczej.
+
+Jeúli Uøytkownik chcia≥by podwyøszyÊ poziom wykorzystania Programu, powinien powiadomiÊ o tym IBM lub osobÍ, od ktÛrej naby≥ Program, oraz uiúciÊ odpowiednie op≥aty.
+
+Jeúli dostarczenie niniejszego Programu wymaga zap≥acenia c≥a, podatku, akcyzy lub innych op≥at na rzecz jakichkolwiek urzÍdÛw, z wyjπtkiem obciπøeÒ wiπøπcych siÍ z uzyskaniem przychodu netto przez IBM, Uøytkownik wyraøa zgodÍ na zap≥acenie odpowiedniej kwoty wskazanej przez IBM lub zobowiπzuje siÍ przedstawiÊ dowÛd zwolnienia od danej op≥aty. Od daty nabycia Programu Uøytkownik ponosi odpowiedzialnoúÊ z tytu≥u naleønego podatku poúredniego.
+
+3. Brak Gwarancji
+
+Z ZASTRZEØENIEM GWARANCJI WYNIKAJ•CYCH Z BEZWZGL DNIE OBOWI•ZUJ•CYCH PRZEPIS”W PRAWA, IBM NIE UDZIELA NA NINIEJSZY PROGRAM CZY TEØ W ZAKRESIE WSPARCIA TECHNICZNEGO JAKICHKOWIEK GWARANCJI, W TYM TAKØE R KOJMI, ANI TEØ NIE USTALA JAKICHKOLWIEK WARUNK”W, WYRAèNYCH CZY DOMNIEMANYCH, A W SZCZEG”LNOåCI DOMNIEMANYCH GWARANCJI CZY WARUNK”W PRZYDATNOåCI HANDLOWEJ, PRZYDATNOåCI DO OKREåLONEGO CELU ANI TEØ GWARANCJI CZY WARUNK”W NIENARUSZANIA PRAW OS”B TRZECICH.
+
+Zastrzeøenie to ma rÛwnieø zastosowanie do wszelkich programistÛw i dostawcÛw IBM.
+
+Producenci, dostawcy i wydawcy zajmujπcy siÍ Programami innymi niø Programy IBM mogπ dostarczaÊ swe w≥asne gwarancje. 
+
+IBM nie úwiadczy wsparcia technicznego, chyba øe IBM okreúli inaczej. 
+
+4. Ograniczenie odpowiedzialnoúci
+
+W przypadku wystπpienia okreúlonych okolicznoúci, za ktÛre odpowiedzialnoúÊ ponosi IBM, a w wyniku ktÛrych Uøytkownik dozna≥ szkody, Uøytkownik bÍdzie uprawniony do uzyskania od IBM odszkodowania. W kaødym takim przypadku, bez wzglÍdu na podstawÍ, na jakiej Uøytkownik jest uprawniony do domagania siÍ odszkodowania od IBM (w≥πczywszy w to naruszenie istotnych postanowieÒ niniejszej Umowy, niedbalstwo, wprowadzenie w b≥πd lub inne roszczenia z tytu≥u odpowiedzialnoúci kontraktowej lub deliktowej), odpowiedzialnoúÊ IBM ogranicza siÍ jedynie do 1) odpowiedzialnoúci za uszczerbek na zdrowiu (≥πcznie ze úmierciπ) oraz za szkody wyrzπdzone w nieruchomoúciach lub majπtku ruchomym, a 2) w przypadku innych rzeczywiúcie poniesionych szkÛd - do wysokoúci op≥at za Program, bÍdπcy przedmiotem roszczenia.
+
+Niniejsze ograniczenie odpowiedzialnoúci ma zastosowanie takøe do programistÛw i dostawcÛw ProgramÛw IBM. Wskazany powyøej zakres odpowiedzialnoúci stanowi ca≥oúÊ odpowiedzialnoúci ponoszonej przez IBM. 
+
+W ØADNYCH OKOLICZNOåCIACH IBM, ANI TEØ PROGRAMIåCI CZY DOSTAWCY PROGRAM”W IBM, NIE PONOSZ• ODPOWIEDZIALNOåCI ZA PONIØSZE SZKODY, NAWET JEåLI ZOSTALI POINFORMOWANI O MOØLIWOåCI ICH WYST•PIENIA:
+
+1. UTRAT  LUB USZKODZENIE DANYCH;
+
+2. SZKODY SZCZEG”LNE, UBOCZNE, POåREDNIE ORAZ SZKODY, KT”RYCH NIE MOØNA BY£O PRZEWIDZIE∆ PRZY ZAWIERANIU UMOWY, ANI TEØ
+
+3. UTRACONE ZYSKI, KONTAKTY HANDLOWE, DOCHODY, REPUTACJ  (GOODWILL) ANI TEØ PRZEWIDYWANE OSZCZ DNOåCI.
+
+USTAWODAWSTWA NIEKT”RYCH KRAJ”W NIE PRZEWIDUJ• WY£•CZENIA LUB OGRANICZENIA ODPOWIEDZIALNOåCI Z TYTU£U SZK”D UBOCZNYCH LUB SZK”D, KT”RYCH NIE MOØNA BY£O PRZEWIDZIE∆ PRZY ZAWIERANIU UMOWY, DLATEGO TEØ POWYØSZE WY£•CZENIA LUB OGRANICZENIA MOG• NIE MIE∆ ZASTOSOWANIA W PRZYPADKU NIEKT”RYCH UØYTKOWNIK”W.
+
+5. Postanowienia ogÛlne
+
+1. Postanowienia zawarte w niniejszej Umowie pozostajπ bez wp≥ywu na uprawnienia przys≥ugujπce konsumentom, ktÛre nie mogπ byÊ wy≥πczone lub ograniczone na podstawie bezwzglÍdnie obowiπzujπcych przepisÛw prawa. 
+
+2. W przypadku niewaønoúci lub niewykonalnoúci ktÛregokolwiek z postanowieÒ niniejszej Umowy, pozosta≥e postanowienia niniejszej Umowy zachowujπ pe≥nπ moc prawnπ i skutecznoúÊ. 
+
+3. Uøytkownik zobowiπzuje siÍ przestrzegaÊ wszelkich obowiπzujπcych praw i przepisÛw eksportowych i importowych.
+
+4. Uøytkownik zezwala IBM na przechowywanie informacji kontaktowych oraz na korzystanie z nich, w≥πczajπc w to imiona i nazwiska, numery telefonÛw i adresy poczty elektronicznej, bez wzglÍdu na miejsce prowadzenia dzia≥alnoúci. Informacje takie bÍdπ przetwarzane i wykorzystywane w zwiπzku z prowadzonπ dzia≥alnoúciπ i mogπ byÊ udostÍpnione wykonawcom, Partnerom Handlowym lub cesjonariuszom IBM, jeúli informacje te majπ zwiπzek z prowadzonπ przez nich dzia≥alnoúciπ, w tym w celu utrzymywania kontaktu z Uøytkownikiem (np. w celu przetwarzania zamÛwieÒ, promocji i prowadzenia badaÒ marketingowych).
+
+5. Wszelkie roszczenia zwiπzane z realizacjπ niniejszej Umowy ulegajπ przedawnieniu po up≥ywie dwÛch lat od powstania przyczyny takich roszczeÒ, chyba øe bezwzglÍdnie obowiπzujπce przepisy prawa stanowiπ inaczej.
+
+6. Ani Uøytkownik, ani IBM nie odpowiadajπ za niedope≥nienie jakichkolwiek obowiπzkÛw, jeúli przyczyny takiego niedope≥nienia leøa≥y poza ich kontrolπ.
+
+7. Niniejsza Umowa nie daje osobom trzecim jakichkolwiek praw ani teø podstawy do roszczeÒ, a IBM nie ponosi odpowiedzialnoúci za jakiekolwiek roszczenie osÛb trzecich wobec Uøytkownika, chyba øe zezwalajπ na to warunki powyøszego paragrafu "Ograniczenie odpowiedzialnoúci" w czÍúci dotyczπcej uszczerbku na zdrowiu (≥πcznie ze úmierciπ) lub szkÛd wyrzπdzonych w nieruchomoúciach lub w majπtku ruchomym, za ktÛre IBM ponosi odpowiedzialnoúÊ prawnπ.
+
+6. Obowiπzujπce ustawodawstwo, jurysdykcja i arbitraø
+
+Obowiπzujπce ustawodawstwo
+
+Obie Strony przyjmujπ jako obowiπzujπce prawo kraju, w ktÛrym licencja na Program zosta≥a nabyta, oraz wyraøajπ zgodÍ na stosowanie takiego prawa przy interpretowaniu oraz egzekwowaniu wszelkich praw i obowiπzkÛw Stron, wynikajπcych z niniejszej Umowy lub majπcych w jakikolwiek sposÛb z niπ zwiπzek, bez odwo≥ywania siÍ do norm kolizyjnych dotyczπcych przepisÛw prawnych. 
+
+Konwencja ONZ dotyczπca umÛw o MiÍdzynarodowej Sprzedaøy TowarÛw (United Nations Convention on Contracts for the International Sale of Goods) nie ma zastosowania.
+
+Jurysdykcja
+
+Wszelkie prawa, obowiπzki i zobowiπzania IBM podlegajπ w≥aúciwym sπdom kraju nabycia licencji na Program.
+
+CzÍúÊ 2 - Warunki specyficzne dla poszczegÛlnych krajÛw
+
+EUROPA, BLISKI WSCH”D, AFRYKA (EUROPE, MIDDLE EAST, AFRICA - EMEA)
+
+Obowiπzujπce ustawodawstwo, jurysdykcja i arbitraø (paragraf 6)
+
+Obowiπzujπce ustawodawstwo
+
+Sformu≥owanie "prawo kraju, w ktÛrym licencja na Program zosta≥a nabyta" zostaje zastπpione sformu≥owaniem "prawo Austrii". Zasada ta dotyczy Polski.
+
+Arbitraø
+
+W Polsce wszelkie kwestie sporne wynikajπce z niniejszej Umowy lub zwiπzane z jej naruszeniem, wypowiedzeniem lub niewaønoúciπ bÍdπ rozstrzygane w sposÛb ostateczny zgodnie z Zasadami PostÍpowania Arbitraøowego i Ugodowego MiÍdzynarodowego Centrum Arbitraøu przy Federalnej Izbie Gospodarczej (Rules of Arbitration and Conciliation of the International Arbitral Center of the Austrian Federal Economic Chamber) w Wiedniu (Vienna Rules), przez trzech arbitrÛw, powo≥anych zgodnie ze wspomnianymi zasadami. Arbitraø bÍdzie mia≥ miejsce w Wiedniu, w Austrii. JÍzykiem obowiπzujπcym podczas postÍpowania bÍdzie jÍzyk angielski. Orzeczenia arbitrÛw bÍdπ ostateczne i wiπøπce dla obu Stron. Oznacza to, øe zgodnie z artyku≥em 598(2) Austriackiego Kodeksu PostÍpowania Cywilnego (Austrian Code of Civil Procedure), Strony rezygnujπ ze stosowania artyku≥u 595(1) punkt 7 tego Kodeksu. Tym niemniej powyøsze warunki w øadnym stopniu nie ograniczajπ prawa IBM do wszczÍcia postÍpowania przed dowolnym w≥aúciwym sπdem w kraju instalacji.
+
+Z125-5589-03 (11/2002)
+
+
+
+INFORMACJE LICENCYJNE
+
+Na Programy wyszczegÛlnione poniøej udzielane sπ licencje na warunkach, stanowiπcych uzupe≥nienie warunkÛw, ktÛre zawiera MiÍdzynarodowa Umowa Licencyjna na Programy nieobjÍte Gwarancjπ.
+
+Nazwa Programu: IBM WebSphere MQ for Wndows - GUI Administrator, SupportPac: MO71 V7.0
+Numer Programu: SupportPac MO71
+Upowaønienie do uøywania na komputerze domowym/przenoúnym: Program moøe znajdowaÊ siÍ zarÛwno na maszynie podstawowej, jak i na innej maszynie, pod warunkiem, øe nie korzysta siÍ z niego na obu maszynach jednoczeúnie.
+
+Prawa do ograniczonego uøywania Innych ProgramÛw IBM
+
+Jeúli Uøytkownik naby≥ ten Program jako czÍúÊ innego programu IBM (zwanego dalej "Programem G≥Ûwnym") w ktÛrego licencji Program ten bÍdzie wymieniony pod nag≥Ûwkiem "Inne Programy IBM", Uøytkownik otrzymuje ten Program jedynie do obs≥ugi Programu G≥Ûwnego, zaú jego prawo do uøywania Programu ogranicza licencja na Program G≥Ûwny. Jeúli Uøytkownik chce nabyÊ oddzielnπ licencjÍ na ten Program, nieograniczonπ warunkami licencji na Program G≥Ûwny, powinien skontaktowaÊ siÍ z przedstawicielem handlowym IBM.
+
+Okreúlone årodowisko Pracy
+
+Specyfikacje dla Programu oraz informacje dotyczπce okreúlonego úrodowiska pracy moøna znaleüÊ w dokumentacji do≥πczonej do Programu, jeúli takowa jest dostÍpna, takiej jak plik readme lub w innych informacjach opublikowanych przez IBM, na przyk≥ad w dokumentach announcement letter. Uøytkownik zgadza siÍ, øe taka dokumentacja oraz inne treúci zwiπzane z Programem mogπ byÊ dostarczane tylko w jÍzyku angielskim.
+
+Warunki specyficzne dla ProgramÛw
+
+1. Program ten jest dostarczany w celu uøywania z programem IBM WebSphere MQ, wersja 7.0 (lub nowsza) lub jego dowolnπ pÛüniejszπ wersjπ, dostarczanπ pod innπ markπ (zwanymi dalej "Programem G≥Ûwnym").
+
+2. Licencja Uøytkownika na uøywanie tego Programu zaleøy od posiadania waønej licencji na uøywanie Programu G≥Ûwnego. Jeúli Uøytkownik nie posiada juø licencji na uøywanie Programu G≥Ûwnego, wÛwczas jego licencja na uøywanie tego Programu automatycznie wygasa ze skutkiem natychmiastowym.
+
+3. Uøytkownik jest upowaøniony do uøywania tego Programu jedynie w po≥πczeniu z Programem G≥Ûwnym. Wyraünie zabrania siÍ uøywania tego Programu w jakimkolwiek innym po≥πczeniu.
+
+4. Na potrzeby niniejszej licencji postanowienia dotyczπce "Przenoszenia Programu" w MiÍdzynarodowej Umowie Licencyjnej na Program lub MiÍdzynarodowej Umowie Licencyjnej na Programy nieobjÍte Gwarancjπ (w zaleønoúci od tego, ktÛra ma zastosowanie) zostajπ usuniÍte i zastπpione nastÍpujπcym tekstem:
+
+"Uøytkownik moøe przenieúÊ Program oraz wszelkie swoje prawa i obowiπzki wynikajπce z licencji na innπ osobÍ (zwanπ dalej "Osobπ Przejmujπcπ") jedynie pod warunkiem, øe:
+
+(i) Uøytkownik kontroluje przedsiÍbiorstwo takiej osoby w ponad 50%, taka osoba kontroluje przedsiÍbiorstwo Uøytkownika w ponad 50% lub teø przedsiÍbiorstwo takiej osoby i przedsiÍbiorstwo Uøytkownika sπ wspÛlnie kontrolowane w ponad 50% przez tÍ samπ osobÍ trzeciπ oraz
+
+(ii) Osoba Przejmujπca wyrazi zgodÍ na warunki niniejszej Umowy. Wraz z Programem Uøytkownik musi rÛwnieø przenieúÊ egzemplarz niniejszej Umowy oraz dokument PoE dla Programu.
+
+Po przeniesieniu Uøytkownik traci prawo do uøywania Programu.
+
+
+
+D/N:  L-AFOS-7NJNBM
+P/N:  L-AFOS-7NJNBM 

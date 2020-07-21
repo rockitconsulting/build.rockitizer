@@ -1,0 +1,23 @@
+package com.rockit.blackboxtester.generated.@flowPackage@;
+
+import com.rockit.common.blackboxtester.wrapper.IFlowWrapper;
+import com.rockit.common.blackboxtester.IConnector;
+import com.rockit.common.blackboxtester.MQConnectorIn;
+import com.rockit.common.blackboxtester.MQConnectorOut;
+
+
+public class @flowname@Wrapper implements IFlowWrapper {
+	@Override
+	public IConnector[] getInConnectors() {
+		return new IConnector[] { @inConnectorsList@ };
+	}
+
+
+	@Override
+	public IConnector[] getOutConnectors() {
+		return new IConnector[] { @outConnectorsList@ };
+		
+	}
+
+}
+  

@@ -1,0 +1,92 @@
+/*
+*	Copyright 2015 rockit.consulting GbR  (www.rockit.consulting)
+*
+*/
+
+
+ext {
+   	
+   	  frameworkTestResourcesDir=new File("${project.ext.testProjectDir}${fileSeparator}src${fileSeparator}test${fileSeparator}resources${fileSeparator}")
+
+      brokerParamsXmlRoot = new XmlSlurper().parseText(new File("${configPath}${fileSeparator}${config.broker}").text)
+      
+      qm = config.queueManager?config.queueManager.name:brokerParamsXmlRoot.'@queueManager'.text()
+	  host = config.queueManager?config.queueManager.host:brokerParamsXmlRoot.'@host'.text()
+	  port = config.queueManager?config.queueManager.listenerPort:brokerParamsXmlRoot.'@listenerPort'.text()
+	  srvconn = config.queueManager?config.queueManager.svrconn:brokerParamsXmlRoot.'@svrconn'.text()
+
+
+     inOutCategory = [
+	     'ComIbmMQInput':'inconnector',
+	     'ComIbmMQOutput':'outconnector'
+     ]
+
+
+	 implementations = [
+	     'ComIbmMQInput':'MQConnectorIn',
+	     'ComIbmMQOutput':'MQConnectorOut'
+     ] 
+
+	 
+     
+     
+    
+	camelCase = { path ->
+	     path.split('\\\\').inject([]) { res, w ->
+	        res <<  w.split('_').collect{ it.toLowerCase().capitalize() }.join('')
+	     }
+	     .join(fileSeparator)
+	
+		
+	
+	}    
+     
+     
+}
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//      Structure generation
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+task prepareTestFrameworkTarget << {
+	generateModel()
+		
+    def myProps = new Properties()
+	file("${brokerConfDir}${fileSeparator}${environment}.properties").withInputStream{
+	       myProps.load(it);   
+	       project.ext.environmentIdx=myProps.IDX
+	}
+}
+
+
+
+
+task generateMqProperties(dependsOn:[prepareTestFrameworkTarget]) << {
+	def qOutModel = []
+    qmodel.each { q, conns ->
+        logger.lifecycle "queue + $q"
+		conns.findAll {it.type=='ComIbmMQOutput'}.each { outq ->
+			qOutModel << outq.qname
+		}
+    }
+	
+   
+   logger.lifecycle "copy generated config.mq.properties into ${frameworkTestResourcesDir.path}"
+
+			    
+   copy {
+		    from "${projectDir}${fileSeparator}tools${fileSeparator}templates${fileSeparator}mq.properties.template"
+		    into "${frameworkTestResourcesDir.path}"
+		    rename("mq.properties.template", "config.mq.properties")
+			filter {
+      							it.replace('@MQGET.List@', qOutModel.unique().join(',') ).
+      							replace('@MQMANAGER.NAME@', qm ).
+      							replace('@MQMANAGER.HOST@', host ).
+      							replace('@MQMANAGER.PORT@', port ).
+      							replace('@MQMANAGER.CHANNEL@', srvconn )
+				   }
+		 }
+		 
+}
+
+
+

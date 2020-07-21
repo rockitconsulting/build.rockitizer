@@ -1,0 +1,134 @@
+
+AP:
+ver=702 x=0 y=0 cx=1920 cy=1030
+vx=0 vy=149 vcx=512 vcy=288
+chstype=0 chsrate=180 maxcsl=1000 mitems=12
+confirms savpos savsize cmdexp=90 sdelay=250 objo=1209600 objr=604800 objrty=3600 
+qmlistwid=200
+dlgadd=0 149 805 494 
+dlgloc=0 149 960 515 
+dlgprf=0 149 512 288 
+dlgapiex=-2147483648 -2147483648 960 540 
+dlgprnt=0 149 512 288 
+dlgfilters=0 149 512 288 
+dlgsyncs=0 149 512 288 
+dlgput=0 149 512 288 
+dlgpub=0 149 512 288 
+dlgqload=0 149 512 288 
+dlgar=0 149 512 288 
+pom=FFFFFFFF po=20310A1B po2m=FFFFFFFF po2=443E088 po3m=7F po3=0 snap=qm snapsz=10
+tf1="Last Refresh on %D - %d %m %y (%t)"
+tf2="%d %m %y (%t)"
+tf3="%t"
+font="System"
+fontsize=16
+npfont="Courier"
+npfontsize=8
+msgformat=3f_ msgformat2=_
+dq=Ab_
+tz=60
+clr0=12632256 clr1=0 clr2=8421504 clr3=16711680 
+clr4=12632256 clr5=12632256 clr6=16711680 clr7=12632256 
+clr8=0 clr9=16777215 clr10=16711680 clr11=12632256 
+clr12=16711680 clr13=8421504 clr14=0 clr15=12632256 
+clr16=16711680 clr17=12632256 clr18=16711680 clr19=16777215 
+clr20=0 clr21=16777215 clr22=0 clr23=16777215 
+clr24=16711680 clr25=0 clr26=16711680 clr27=12632256 
+clr28=0 clr29=12632256 clr30=8421504 clr31=14540253 
+clr32=0 clr33=13158600 clr34=13158600 clr35=8421504 
+clr36=13158600 clr37=8421504 clr38=8421504 clr39=16711680 
+clr40=8421504 clr41=16711680 
+PRT:
+  margin  =100
+PRH:
+  margin  =100
+PRF:
+  margin  =100
+MNU:
+(749 1512752808 671961)(545 1512378888 24527866)(542 0 0)(574 1473948170 1473948170)(575 0 0)(534 1512398009 3640480)(533 1450692950 195430535)(559 0 0)(715 0 0)(624 0 0)(536 0 0)(537 0 0)(541 0 0)(538 0 0)(539 0 0)(540 0 0)(576 0 0)(577 0 0)(626 0 0)(625 0 0)(694 0 0)(693 0 0)(784 0 0)(783 0 0)(787 0 0)(786 0 0)(619 0 0)(618 0 0)(760 0 0)(759 0 0)(721 0 0)(720 0 0)(718 0 0)(717 0 0)(726 0 0)(725 0 0)(729 0 0)(728 0 0)(580 0 0)(581 0 0)(582 0 0)(566 0 0)(567 0 0)(565 1473175135 1473175135)(741 0 0)(740 0 0)(744 0 0)(743 0 0)(764 0 0)(763 0 0)(767 0 0)(766 0 0)(770 0 0)(769 0 0)(773 0 0)(772 0 0)
+OBQ:
+"SYSTEM.BROKER.AGGR.REPLY"
+"SYSTEM.BROKER.ADMIN.REPLYTODM"
+"JOERG.COPYMESSAGEAPP.IN"
+"JOERG.COPYMESSAGEAPP.OUT"
+"XZ0.MBVM.U.APPLICATION.ERROR.01"
+"XZ0.MBVM.U.AMETRAS.CAS.TRIGGER.01"
+"XZ0.MBVM.U.SCHEDULER.CONFIG.01"
+"XZ0.MBVM.U.AMETRAS.FLEET.CFG.01"
+"XZ0.MBVM.U.*"
+"XZ0.MBVM.U.APP.ERROR.01"
+OBC:
+"QM0A006E.ADMIN"
+"NONPRIV.SVRCONN"
+"SYSTEM.ADMIN.SVRCONN"
+
+QM:QM0A006E "QM0A006E" 3 800
+rq=SYSTEM.DEFAULT.MODEL.QUEUE
+client npsai objd ux=0 uy=0 
+expm=4095 expo=0
+
+CLN:
+ 3501="QM0A006E.ADMIN"
+ 1511=6
+ 1501=2
+ 3506="linux-wmnh(11419)"
+
+DLG:"Channel"
+x=0 y=0 x2=0 y2=0 cx=640 cy=346 cx2=1154 cy2=690 
+buttons fields tl 
+
+DLG:"Client Channel Definition"
+x=0 y=0 x2=1024 y2=40 cx=640 cy=346 cx2=704 cy2=690 
+buttons fields tl 
+
+DLG:"Cluster Queue Manager List"
+x=0 y=0 x2=757 y2=272 cx=640 cy=346 cx2=1154 cy2=397 
+buttons fields filter 
+
+DLG:"Queue List"
+x=0 y=0 x2=470 y2=355 cx=640 cy=346 cx2=1334 cy2=616 
+buttons fields filter tl 
+
+DLG:"Queue Manager"
+x=0 y=0 x2=965 y2=222 cx=640 cy=346 cx2=820 cy2=690 
+buttons fields tl 
+
+QM:MBVMQMGR "MBVMQMGR" 3 904
+rq=SYSTEM.DEFAULT.MODEL.QUEUE
+client npsai objd ux=0 uy=0 
+expm=4095 expo=0
+
+CLN:
+ 3501="SYSTEM.ADMIN.SVRCONN"
+ 1511=6
+ 1501=2
+ 3506="192.168.2.24(1414)"
+
+DLG:"Client Channel Definition"
+x=820 y=413 x2=0 y2=0 cx=560 cy=596 cx2=640 cy2=360 
+buttons fields tl 
+
+DLG:"Message"
+x=0 y=0 x2=0 y2=0 cx=640 cy=343 cx2=1920 cy2=1048 
+buttons fields tl 
+
+DLG:"Message List"
+x=0 y=0 x2=0 y2=0 cx=640 cy=343 cx2=1920 cy2=1048 
+buttons fields filter tl 
+
+DLG:"Queue"
+x=0 y=0 x2=0 y2=218 cx=640 cy=343 cx2=823 cy2=862 
+buttons fields tl 
+
+DLG:"Queue List"
+x=0 y=0 x2=2128 y2=195 cx=1920 cy=1030 cx2=739 cy2=611 
+buttons fields filter tl 
+
+DLG:"Queue Manager"
+x=0 y=25 x2=0 y2=0 cx=1442 cy=862 cx2=0 cy2=0 
+buttons fields tl 
+
+QM:QMGR "QMGR" 11 903
+rq=SYSTEM.DEFAULT.MODEL.QUEUE
+npsai objd ux=0 uy=0 
+expm=4095 expo=0

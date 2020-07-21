@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<IntegrationNodeConnectionParameters
+    Version="10.0.0"
+    host="localhost"
+    listenerPort="4418"
+    integrationNodeName="IB10Node"
+    userName="joerg"
+    password="Stuttgart2015" 
+    xmlns="http://www.ibm.com/xmlns/prod/websphere/iib/8/IntegrationNodeConnectionParameters" />

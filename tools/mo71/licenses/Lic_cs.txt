@@ -1,0 +1,158 @@
+Mezinárodní licenèní smlouva pro programy bez záruky
+
+Èást 1 - Obecná ustanovení
+
+STAENÍM, INSTALACÍ, ZKOPÍROVÁNÍM, PØÍSTUPEM K PROGRAMU NEBO POUITÍM PROGRAMU VYJADØUJETE SVÙJ SOUHLAS S TOUTO SMLOUVOU. JESTLIE AKCEPTUJETE TYTO PODMÍNKY JMÉNEM JINÉ OSOBY NEBO SPOLEÈNOSTI NEBO JINÉHO PRÁVNÍHO SUBJEKTU, PAK TÍMTO PROHLAŠUJETE A ZARUÈUJETE, E JSTE PLNÌ ZMOCNÌNI VÁZAT TUTO OSOBU, SPOLEÈNOST NEBO PRÁVNÍ SUBJEKT TÌMITO PODMÍNKAMI. JESTLIE S TÌMITO PODMÍNKAMI NESOUHLASÍTE,
+
+- NESTAHUJTE, NEINSTALUJTE, NEKOPÍRUJTE, NEPØISTUPUJTE NEBO NEPOUÍVEJTE PROGRAM, A 
+
+- BEZODKLADNÌ VRATE PROGRAM A DOKUMENT O OPRÁVNÌNÍ (PROOF OF ENTITLEMENT) SUBJEKTU, OD KTERÉHO JSTE JE ZÍSKALI, A BUDE VÁM VRÁCENA ÈÁSTKA, KTEROU JSTE ZA NÌ ZAPLATILI. JESTLIE JSTE JI PROGRAM STÁHLI, OBRATE SE NA SUBJEKT, OD KTERÉHO JSTE JEJ ZÍSKALI. 
+
+"IBM" je spoleènost International Business Machines Corporation nebo nìkterá z jejích dceøinıch spoleèností. 
+
+"Licenèní informace" ("LI") je dokument, kterı uvádí informace specifické pro program. Licenèní informace pro program jsou k dispozici na adrese http://www.ibm.com/software/sla/. Licenèní informace lze nalézt rovnì v souboru v adresáøi s programem - prostøednictvím systémového pøíkazu - nebo ve formì pøíruèky, kterou obdríte s programem. 
+
+"Program" zahrnuje níe uvedené komponenty, vèetnì originálu a všech úplnıch nebo dílèích kopií: 1) strojovì èitelné instrukce (MRI) a data, 2) komponenty, 3) audiovizuální obsah (jako jsou obrazy, text, nahrávky nebo obrázky), 4) související licencované materiály a 5) licenèní dokumenty nebo klíèe a dokumentace. 
+
+"Dokument o oprávnìní" ("PoE") pøedstavuje dùkaz o Vašem oprávnìní pouívat program na specifikované úrovni. Tuto úroveò lze mìøit, napø. podle poètu procesorù nebo uivatelù. Dokument PoE je rovnì dùkazem o Vašem nároku na ceny za budoucí pøechody na vyšší verzi, vyskytnou-li se nìjaké, a potenciální zvláštní nebo propagaèní pøíleitosti. Jestlie Vám IBM nedodá dokument PoE, pak IBM mùe akceptovat pùvodní stvrzenku o nákupu nebo jinı doklad o nákupu od subjektu (buï IBM nebo její prodejce), od kterého jste program zakoupili, za pøedpokladu, e tento doklad uvádí jméno programu a zakoupenou úroveò uívání. 
+
+"Vy" a "Váš/Vaše" se vztahuje na jednotlivou osobu nebo na jeden právní subjekt. 
+
+Tato smlouva je tvoøena èástí 1 - Obecná ustanovení, èástí 2 - Specifická ustanovení pro jednotlivé zemì (jsou-li nìjaká), licenèními informacemi a dokumentem PoE a tvoøí úplnou smlouvu mezi Vámi a IBM tıkající se uívání programu. Nahrazuje veškerá pøedchozí ústní nebo písemná ujednání mezi Vámi a IBM ohlednì uívání programu. Podmínky èásti 2 a licenèních informací mohou nahrazovat nebo upravovat podmínky èásti 1. Pokud se vyskytne rozpor mezi podmínkami této smlouvy a podmínkami smlouvy IBM IPA (International Passport Advantage Agreement), pak mají pøednost podmínky smlouvy, která byla uzavøena pozdìji. 
+
+1. Oprávnìní
+
+Licence
+
+Program je vlastnictvím IBM nebo dodavatele IBM, je chránìn autorskımi právy a je k nìmu poskytováno právo uívání, není prodáván. 
+
+IBM Vám udìluje nevıhradní licence na uívání programu, pokud jej získáte zákonnım zpùsobem. 
+
+Smíte 1) pouívat program a do úrovnì uívání uvedené v dokumentu PoE a 2) vytváøet a instalovat kopie, vèetnì záloní kopie za úèelem podpory takového uívání. Podmínky této licence se vztahují na kadou kopii, kterou vytvoøíte. Jste povinni reprodukovat všechna upozornìní o autorskıch právech a další poznámky tıkající se vlastnictví na kadé kopii nebo dílèí kopii programu. 
+
+Kupujete-li tento program jako programovou aktualizaci, nesmíte po nainstalování vyšší verze pouívat program, ze kterého jste pøešli, a nesmíte jej ani pøevádìt na tøetí osobu. 
+
+Zavazujete se, e zajistíte, aby kdokoliv, kdo pouívá tento program (s lokálním nebo vzdálenım pøístupem), tak èinil vıhradnì v souladu s Vaším oprávnìnım uíváním a v souladu s podmínkami této smlouvy. 
+
+Není povoleno 1) pouívat, rozmnoovat, upravovat nebo distribuovat program jinak, ne je vıslovnì umonìno touto smlouvou 2) zpìtnì sestavovat, zpìtnì kompilovat, èi jakkoliv pøekládat program, není-li to vıslovnì povoleno ze zákona bez monosti toto povolení smluvnì vylouèit; ani 3) program sublicencovat, pronajímat nebo poskytovat formou leasingu. 
+
+IBM je oprávnìna Vaši licenci ukonèit, nejednáte-li v souladu s podmínkami této smlouvy. Pokud tak IBM uèiní, jste povinni znièit všechny kopie programu a související dokumenty PoE. 
+
+Záruka vrácení penìz
+
+Jestlie z nìjakého dùvodu nejste spokojeni s programem a jste pùvodním nabyvatelem licence, mùe Vám bıt vrácena èástka, kterou jste za program zaplatili, za pøedpokladu, e bìhem 30 dnù od data fakturace vrátíte program a dokument PoE subjektu, od kterého jste je získali. Jestlie jste program stáhli, mùete poádat subjekt, od kterého jste program získali, o pokyny, jak dosáhnout vrácení penìz. 
+
+Pøenos programu
+
+Program a všechna Vaše práva a závazky, kterıch jste nabyli na základì udìlené licence, smíte pøenést na tøetí osobu za pøedpokladu, e tato tøetí osoba souhlasí s podmínkami této smlouvy. Pokud právo uívání programu pøevádíte, musíte pøevést rovnì kopii této smlouvy, vèetnì dokumentu PoE k programu. Po té, co program pøevedete, nejste oprávnìní jej dále pouívat. 
+
+2. Poplatky
+
+Èástka splatná za licenci k programu pøedstavuje jednorázovı poplatek. 
+
+Jednorázové poplatky jsou zaloeny na získané úrovni uívání, která je specifikována v dokumentu PoE. IBM nevrací ani jinak nerefunduje ji splatné nebo zaplacené èástky, s vıjimkou pøípadù, které jsou specifikovány jinde v této smlouvì. 
+
+Pøejete-li si úroveò uívání zvıšit, uvìdomte o této skuteènosti IBM nebo subjekt, od kterého jste program získali, a zaplate všechny pøíslušné poplatky. 
+
+Bude-li na program uvaleno orgánem k tomu oprávnìnım clo, daò èi poplatek, vyjma tìch, které jsou zaloeny na èistém pøíjmu IBM, zavazujete se, e uhradíte pøíslušnou èástku nebo pøedloíte potvrzení o osvobození od takové povinnosti. Od data poøízení programu jste odpovìdni za veškeré pøíslušné danì vztahující se na vás v souvislosti s programem. 
+
+3. Vylouèení záruky
+
+S VİJIMKOU ZÁRUK VYPLİVAJÍCÍCH ZE ZÁKONA, JE NEMOHOU BİT VYLOUÈENY, IBM V ÁDNÉM PØÍPADÌ NEPOSKYTUJE ZÁRUKY NEBO PODMÍNKY VYJÁDØENÉ NEBO ODVOZENÉ, VÈETNÌ, (ALE NE VİHRADNÌ), ODVOZENİCH ZÁRUK PRODEJNOSTI A VHODNOSTI PRO URÈITÉ ÚÈELY A ZÁRUKY NEPORUŠENÍ PRÁV TİKAJÍCÍ SE PROGRAMU NEBO PØÍPADNÉ TECHNICKÉ PODPORY. 
+
+Uvedené vylouèení záruk se vztahuje rovnì na všechny vıvojáøe programu a dodavatele IBM. 
+
+Vırobci, dodavatelé nebo vydavatelé programù jinıch ne od IBM mohou poskytovat své vlastní záruky. 
+
+Jestlie IBM nespecifikuje jinak, neposkytuje technickou podporu. 
+
+4. Omezení odpovìdnosti
+
+Mohou nastat okolnosti, kdy Vám z dùvodu neplnìní závazku na stranì IBM èi z jiného dùvodu vznikne nárok na náhradu škody ze strany IBM. V kadém takovém pøípadì, bez ohledu na pøíèinu vzniku takového nároku (vèetnì hrubého porušení smlouvy, nedbalosti, pøivedení v omyl èi jiného porušení závazkového èi mimozávazkového vztahu), odpovídá IBM pouze 1) za škody na zdraví (vèetnì smrti) a škody na nemovitém nebo osobním hmotném majetku a 2) u jinıch skuteènıch pøímıch škod do vıše poplatkù za program, kterı je pøedmìtem nároku. 
+
+Uvedené omezení odpovìdnosti se vztahuje rovnì na vıvojáøe programu a dodavatele IBM. Jedná se o maximum, za které IBM a její dodavatelé spoleènì odpovídají. 
+
+IBM ANI JEJÍ VİVOJÁØI PROGRAMU NEJSOU ZA ÁDNİCH OKOLNOSTÍ ODPOVÌDNÍ ZA ÁDNÉ Z NÍE UVEDENİCH ŠKOD, ANI KDY BYLI O MONOSTI JEJICH VZNIKU PØEDEM INFORMOVÁNI:
+
+1. ZTRÁTA NEBO POŠKOZENÍ DAT;
+
+2. ZVLÁŠTNÍ, NAHODILÉ NEBO NEPØÍMÉ ŠKODY NEBO NÁSLEDNÉ EKONOMICKÉ ŠKODY;
+
+3. UŠLİ ZISK, ZTRÁTU OBCHODNÍCH TRANSAKCÍ, VİNOSU, DOBRÉHO JMÉNA NEBO PØEDPOKLÁDANİCH ÚSPOR. 
+
+NÌKTERÉ JURISDIKCE NEUMOÒUJÍ VYLOUÈENÍ NEBO OMEZENÍ NAHODILİCH NEBO NÁSLEDNİCH ŠKOD, TAKE SE NA VÁS VİŠE UVEDENÉ OMEZENÍ NEBO VYLOUÈENÍ NEMUSÍ VZTAHOVAT. 
+
+5. Všeobecná ustanovení
+
+1. Ustanovení této smlouvy se nedotıkají zákonnıch práv spotøebitelù, je nemohou bıt smluvnì vylouèena èi omezena. 
+
+2. V pøípadì, e nìkteré z ustanovení této smlouvy bude povaováno za neplatné nebo nevymahatelné, zbıvající ustanovení této smlouvy zùstávají plnì platná a úèinná. 
+
+3. Souhlasíte, e budete jednat v souladu s pøíslušnımi vıvozními a dovozními pøedpisy a naøízeními. 
+
+4. Souhlasíte s tím, e IBM je oprávnìna uloit a pouít Vaše osobní údaje vèetnì jmen, telefonních èísel a e-mailové adresy, a to kdekoli, kde IBM provádí obchodní èinnost. Tyto informace budou pracovány a pouity v souvislosti s naším obchodním vztahem a mohou bıt poskytnuty dodavatelùm, obchodním partnerùm a právním nástupcùm IBM pro úèely, které jsou v souladu s jejich spoleènımi obchodními aktivitami vèetnì komunikace s Vámi (napøíklad pro úèely zpracování objednávek, propagace a prùzkumu trhu).
+
+5. Všechny nároky vyplıvající ze smlouvy mohou bıt uplatnìny kteroukoli ze stran do dvou let ode dne, kdy vznikla pøíèina nároku, nestanoví-li místní právní pøedpisy jinak, bez monosti smluvního vylouèení nebo omezení. 
+
+6. ádná ze smluvních stran neodpovídá za porušení závazkù, ke kterım dojde nezávisle na její vùli. 
+
+7. Tato smlouva nedává ádné tøetí stranì ádné právo nebo dùvod k alobì a IBM není odpovìdná za nároky tøetích stran vznesené vùèi vám, s vıjimkou, jak uvádí odstavec Omezení odpovìdnosti vıše, škody na zdraví (vèetnì smrti) nebo škody na nemovitém nebo osobním hmotném majetku, za které je IBM právnì odpovìdná.
+
+6. Rozhodné právo, jurisdikce a arbitrá
+
+Rozhodné právo, kterım se smlouva øídí
+
+Obì smluvní strany souhlasí, e se øízení, interpretace a vymáhání všech práv a závazkù, Vašich i IBM, vzniklıch z nebo nìjakım zpùsobem souvisejících s pøedmìtem této smlouvy, bude øídit právními pøedpisy zemì, ve které jste získali licenci k programu. 
+
+Konvence OSN o smlouvách pro mezinárodní prodej zboí se neaplikuje. 
+
+Jurisdikce
+
+Všechna práva a povinnosti vyplıvající z této smlouvy budou øešena pøíslušnım soudem zemì, ve které jste získali licenci k programu. 
+
+Èást 2 - Ustanovení specifická pro jednotlivé státy
+
+Neaplikují se ádná ustanovení specifická pro jednotlivé státy. 
+
+Z125-5589-03 (11/2002)
+
+
+
+LICENÈNÍ INFORMACE
+
+Níe uvedené programy jsou licencovány na základì následujících ustanovení a podmínek, které doplòují ustanovení a podmínky smlouvy Mezinárodní licenèní smlouva pro programy bez záruky.
+
+Jméno programu: IBM WebSphere MQ for Wndows - GUI Administrator, SupportPac: MO71 V7.0
+Èíslo programu: SupportPac MO71
+Oprávnìní k uívání na domácím/pøenosném poèítaèi: Program smí bıt uloen na primárním stroji a dalším stroji, za pøedpokladu, e program není v aktivním uívání na obou strojích ve stejném okamiku.
+
+Práva na omezené uívání jinıch programù IBM
+
+Jestlie jste tento program zakoupili jako souèást jiného programu IBM ("základní program") kterı tento program uvádí v oddílu "Jiné programy IBM", získali jste tento program pouze pro úèely podpory základního programu a Vaše práva na uívání tohoto programu jsou omezena licencí na základní program. Jestlie si chcete zakoupit samostatnou licenci na tento program, která není omezena licenèními podmínkami na základní program, obrate se na obchodního zástupce IBM.
+
+Urèené operaèní prostøedí
+
+Specifikace programu a informace o urèeném operaèním prostøedí, jsou-li dostupné, jsou k dispozici v dokumentaci pøipojené k programu ve formì souboru Readme nebo v jinıch informacích zveøejnìnıch spoleèností IBM, tedy napøíklad v nabídce. Vyjadøujete svùj souhlas s tím, e tato dokumentace a další informace tıkající se programu mohou bıt uvedeny pouze v angliètinì.
+
+Podmínky specifické pro program
+
+1. Tento program se dodává pro uívání s produktem IBM WebSphere MQ V7.0 (nebo vyšší verze), nebo s jakoukoliv jeho následnou verzí ("základní program").  
+
+2. Licence na uívání tohoto programu je podmínìna vlastnictvím platné licence na uívání základního programu. Pokud ji nadále nejste licencováni k uívání základního programu, pak Vaše licence na uívání tohoto programu automaticky a s okamitou platností konèí.
+
+3. Tento program smíte uívat pøímo ve spojení se základním programem a vıslovnì je zakázáno uívání nebo pokus o uívání tohoto programu v jakékoli jiné souvislosti. 
+
+4. Pro úèely této licence jsou ustanovení uvedená v èásti "Pøevod programu", která jsou souèástí Mezinárodní licenèní smlouvy pro programy nebo Mezinárodní licenèní smlouvy pro programy bez záruky (podle toho, co je relevantní), odstranìna a nahrazují se textem:  
+
+"Program a veškerá licenèní práva a závazky smíte pøevést na jinou smluvní stranu ("nabyvatel") pouze za pøedpokladu, e: 
+
+(i) tuto stranu z více ne 50% vlastníte, tato strana Vaši spoleènost z více ne 50% ovládá, nebo jste Vy a tato strana z více ne 50% pod spoleènım vlastnictvím této strany; a 
+
+(ii) nabyvatel vyjádøí souhlas s podmínkami této smlouvy. Pokud program pøevedete, jste povinni zároveò pøevést kopii této smlouvy vèetnì dokumentu o oprávnìní (Proof of Entitlement) k programu. 
+
+Následnì po pøevodu nejste oprávnìni uívat program."
+
+
+
+D/N:  L-AFOS-7NJNBM
+P/N:  L-AFOS-7NJNBM 

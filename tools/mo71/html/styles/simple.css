@@ -1,0 +1,330 @@
+/* Generic stylesheet documentation */
+        /* #################################################### */ /*
+
+   <!--[title]
+       This generic stylesheet should be used control the formatting
+       of all cs documentation to ensure they all have a common
+       appearance.
+       [/title]-->
+
+*/ /* Basic Tag Formatiing */ /* -------------------- */
+body {
+        margin: 0px 0px 0px 0px;
+        padding: 0px;
+}
+
+body,span,p,ul,ol,td,blockquote {
+        font-size: 10pt;
+        font-family: verdana, helvetica, arial, sans-serif;
+}
+
+pre {
+        padding: 5px 5px 5px 35px;
+        color: #aa3333;
+}
+
+td pre {
+        padding: 0;
+        margin: 0;
+}
+
+li {
+        padding: 5px 5px 5px 5px;
+}
+
+p,ul,ol,blockquote {
+        margin-bottom: 5px;
+        margin-top: 10px
+}
+
+body {
+        background-color: #ffffff;
+}
+
+a :hover {
+        color: #6699cc;
+}
+
+a :active {
+        color: #003399;
+}
+
+table {
+        text-align: left;
+        border: 1px;
+        width: 100%;
+        /*margin-left: auto; */
+        /*margin-right: auto */
+        /* border-spacing: 0px 10px; */ /*border: 1px solid black;*/
+}
+
+th {
+        color: #ffffff;
+        border-style: ridge;
+        font-weight: bold;
+        font-size: 110%;
+        background-color: #8888ff;
+        padding: 5px 5px 5px 5px;
+}
+
+td {
+        /* border: 1px solid blue; */
+        border-bottom: 1px  blue inset;
+        border-left: 1px blue inset;
+        /* border-collapse: separate; */
+        border-spacing: 1px 1px;
+        empty-cells: show;
+        /* padding: 1px 1px 1px 1px; */
+         font-size: 100%;
+}
+
+tr {
+        vertical-align: top;
+        background-color: #f0f0f0;
+}
+
+tr .alternativerow {
+        padding: 5px 5px 5px 5px;
+        background-color: #dddddd;
+}
+
+/* Custom Formats */ /* -------------- */
+        /* The primary heading used to indicate the name of the page e.g. Common Services Documentation. */
+#footerx {
+        margin: 0px -100px;
+        margin-top: 20px;
+        background: #47b;
+        color: #fff;
+        vertical-align: middle;
+        text-align: right;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 10px;
+}
+
+h1 {
+        margin: 0px 0px;
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-bottom: 0px;
+        background-repeat:repeat-x;
+        /* background: #47b url(w3-sitemark-blank.gif) ; */
+        background: #888888 url(bg-portlet-head-blue-light.gif);
+        background-position:top left;
+        color: #000;
+        vertical-align: middle;
+        min-height: 40px;
+        font-size: 25px;
+        font-weight: bold;
+        font-family: arial, verdana, helvetica, sans-serif;
+}
+
+/* The primary subheading used to indicate key sections of the page e.g Introduction. */
+h2 {
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 12pt;
+        background-image: url(bg-portlet-head-gray-med.gif);
+        background-color: #888888;
+                padding: 5px 5px 5px 5px;
+        width: 100%;
+        vertical-align: middle;
+}
+
+/*A second subheading using a smaller font and different background colour for subsections. */
+h3 {
+        color: #000000;
+        font-weight: bold;
+        font-size: 10pt;
+        font-style: italic;
+        background-color: #ffffff;
+        /*background-color: #ffffcc;*/
+        /*background: #888888 url(bg-portlet-head-gray-med.gif) repeat-x; */
+        background: #ccccff url(bg-portlet-head-blue-light.gif) repeat-x;
+        padding: 2px 2px 2px 2px;
+        width: 100%;
+        vertical-align: middle;
+}
+
+h4 {
+        color: #000000;
+        font-weight: bold;
+        font-size: 8pt;
+        font-style: italic;
+        background-color: #ffffff;
+        /*background-color: #ffffcc;*/
+        background: #ccccff url(bg-portlet-head-blue-light.gif) repeat-x;
+        padding: 5px 5px 5px 5px;
+        width: 100%;
+        vertical-align: middle;
+        min-height: 10px;
+}
+
+/* A new tag used to surround and thus highlight code or commands. */
+code {
+        color: #aa3333;
+}
+
+.code {
+        color: #aa3333;
+        padding: 0px 10px 0px 10px;
+}
+
+/* The following controls the formatting of list items in an UNORDERED list which */
+        /* might be useful for controlling the format of a contents page for example.     */
+ul li .level1 {
+        font-weight: bold;
+        font-style: normal;
+        font-size: 10pt;
+        list-style: square;
+        margin: 0px 0px 0px 0px;
+        padding: 5px 5px 5px 5px;
+}
+
+ul li .level2 {
+        font-weight: normal;
+        font-style: normal;
+        font-size: 10pt;
+        list-style: disc;
+        margin: 0px 0px 0px 0px;
+        padding: 5px 5px 5px 5px;
+}
+
+ul li .level3 {
+        font-weight: normal;
+        font-style: italic;
+        font-size: 10pt;
+        list-style: circle;
+        margin: 0px 0px 0px 0px;
+        padding: 2px 2px 2px 2px;
+}
+
+/* The following controls the formatting of list items in an ORDERED list which */
+        /* might be useful for controlling the format of a contents page for example.   */
+ol li .level1 {
+        font-weight: bold;
+        font-style: normal;
+        font-size: 10pt;
+        margin: 0px 0px 0px 0px;
+        padding: 5px 5px 5px 5px;
+}
+
+ol li .level2 {
+        font-weight: normal;
+        font-style: normal;
+        font-size: 10pt;
+        margin: 0px 0px 0px 0px;
+        padding: 5px 5px 5px 5px;
+}
+
+ol li .level3 {
+        font-weight: normal;
+        font-style: italic;
+        font-size: 10pt;
+        margin: 0px 0px 0px 0px;
+        padding: 2px 2px 2px 2px;
+}
+
+/* ------- masthead styles ------- */
+#ibm-logo {
+        position: absolute;
+        right: 13px;
+        top: 13px;
+        background: url(id-ibm-logo.gif);
+        width: 44px;
+        overflow: hidden;
+        height: 15px;
+}
+
+.todl-comment {
+        color: green;
+}
+
+.perl-string {
+        color: #3333aa;
+}
+
+/* ------- navigation styles ------- */
+#left-nav       {color:#000; text-decoration:none; border-bottom:1px solid #ccc;}
+#left-nav a     {color:#000; text-decoration:none;}
+#left-nav a:hover       {text-decoration:underline; color:#000; background:#eee;}
+#left-nav a.active:hover        {text-decoration:none; color:#000; background:#fff;}
+
+.top-level a,
+.second-level a,
+.third-level a  {display:block; margin:0; padding:5px 0 5px 0; border-top:1px solid #fff;}
+
+.top-level a    {padding-left:12px;}
+.second-level a {padding-left:24px;}
+.third-level a  {padding-left:36px;}
+
+.top-level a    {color:#000; background:#9cf;}
+
+.top-level a#site-home  {font-size:1.1em;}
+
+.second-level a,
+.third-level a, a.open  {color:#000; background:#cce5ff;}
+
+a.active        {color:#000; background:#fff;}
+
+#fourth-level   {margin:.5em 0; padding:0; background-color:#fff;}
+#fourth-level table     {width:100%;}
+#fourth-level p {color:#666; width:80%;}
+#fourth-level a.active  {color:#000; font-weight:bold; text-decoration:none; cursor:text;}
+
+#fourth-level .page-tabs .empty {width:30%;}
+#fourth-level .page-tabs        {margin-top:.5em;}
+
+#fourth-level .lists    {background:#fff url(../images/rule-h-gray-dots.gif) left bottom repeat-x;}
+#fourth-level td.col01  {width:22%; vertical-align:top; padding-left:1em;}
+#fourth-level td.col02  {width:78%; vertical-align:top;}
+
+#fourth-level .text-tabs        {margin:1em 0 0 0; padding:0 0 1em .5em; background:url(../images/rule-h-gray-dots.gif) left bottom repeat-x;}
+#fourth-level .text-tabs li     {display:inline; padding-left:.5em; color:#666;}
+#fourth-level .text-tabs li a {padding-right:.5em;}
+
+#related-links  {color:#000; background:#fff; margin:16px 0 5px 0;}
+#related-links .title   {padding:0 0 0 12px;}
+#related-links ul, #related-links ol    {margin:.3em 0 1em 1.5em;}
+
+
+/* ------- page structure ------- */
+#navigation     {
+        position:absolute;
+        top:70px;
+        left:0;
+        color:#000;
+        background:#fff;
+        padding:5px;
+        margin:0;
+        width:150px;
+}
+
+#content        {
+       position:absolute;
+       top:75px;
+       left:170px;
+        color:#000;
+        background-color:#fff;
+}
+
+#content-head   {
+        color:#000;
+        background:transparent;
+        margin-bottom:1em;
+        margin-top:0;
+}
+
+#content-sidebar        {
+        color:#000;
+        background:#fff;
+        margin-left:68%;
+        padding-right:10px;
+}
+
+* html #content-sidebar {
+        \margin-left:57%;
+        ma\rgin-left:55%;
+        \margin-top:10px;
+}
+

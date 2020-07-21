@@ -1,0 +1,24 @@
+/*
+*	Copyright 2015 rockit.consulting GbR  (www.rockit.consulting)
+*	
+*/
+
+
+apply from: "$scriptDir/ext-task-timer.gradle"  , to: project // task extened with timer
+apply from: "$scriptDir/ext-configuration.gradle"  , to: project //tool configuration 
+apply from: "$scriptDir/broker-common.gradle"  , to: project // broker common methods
+apply from: "$scriptDir/broker-configure.gradle"  , to: project // broker configuration 
+apply from: "$scriptDir/broker-configure-model.gradle"  , to: project // broker configuration
+apply from: "$scriptDir/exec-ib9-readBars.gradle"  , to: project // broker 
+apply from: "$scriptDir/exec-ib9-createBars.gradle"  , to: project // broker 
+apply from: "$scriptDir/plugin-java-package.gradle"  , to: project // repackage bar with java artifacts
+apply from: "$scriptDir/exec-ib9-packageBars.gradle"  , to: project // broker 
+apply from: "$scriptDir/exec-ib9-overrideBars.gradle"  , to: project // broker 
+apply from: "$scriptDir/exec-ib9-manage-exgroups.gradle"  , to: project // broker 
+apply from: "$scriptDir/exec-ib9-deployBars.gradle"  , to: project // broker 
+apply from: "$scriptDir/plugin-wildcards.gradle"  , to: project // daimler wildcards 
+apply from: "$scriptDir/plugin-mq-environment.gradle"  , to: project // mq environment
+apply from: "$scriptDir/plugin-test-framework.gradle",  to: project //test framework
+apply from: "$scriptDir/all-ib9-exec.gradle"  , to: project //  execution tasks 
+
+

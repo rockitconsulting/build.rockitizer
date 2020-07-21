@@ -1,0 +1,66 @@
+/*
+*	Copyright 2015 rockit.consulting GbR  (www.rockit.consulting)
+*
+*/
+
+
+ext {
+
+}
+
+
+
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*        					Override Bars parrallel and sequential                                                  */
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+task overrideBars(dependsOn:["doOverrideBars${parallel}"])  << {
+	bars.each { bar ->
+		if(hasProperty("doOverrideBars${parallel}-${bar}")) {
+			logger.lifecycle ext."doOverrideBars${parallel}-${bar}" //captured output from console
+		}
+	}
+} 
+
+
+
+task doOverrideBars(dependsOn:[findBarFiles, prepareBroker, "configure${decoupled}", deltaBars])
+
+bars.each { bar ->
+    	task "overrideBar-${bar}" << {
+		  	def cmdArgs 
+		  	if(config.deployApplicationName) {
+			   cmdArgs = ["-runtime",'-b', "${barByName(bar)}", "-k", config.deployApplicationName.split(' ')[0] , "-r", "-p", file {"${barPropertiesOut}${fileSeparator}flows.properties"}]
+		  	} else {
+				cmdArgs = ["-runtime",'-b', "${barByName(bar)}", "-p", file {"${barPropertiesOut}${fileSeparator}flows.properties"}]
+			}
+			logger.lifecycle "override bar " + cmdArgs.join(" ")
+			def result = javaexec {
+	       		  classpath brokerClasspath
+	              main = "com.ibm.broker.config.util.ApplyBarOverride"
+	              args = cmdArgs
+             }
+        }
+        doOverrideBars.dependsOn "overrideBar-${bar}"
+}
+
+
+
+task doOverrideBarsParallel(dependsOn:[findBarFiles,prepareBroker, "configure${decoupled}", deltaBars]) << {  
+   // ant.parallel(threadsPerProcessor: 1) {
+			bars.each { bar ->
+			    (config.deployApplicationName?.split(' ')? config.deployApplicationName.split(' '):['dummy']).each { app ->
+		    		ant.java(fork:'true',failonerror:'yes',classname:"com.ibm.broker.config.util.ApplyBarOverride",classpath:brokerClasspath.flatten().join(';')) {
+						if(config.deployApplicationName) {
+						   arg(line:"-runtime -b ${barByName(bar)} -k ${app} -p  ${file {barPropertiesOut.path+fileSeparator+'flows.properties'}} -r")
+						} else { 
+							arg(line:"-runtime -b ${barByName(bar)} -p  ${file {barPropertiesOut.path+fileSeparator+'flows.properties'}}")
+						}
+					}
+				}
+			}
+   // }
+}

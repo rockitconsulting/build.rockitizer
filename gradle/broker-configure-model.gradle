@@ -1,0 +1,102 @@
+/*
+*	Copyright 2015 rockit.consulting GbR  (www.rockit.consulting)
+*
+*/
+
+ext {
+
+     connectors = [
+	     'ComIbmMQInput':'queueName',
+	     'ComIbmMQOutput':'queueName'
+     ]
+
+
+     findProjectFileByName = { relPath ->
+     	allProjectFiles.find { file -> file.endsWith(relPath) }
+     }   
+     
+     
+     getFlowConnectorNodes = { flowSrcPath ->
+		    def xml = new XmlSlurper().parseText(new File(flowSrcPath).text)
+		    xml.'**'.findAll{ node-> node.name() == 'nodes' && connectors.keySet().contains( getConnectorType(node) ) }
+     }
+     
+     
+     getConnectorType = { node ->
+     	node.'@xmi:type'.text().split('\\.')[0]
+     }
+     
+     getConnectorName = { node ->
+     	node.translation.'@string'.text()
+     }
+     
+     
+     buildPropertyKey = { relFlowPath, node ->
+		 "${relFlowPath.replaceAll('\\\\',".")}#${getConnectorName(node)}.${connectors[getConnectorType(node)]}"
+     }
+
+
+	loadPropertiesToModel = {
+		
+		def config=new File("${barPropertiesOut}${fileSeparator}flows.properties")
+		if( !config.exists() ) {
+			throw new  Throwable("no ${barPropertiesOut}${fileSeparator}flows.properties found . Use <checkConfig> Task to generate environment dependend configuration !!!")
+		}
+		
+		project.ext.flowProperties = [:]
+		config.eachLine { line -> 
+		  if(!line.trim()||line.trim().startsWith('#')) { return }
+		  flowProperties[line.split('=')[0]?.trim()] = line.split('=')[1]?.trim() 
+		}
+	}
+
+
+	extendModelWithApplicationConfiguration = { model ->
+
+		flowProperties.each { k,v -> 
+		  if( k.contains('ApplicationConfiguration')&&k.contains('queueName') ) {
+		  	logger.lifecycle "Extend MQ Model with $k=$v"
+		    if( !model[v] ) {      
+		    	model[v] = [ ['type':'ComIbmMQOutput', 'qname':v.trim(), 'cname':k.trim(),'flowname':k.trim(), key:k.trim() ] ]
+		    } else {
+		    	model[v] << ['type':'ComIbmMQOutput', 'qname':v.trim(), 'cname':k.trim(),'flowname':k.trim(), key:k.trim() ] 
+		    }
+		  } 
+		}
+		model
+	}
+
+	generateModel = {
+		loadPropertiesToModel()
+		def model = [ : ]
+	    barToProjects.each { bar, projects  ->
+			getFilesProjects(bar, projects,['.msgflow','.subflow'], true ).split(' ' ).each { relPathWithExtension ->
+				def relFlowPath = relPathWithExtension - getFileExtension(relPathWithExtension) //'.msgflow' //camelCase(relPath-'.msgflow')
+			    def flowSrcPath =  findProjectFileByName(relPathWithExtension)
+			    
+			    def flowname =  relFlowPath.split('\\\\').last()
+				logger.lifecycle "flow ${flowname}"
+			    
+			    getFlowConnectorNodes(flowSrcPath).each { node ->
+				    def cimpl = implementations[getConnectorType(node)]
+				    def qname = flowProperties[buildPropertyKey(relFlowPath, node)]?:'value.not.configured.destination.list'
+				    if( qname == 'value.not.configured.destination.list' ) { return }
+				    
+				    def cname = getConnectorName(node).replaceAll('[^a-zA-Z0-9_]+','')
+				    def pattern = "\\.${decouplePrefix}.\\d+"
+				    def queue = qname - ~/${pattern}/
+
+
+				    if( !model[queue] ) {      
+				    	model[queue] = [ ['type':getConnectorType(node).trim(), 'qname':qname.trim(), 'cname':cname.trim(),'flowname':flowname.trim(), key:buildPropertyKey(relFlowPath, node).trim() ] ]
+				    } else {
+				    	model[queue] << ['type':getConnectorType(node).trim(), 'qname':qname.trim(), 'cname':cname.trim(),'flowname':flowname.trim(), key:buildPropertyKey(relFlowPath, node).trim() ] 
+				    }
+				}
+			 	
+	       }  
+	    
+	    }	
+	    project.ext.qmodel  = extendModelWithApplicationConfiguration( model )
+	}
+}

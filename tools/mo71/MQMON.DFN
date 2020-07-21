@@ -1,0 +1,665 @@
+QMG:MBVMQMGR MQMON
+  ot  =1512752802
+  dlq ="SYSTEM.DEAD.LETTER.QUEUE"
+  dxmt="MBVMDEV.DEFAULT.XMIT.QUEUE"
+QL:SYSTEM.HIERARCHY.STATE 
+  desc="MQ Publish/Subscribe Distributed Pub/sub hierarchy relationship"
+  maxd=999999999
+QL:SYSTEM.BROKER.DEFAULT.STREAM 
+  desc="Default stream for queued Pub/Sub interface"
+  maxd=5000
+QM:SYSTEM.MQEXPLORER.REPLY.MODEL 
+  maxd=5000
+QL:SYSTEM.ADMIN.COMMAND.QUEUE 
+  desc="IBM MQ Administration Command Queue"
+  maxd=3000
+  maxm=32762
+QL:SYSTEM.CICS.INITIATION.QUEUE 
+  desc="IBM MQ Default CICS Initiation queue"
+  maxd=1000
+  maxm=1000
+QL:SYSTEM.INTERNAL.REPLY.QUEUE 
+  desc="IBM MQ Internal Reply Queue"
+  maxd=999999999
+  maxm=32762
+QL:SYSTEM.PROTECTION.ERROR.QUEUE 
+  desc="IBM MQ Message Protection Error Queue"
+  maxd=999999999
+QL:MQMON.admin.5A25598024ED9AB2 
+  maxd=5000
+QL:SYSTEM.ADMIN.TRACE.ROUTE.QUEUE 
+  desc="IBM MQ Administration Trace Route Queue"
+  maxd=5000
+QL:SYSTEM.CHANNEL.INITQ 
+  desc="IBM MQ Channel Initiation Queue"
+  maxd=1000
+  maxm=2000
+QA:SYSTEM.DEFAULT.ALIAS.QUEUE 
+QL:SYSTEM.INTER.QMGR.FANREQ 
+  desc="MQ Publish/Subscribe Distributed Pub/sub proxy-sub request queue"
+  maxd=999999999
+QM:SYSTEM.JMS.TEMPQ.MODEL 
+  desc="Model for JMS temporary queues"
+  maxd=5000
+QM:SYSTEM.NDURABLE.MODEL.QUEUE 
+  desc="Model for managed queues for non durable subscriptions"
+  maxd=999999999
+QL:SYSTEM.SELECTION.EVALUATION.QUEUE 
+  desc="IBM MQ Selection Evaluation Queue"
+  maxd=999999999
+  maxm=104857600
+QL:AMQ.MQEXPLORER.5A25598024ED96B3 
+  maxd=5000
+QL:SYSTEM.ADMIN.CHANNEL.EVENT 
+  desc="IBM MQ Channel Related Event Queue"
+  maxd=3000
+  maxm=9000
+QL:SYSTEM.ADMIN.PUBSUB.EVENT 
+  desc="IBM MQ Publish/Subscribe Related Event Queue"
+  maxd=5000
+QL:SYSTEM.AUTH.DATA.QUEUE 
+  desc="IBM MQ Authority Data Queue"
+  maxd=999999999
+QL:SYSTEM.BROKER.INTER.BROKER.COMMUNICATIONS 
+  desc="MQSeries Publish/Subscribe internal reply queue"
+  maxd=999999999
+  maxm=104857600
+QL:SYSTEM.CHANNEL.SYNCQ 
+  desc="IBM MQ Channel Sync Queue"
+  maxd=20000
+  maxm=20000
+QM:SYSTEM.CLUSTER.TRANSMIT.MODEL.QUEUE 
+  desc="IBM MQ Cluster Transmission Model Queue"
+  maxd=999999999
+QR:SYSTEM.DEFAULT.REMOTE.QUEUE 
+QL:SYSTEM.INTER.QMGR.CONTROL 
+  desc="MQ Publish/Subscribe Distributed Pub/sub Control Queue"
+  maxd=999999999
+QL:SYSTEM.INTER.QMGR.PUBS 
+  desc="MQ Publish/Subscribe Distributed Pub/sub Publications"
+  maxd=999999999
+QL:SYSTEM.INTERNAL.REQUEST.QUEUE 
+  desc="IBM MQ Internal Request Queue"
+  maxd=999999999
+  maxm=32762
+QL:SYSTEM.MESSAGE.ASSOCIATION.QUEUE 
+  desc="IBM MQ Message Association Queue"
+  maxd=999999999
+QM:SYSTEM.MQSC.REPLY.QUEUE 
+  desc="IBM MQ MQSC Reply Queue"
+  maxd=3000
+QL:SYSTEM.PENDING.DATA.QUEUE 
+  desc="IBM MQ Deferred Message Queue"
+  maxd=999999999
+QL:SYSTEM.REST.REPLY.QUEUE 
+  desc="IBM MQ REST Reply Queue"
+  maxd=999999999
+QL:SYSTEM.SELECTION.VALIDATION.QUEUE 
+  desc="IBM MQ Selection Validation Queue"
+  maxd=999999999
+QL:AMQ.MQEXPLORER.5A25598024ED95B3 
+  maxd=5000
+QL:AMQ.MQEXPLORER.5A25598024ED97B3 
+  maxd=5000
+QL:SYSTEM.ADMIN.ACCOUNTING.QUEUE 
+  desc="IBM MQ Administration Accounting Queue"
+  maxd=3000
+QL:SYSTEM.ADMIN.COMMAND.EVENT 
+  desc="IBM MQ Command Event Queue"
+  maxd=5000
+QL:SYSTEM.ADMIN.LOGGER.EVENT 
+  desc="IBM MQ Logger Event Queue"
+  maxd=3000
+  maxm=9000
+QL:SYSTEM.ADMIN.STATISTICS.QUEUE 
+  desc="IBM MQ Administration Statistics Queue"
+  maxd=3000
+QL:SYSTEM.AMQP.COMMAND.QUEUE 
+  desc="IBM MQ Administration Command Queue"
+  maxd=3000
+  maxm=32762
+QL:SYSTEM.BROKER.CONTROL.QUEUE 
+  desc="Control queue for queued Pub/Sub interface"
+  maxd=5000
+QL:SYSTEM.CHLAUTH.DATA.QUEUE 
+  desc="IBM MQ Channel Authentication Data Queue"
+  maxd=999999999
+  maxm=104857600
+QL:SYSTEM.CLUSTER.HISTORY.QUEUE 
+  desc="IBM MQ Cluster History Queue"
+  maxd=999999999
+QL:SYSTEM.DDELAY.LOCAL.QUEUE 
+  desc="IBM MQ Deferred Delivery Queue"
+  maxd=999999999
+QL:SYSTEM.DEFAULT.LOCAL.QUEUE 
+  maxd=5000
+QM:SYSTEM.DURABLE.MODEL.QUEUE 
+  desc="Model for managed queues for durable subscriptions"
+  maxd=999999999
+QL:SYSTEM.PROTECTION.POLICY.QUEUE 
+  desc="IBM MQ Message Protection Policy Queue"
+  maxd=999999999
+QL:SYSTEM.RETAINED.PUB.QUEUE 
+  desc="Store of retained publications"
+  maxd=999999999
+  maxm=104857600
+QL:SYSTEM.ADMIN.ACTIVITY.QUEUE 
+  desc="IBM MQ Administration Activity Queue"
+  maxd=5000
+QL:SYSTEM.ADMIN.CONFIG.EVENT 
+  desc="IBM MQ Configuration Event Queue"
+  maxd=5000
+QL:SYSTEM.ADMIN.PERFM.EVENT 
+  desc="IBM MQ Performance Related Event Queue"
+  maxd=3000
+  maxm=9000
+QL:SYSTEM.ADMIN.QMGR.EVENT 
+  desc="IBM MQ Queue Manager Related Event Queue"
+  maxd=3000
+  maxm=32762
+QL:SYSTEM.ADMIN.TRACE.ACTIVITY.QUEUE 
+  desc="IBM MQ Administration Trace Activity Queue"
+  maxd=3000
+QL:SYSTEM.BROKER.ADMIN.STREAM 
+  desc="Admin stream for queued Pub/Sub interface"
+  maxd=5000
+QL:SYSTEM.CLUSTER.COMMAND.QUEUE 
+  desc="IBM MQ Cluster Command Queue"
+  maxd=999999999
+QL:SYSTEM.CLUSTER.REPOSITORY.QUEUE 
+  desc="IBM MQ Cluster Repository Queue"
+  maxd=999999999
+QL:SYSTEM.CLUSTER.TRANSMIT.QUEUE 
+  desc="IBM MQ Cluster Transmission Queue"
+  maxd=999999999
+  xmit
+QL:SYSTEM.DEAD.LETTER.QUEUE 
+  desc="IBM MQ Default Dead Letter Queue"
+  maxd=999999999
+QL:SYSTEM.DEFAULT.INITIATION.QUEUE 
+  desc="IBM MQ Default Initiation Queue"
+  maxd=1000
+  maxm=1000
+QM:SYSTEM.DEFAULT.MODEL.QUEUE 
+  maxd=5000
+QL:SYSTEM.DOTNET.XARECOVERY.QUEUE 
+  desc="IBM MQ .NET XA Recovery Queue"
+  maxd=999999999
+QL:SYSTEM.DURABLE.SUBSCRIBER.QUEUE 
+  desc="Store of information about durable subscribers"
+  maxd=999999999
+  maxm=104857600
+CCS:SYSTEM.DEF.CLUSSDR 
+  bs=50
+  hb=300
+  npms=2
+CSC:SYSTEM.ADMIN.SVRCONN 
+  hb=300
+CRQ:SYSTEM.DEF.REQUESTER 
+  bs=50
+  hb=300
+  npms=2
+CSC:NONPRIV.SVRCONN 
+  hb=300
+CSC:SYSTEM.AUTO.SVRCONN 
+  desc="Auto-defined by"
+  hb=300
+CRC:SYSTEM.DEF.RECEIVER 
+  bs=50
+  hb=300
+  npms=2
+CSV:SYSTEM.DEF.SERVER 
+  bs=50
+  hb=300
+  npms=2
+CRC:SYSTEM.AUTO.RECEIVER 
+  desc="Auto-defined by"
+  bs=50
+  hb=300
+  npms=2
+CCR:SYSTEM.DEF.CLUSRCVR 
+  bs=50
+  hb=300
+  npms=2
+CSN:SYSTEM.DEF.SENDER 
+  bs=50
+  hb=300
+  npms=2
+CSC:SYSTEM.DEF.SVRCONN 
+  hb=300
+CCL:SYSTEM.DEF.CLNTCONN 
+  hb=300
+PRC:SYSTEM.DEFAULT.PROCESS 
+NL:SYSTEM.QPUBSUB.QUEUE.NAMELIST 
+  desc="A"
+  names = "SYSTEM.BROKER.DEFAULT.STREAM",
+          "SYSTEM.BROKER.ADMIN.STREAM"
+NL:SYSTEM.DEFAULT.NAMELIST 
+NL:SYSTEM.QPUBSUB.SUBPOINT.NAMELIST 
+  desc="Topic"
+  names = "SYSTEM.BROKER.DEFAULT.SUBPOINT"
+TP:SYSTEM.BROKER.DEFAULT.STREAM 
+  desc="Default stream for queued Pub/Sub interface"
+TP:SYSTEM.BASE.TOPIC 
+  desc="Base topic for resolving attributes"
+TP:SYSTEM.BROKER.DEFAULT.SUBPOINT 
+  desc="Default RFH2 subscription point for queued Pub/Sub interface"
+TP:SYSTEM.ADMIN.TOPIC 
+  desc="Root topic for MQ administrative topics"
+  str="$SYS/MQ"
+TP:SYSTEM.BROKER.ADMIN.STREAM 
+  desc="Admin stream for queued Pub/Sub interface"
+  str="SYSTEM.BROKER.ADMIN.STREAM"
+TP:SYSTEM.DEFAULT.TOPIC 
+QMG:QMGR MQMON
+  ot  =1512752786
+  dlq ="SYSTEM.DEAD.LETTER.QUEUE"
+QL:SYSTEM.HIERARCHY.STATE 
+  desc="MQ Publish/Subscribe Distributed Pub/sub hierarchy relationship"
+  maxd=999999999
+QL:SYSTEM.BROKER.DEFAULT.STREAM 
+  desc="Default stream for queued Pub/Sub interface"
+  maxd=5000
+QL:XZ0.MBVM.U.AMETRAS.FLEET.ERROR.01 
+  desc="GENERATED INPUT  QUEUE"
+  maxd=5000
+QL:SYSTEM.ADMIN.TRACE.ROUTE.QUEUE 
+  desc="IBM MQ Administration Trace Route Queue"
+  maxd=5000
+QL:SYSTEM.CICS.INITIATION.QUEUE 
+  desc="IBM MQ Default CICS Initiation queue"
+  maxd=1000
+  maxm=1000
+QL:SYSTEM.SELECTION.EVALUATION.QUEUE 
+  desc="IBM MQ Selection Evaluation Queue"
+  maxd=999999999
+  maxm=104857600
+QL:XZ0.MBVM.U.APPLICATION.ERROR.01 
+  maxd=100000
+  maxm=104857600
+QL:SYSTEM.ADMIN.COMMAND.QUEUE 
+  desc="IBM MQ Administration Command Queue"
+  maxd=3000
+  maxm=32762
+QL:SYSTEM.BROKER.AGGR.TIMEOUT 
+  maxd=100000
+  maxm=104857600
+QL:SYSTEM.BROKER.SEQ.NUMBER 
+  maxd=100000
+  maxm=104857600
+QA:SYSTEM.DEFAULT.ALIAS.QUEUE 
+QM:SYSTEM.MQEXPLORER.REPLY.MODEL 
+  maxd=5000
+QL:XZ0.MBVM.U.AMETRAS.FLEET.01 
+  maxd=100000
+  maxm=104857600
+QL:XZ0.MBVM.U.APP.ERROR.01 
+  desc="GENERATED INPUT  QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.MBVM.VAL.ERROR.01 
+  desc="GENERATED INPUT  QUEUE"
+  maxd=5000
+QL:SYSTEM.ADMIN.ACCOUNTING.QUEUE 
+  desc="IBM MQ Administration Accounting Queue"
+  maxd=3000
+QL:SYSTEM.ADMIN.PUBSUB.EVENT 
+  desc="IBM MQ Publish/Subscribe Related Event Queue"
+  maxd=5000
+QL:SYSTEM.BROKER.ADMIN.STREAM 
+  desc="Admin stream for queued Pub/Sub interface"
+  maxd=5000
+QL:SYSTEM.BROKER.CONTROL.QUEUE 
+  desc="Control queue for queued Pub/Sub interface"
+  maxd=5000
+QL:SYSTEM.BROKER.INTER.BROKER.COMMUNICATIONS 
+  desc="MQSeries Publish/Subscribe internal reply queue"
+  maxd=999999999
+  maxm=104857600
+QL:SYSTEM.BROKER.WS.REPLY 
+  maxd=5000
+  maxm=104857600
+QM:SYSTEM.CLUSTER.TRANSMIT.MODEL.QUEUE 
+  desc="IBM MQ Cluster Transmission Model Queue"
+  maxd=999999999
+QR:SYSTEM.DEFAULT.REMOTE.QUEUE 
+QL:SYSTEM.INTERNAL.REPLY.QUEUE 
+  desc="IBM MQ Internal Reply Queue"
+  maxd=999999999
+  maxm=32762
+QL:SYSTEM.PROTECTION.ERROR.QUEUE 
+  desc="IBM MQ Message Protection Error Queue"
+  maxd=999999999
+QL:XZ0.MBVM.U.AMETRAS.CAS.TRIGGER.01 
+  desc="GENERATED INPUT  QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.AMETRAS.FLEET.CFG.01 
+  desc="GENERATED INPUT  QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.AMFLFZGB.CFG.01 
+  desc="GENERATED INPUT  QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.APP.VAL.ERROR.01 
+  desc="GENERATED INPUT  QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.LOG 
+  desc="GENERATED INPUT  QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.SCHEDULER.CONFIG.01 
+  desc="GENERATED INPUT  QUEUE"
+  maxd=5000
+QL:ESB.BTM.V1.LOG.OUT.BACKOUT 
+  desc="GENERATED BACKOUT QUEUE"
+  maxd=5000
+QL:SYSTEM.ADMIN.CHANNEL.EVENT 
+  desc="IBM MQ Channel Related Event Queue"
+  maxd=3000
+  maxm=9000
+QL:SYSTEM.ADMIN.LOGGER.EVENT 
+  desc="IBM MQ Logger Event Queue"
+  maxd=3000
+  maxm=9000
+QL:SYSTEM.ADMIN.STATISTICS.QUEUE 
+  desc="IBM MQ Administration Statistics Queue"
+  maxd=3000
+QL:SYSTEM.AUTH.DATA.QUEUE 
+  desc="IBM MQ Authority Data Queue"
+  maxd=999999999
+QL:SYSTEM.BROKER.AGGR.REPLY 
+  maxd=100000
+  maxm=104857600
+QL:SYSTEM.BROKER.AUTH 
+  maxd=5000
+  maxm=104857600
+QL:SYSTEM.BROKER.DC.BACKOUT 
+  maxd=100000
+  maxm=104857600
+QL:SYSTEM.BROKER.EDA.EVENTS 
+  maxd=100000
+  maxm=104857600
+QL:SYSTEM.BROKER.SEQ.EXPIRY 
+  maxd=100000
+  maxm=104857600
+QL:SYSTEM.BROKER.WS.ACK 
+  maxd=5000
+  maxm=104857600
+QL:SYSTEM.CHANNEL.SYNCQ 
+  desc="IBM MQ Channel Sync Queue"
+  maxd=20000
+  maxm=20000
+QL:SYSTEM.CLUSTER.HISTORY.QUEUE 
+  desc="IBM MQ Cluster History Queue"
+  maxd=999999999
+QL:SYSTEM.DDELAY.LOCAL.QUEUE 
+  desc="IBM MQ Deferred Delivery Queue"
+  maxd=999999999
+QL:SYSTEM.DEFAULT.LOCAL.QUEUE 
+  maxd=5000
+QM:SYSTEM.DURABLE.MODEL.QUEUE 
+  desc="Model for managed queues for durable subscriptions"
+  maxd=999999999
+QL:SYSTEM.INTER.QMGR.FANREQ 
+  desc="MQ Publish/Subscribe Distributed Pub/sub proxy-sub request queue"
+  maxd=999999999
+QM:SYSTEM.JMS.TEMPQ.MODEL 
+  desc="Model for JMS temporary queues"
+  maxd=5000
+QM:SYSTEM.NDURABLE.MODEL.QUEUE 
+  desc="Model for managed queues for non durable subscriptions"
+  maxd=999999999
+QL:SYSTEM.REST.REPLY.QUEUE 
+  desc="IBM MQ REST Reply Queue"
+  maxd=999999999
+QL:XZ0.MBVM.U.AMCAS.TRIGGER.01 
+  desc="GENERATED INPUT  QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.AMETRAS.CAS.TRIGGER.01.BACKOUT 
+  desc="GENERATED BACKOUT QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.AMETRAS.FLEET.01.BACKOUT 
+  maxd=100000
+  maxm=104857600
+QL:XZ0.MBVM.U.AMETRAS.FLEET.CFG.01.BACKOUT 
+  desc="GENERATED BACKOUT QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.AMETRAS.FLEET.TRIGGER.01 
+  desc="GENERATED INPUT  QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.AMFLFZGB.TRIGGER.01 
+  desc="GENERATED INPUT  QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.APP.ERROR.01.BACKOUT 
+  desc="GENERATED BACKOUT QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.APP.VAL.ERROR.01.BACKOUT 
+  desc="GENERATED BACKOUT QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.APPLICATION.ERROR.01.BACKOUT 
+  maxd=100000
+  maxm=104857600
+QL:XZ0.MBVM.U.LOG.BACKOUT 
+  desc="GENERATED BACKOUT QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.SCHEDULE.CFG.01 
+  desc="GENERATED INPUT  QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.VALID.ERROR.01 
+  desc="GENERATED INPUT  QUEUE"
+  maxd=5000
+QL:ESB.BTM.V1.LOG.OUT 
+  desc="GENERATED INPUT  QUEUE"
+  maxd=5000
+QL:MQMON.admin.5A27C9DB02AAEF25 
+  maxd=5000
+QL:SYSTEM.ADMIN.ACTIVITY.QUEUE 
+  desc="IBM MQ Administration Activity Queue"
+  maxd=5000
+QL:SYSTEM.ADMIN.COMMAND.EVENT 
+  desc="IBM MQ Command Event Queue"
+  maxd=5000
+QL:SYSTEM.ADMIN.CONFIG.EVENT 
+  desc="IBM MQ Configuration Event Queue"
+  maxd=5000
+QL:SYSTEM.ADMIN.PERFM.EVENT 
+  desc="IBM MQ Performance Related Event Queue"
+  maxd=3000
+  maxm=9000
+QL:SYSTEM.ADMIN.QMGR.EVENT 
+  desc="IBM MQ Queue Manager Related Event Queue"
+  maxd=3000
+  maxm=32762
+QL:SYSTEM.ADMIN.TRACE.ACTIVITY.QUEUE 
+  desc="IBM MQ Administration Trace Activity Queue"
+  maxd=3000
+QL:SYSTEM.AMQP.COMMAND.QUEUE 
+  desc="IBM MQ Administration Command Queue"
+  maxd=3000
+  maxm=32762
+QL:SYSTEM.BROKER.ADAPTER.PROCESSED 
+  maxd=100000
+  maxm=104857600
+QL:SYSTEM.BROKER.AGGR.CONTROL 
+  maxd=100000
+  maxm=104857600
+QL:SYSTEM.BROKER.AGGR.REQUEST 
+  maxd=100000
+  maxm=104857600
+QL:SYSTEM.BROKER.AGGR.UNKNOWN 
+  maxd=100000
+  maxm=104857600
+QM:SYSTEM.BROKER.CD.MODEL 
+  maxd=10000
+QL:SYSTEM.BROKER.DC.AUTH 
+  maxd=100000
+  maxm=104857600
+QL:SYSTEM.BROKER.DC.RECORD 
+  maxd=100000
+  maxm=104857600
+QL:SYSTEM.BROKER.EDA.COLLECTIONS 
+  maxd=100000
+  maxm=104857600
+QM:SYSTEM.BROKER.FTE.MODEL 
+  maxd=10000
+QM:SYSTEM.BROKER.MODEL.QUEUE 
+  maxd=5000
+QL:SYSTEM.BROKER.SEQ.GROUP 
+  maxd=100000
+  maxm=104857600
+QL:SYSTEM.BROKER.TIMEOUT.QUEUE 
+  maxd=100000
+  maxm=104857600
+QL:SYSTEM.BROKER.WS.INPUT 
+  maxd=5000
+  maxm=104857600
+QL:SYSTEM.CHANNEL.INITQ 
+  desc="IBM MQ Channel Initiation Queue"
+  maxd=1000
+  maxm=2000
+QL:SYSTEM.CHLAUTH.DATA.QUEUE 
+  desc="IBM MQ Channel Authentication Data Queue"
+  maxd=999999999
+  maxm=104857600
+QL:SYSTEM.CLUSTER.COMMAND.QUEUE 
+  desc="IBM MQ Cluster Command Queue"
+  maxd=999999999
+QL:SYSTEM.CLUSTER.REPOSITORY.QUEUE 
+  desc="IBM MQ Cluster Repository Queue"
+  maxd=999999999
+QL:SYSTEM.CLUSTER.TRANSMIT.QUEUE 
+  desc="IBM MQ Cluster Transmission Queue"
+  maxd=999999999
+  xmit
+QL:SYSTEM.DEAD.LETTER.QUEUE 
+  desc="IBM MQ Default Dead Letter Queue"
+  maxd=999999999
+QL:SYSTEM.DEFAULT.INITIATION.QUEUE 
+  desc="IBM MQ Default Initiation Queue"
+  maxd=1000
+  maxm=1000
+QM:SYSTEM.DEFAULT.MODEL.QUEUE 
+  maxd=5000
+QL:SYSTEM.DOTNET.XARECOVERY.QUEUE 
+  desc="IBM MQ .NET XA Recovery Queue"
+  maxd=999999999
+QL:SYSTEM.DURABLE.SUBSCRIBER.QUEUE 
+  desc="Store of information about durable subscribers"
+  maxd=999999999
+  maxm=104857600
+QL:SYSTEM.INTER.QMGR.CONTROL 
+  desc="MQ Publish/Subscribe Distributed Pub/sub Control Queue"
+  maxd=999999999
+QL:SYSTEM.INTER.QMGR.PUBS 
+  desc="MQ Publish/Subscribe Distributed Pub/sub Publications"
+  maxd=999999999
+QL:SYSTEM.INTERNAL.REQUEST.QUEUE 
+  desc="IBM MQ Internal Request Queue"
+  maxd=999999999
+  maxm=32762
+QL:SYSTEM.MESSAGE.ASSOCIATION.QUEUE 
+  desc="IBM MQ Message Association Queue"
+  maxd=999999999
+QM:SYSTEM.MQSC.REPLY.QUEUE 
+  desc="IBM MQ MQSC Reply Queue"
+  maxd=3000
+QL:SYSTEM.PENDING.DATA.QUEUE 
+  desc="IBM MQ Deferred Message Queue"
+  maxd=999999999
+QL:SYSTEM.PROTECTION.POLICY.QUEUE 
+  desc="IBM MQ Message Protection Policy Queue"
+  maxd=999999999
+QL:SYSTEM.RETAINED.PUB.QUEUE 
+  desc="Store of retained publications"
+  maxd=999999999
+  maxm=104857600
+QL:SYSTEM.SELECTION.VALIDATION.QUEUE 
+  desc="IBM MQ Selection Validation Queue"
+  maxd=999999999
+QL:XZ0.MBVM.U.AMCAS.TRIGGER.01.BACKOUT 
+  desc="GENERATED BACKOUT QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.AMETRAS.FLEET.ERROR.01.BACKOUT 
+  desc="GENERATED BACKOUT QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.AMETRAS.FLEET.TRIGGER.01.BACKOUT 
+  desc="GENERATED BACKOUT QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.AMFLFZGB.CFG.01.BACKOUT 
+  desc="GENERATED BACKOUT QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.AMFLFZGB.TRIGGER.01.BACKOUT 
+  desc="GENERATED BACKOUT QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.MBVM.VAL.ERROR.01.BACKOUT 
+  desc="GENERATED BACKOUT QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.SCHEDULE.CFG.01.BACKOUT 
+  desc="GENERATED BACKOUT QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.SCHEDULER.CONFIG.01.BACKOUT 
+  desc="GENERATED BACKOUT QUEUE"
+  maxd=5000
+QL:XZ0.MBVM.U.VALID.ERROR.01.BACKOUT 
+  desc="GENERATED BACKOUT QUEUE"
+  maxd=5000
+CCS:SYSTEM.DEF.CLUSSDR 
+  bs=50
+  hb=300
+  npms=2
+CSC:SYSTEM.AUTO.SVRCONN 
+  desc="Auto-defined by"
+  hb=300
+CRQ:SYSTEM.DEF.REQUESTER 
+  bs=50
+  hb=300
+  npms=2
+CRC:SYSTEM.AUTO.RECEIVER 
+  desc="Auto-defined by"
+  bs=50
+  hb=300
+  npms=2
+CRC:SYSTEM.DEF.RECEIVER 
+  bs=50
+  hb=300
+  npms=2
+CSV:SYSTEM.DEF.SERVER 
+  bs=50
+  hb=300
+  npms=2
+CSC:SYSTEM.BKR.CONFIG 
+  maxm=104857600
+  hb=300
+CCR:SYSTEM.DEF.CLUSRCVR 
+  bs=50
+  hb=300
+  npms=2
+CSN:SYSTEM.DEF.SENDER 
+  bs=50
+  hb=300
+  npms=2
+CSC:SYSTEM.DEF.SVRCONN 
+  hb=300
+CCL:SYSTEM.DEF.CLNTCONN 
+  hb=300
+PRC:SYSTEM.DEFAULT.PROCESS 
+NL:SYSTEM.QPUBSUB.QUEUE.NAMELIST 
+  desc="A"
+  names = "SYSTEM.BROKER.DEFAULT.STREAM",
+          "SYSTEM.BROKER.ADMIN.STREAM"
+NL:SYSTEM.DEFAULT.NAMELIST 
+NL:SYSTEM.QPUBSUB.SUBPOINT.NAMELIST 
+  desc="Topic"
+  names = "SYSTEM.BROKER.DEFAULT.SUBPOINT"
+TP:SYSTEM.BROKER.DEFAULT.STREAM 
+  desc="Default stream for queued Pub/Sub interface"
+TP:SYSTEM.BASE.TOPIC 
+  desc="Base topic for resolving attributes"
+TP:SYSTEM.BROKER.MB.TOPIC 
+  str="$SYS/Broker"
+TP:SYSTEM.ADMIN.TOPIC 
+  desc="Root topic for MQ administrative topics"
+  str="$SYS/MQ"
+TP:SYSTEM.BROKER.ADMIN.STREAM 
+  desc="Admin stream for queued Pub/Sub interface"
+  str="SYSTEM.BROKER.ADMIN.STREAM"
+TP:SYSTEM.BROKER.DEFAULT.SUBPOINT 
+  desc="Default RFH2 subscription point for queued Pub/Sub interface"
+TP:SYSTEM.DEFAULT.TOPIC 

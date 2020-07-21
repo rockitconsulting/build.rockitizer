@@ -1,0 +1,51 @@
+/*
+*	Copyright 2015 rockit.consulting GbR  (www.rockit.consulting)
+*
+*/
+
+/*
+* Build Framework 
+*/
+
+task checkConfig(group:'build', dependsOn:["configure${decoupled}", deltaBars])
+task checkConfigDeploy(group:'build', dependsOn:[ "configure${decoupled}", deltaBars ,deployBars])
+task buildConfigDeploy(group:'build', dependsOn:[ createBars, "configure${decoupled}", deltaBars, deployBars])
+task packConfigDeploy(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, deployBars])
+
+
+configure.mustRunAfter  packageBars
+deltaBars.mustRunAfter  configure
+deployBars.mustRunAfter  deltaBars
+
+
+/*
+* Environment Framework 
+*/
+
+task createEnvironment(group:'build', dependsOn:[ packageBars, checkConfig, createMqEnv, createExecutionGroups])
+task deleteEnvironment(group:'build', dependsOn:[deleteMqEnv, deleteExecutionGroups])
+
+
+
+/*
+* Test Framework 
+*/
+
+task generateTestStubs(group:'build', dependsOn:[generateMqProperties])
+//gradlew  generateConnectors -PconfigPath=c:\work\projects\ib9rockitizer\proj\wppsconf -Penv=dect   -Pdecoupled
+ 
+ 
+task usage(group:'build') {
+println """
+Common Usage:  gradlew <target> -PconfigPath=<pathToConfig> -Penv=<environment> -i (optional info logging)
+	
+Targets: 
+		createEnvironment - creates EGs and MQ Objects
+		deleteEnvironment - deletes EGs and MQ Objects
+		buildConfigDeploy - create and deploy bars: mb-style  
+		packConfigDeploy -  package and deploy apps: iib-style (fast) 
+		generateTestStubs - generate model for test
+"""
+
+
+}

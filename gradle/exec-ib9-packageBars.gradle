@@ -1,0 +1,61 @@
+/*
+*	Copyright 2015 rockit.consulting GbR  (www.rockit.consulting)
+*
+*/
+
+
+ext {
+	
+}
+
+
+
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*        					Create Bars parrallel and sequential                                                  */
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+task packageBars(dependsOn:["doPackageBars${parallel}", "repackBars"]) {
+	barToProjects.each { bar, projects  ->
+		if(hasProperty("doPackageBars${parallel}-${bar}")) {
+			logger.lifecycle ext."doPackageBars${parallel}-${bar}" //captured output from console
+		}
+	}
+} 
+
+
+/*
+< target name="package_bar">
+ <mkdir dir="${dist.path}"/>
+ <java classname="com.ibm.broker.config.appdev.FlowRendererBAR" failonerror="true" fork="true">
+  <arg line="-a ${dist.path}/ProjectA.bar"/>
+  <arg line="-w ../"/>
+  <arg line="-y commonJava commonESQL ProjectA"/>
+  <classpath>
+   <fileset dir="C:/Program Files/IBM/MQSI/8.0.0.3/classes">
+    <include name="*.jar"/>
+   </fileset>
+  </classpath>
+ </java>
+</target>
+*/
+
+
+task doPackageBarsParallel(dependsOn:[copyProjectsToBuildTarget , readProjectStructureFromConfig]) << {
+      ant.parallel(threadsPerProcessor: 1) {
+		  barToProjects.each { bar, projects  ->
+				if(config.deployApplicationName) {
+		    		ant.java(fork:'true',failonerror:'yes',classname:"com.ibm.broker.config.appdev.FlowRendererBAR", classpath:brokerClasspath.flatten().join(';')) {
+						arg(line:"-w ${brokerProjectsTargetDir}${fileSeparator}${bar}${fileSeparator} -a ${barTargetOut}${fileSeparator}${bar}.bar -k ${config.deployApplicationName} -i")
+					}		
+				}
+				
+				
+    	   } 
+     }
+}  
+
+
+
+

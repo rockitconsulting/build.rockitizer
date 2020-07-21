@@ -1,0 +1,164 @@
+Garantisi Verilmeyen Programlar Ýçin Uluslararasý Program Lisansý Sözleþmesi
+
+Bölüm 1 - Genel Koþullar
+
+BU PROGRAMI YÜKLEYEREK, KURARAK, KOPYALAYARAK, KULLANARAK YA DA BU PROGRAMA ERÝÞEREK, BU SÖZLEÞMENÝN KOÞULLARINI KABUL EDÝYORSUNUZ. BU KOÞULLARI BÝR BAÞKA KÝÞÝ YA DA ÞÝRKET YA DA TÜZEL KÝÞÝLÝK ADINA KABUL EDÝYORSANIZ, BU KÝÞÝ, ÞÝRKET YA DA TÜZEL KÝÞÝNÝN BU KOÞULLARA UYMASINI SAÐLAMAK ÝÇÝN ELÝNÝZDE TAM YETKÝ BULUNDUÐUNU BEYAN VE GARANTÝ EDERSÝNÝZ. BU KOÞULLARI KABUL ETMÝYORSANIZ;
+
+- BU PROGRAMI YÜKLEMEYÝNÝZ, KURMAYINIZ, KOPYALAMAYINIZ, KULLANMAYINIZ YA DA BU PROGRAMA ERÝÞMEYÝNÝZ; VE
+
+- ÖDEDÝÐÝNÝZ TUTARIN GERÝ ÖDENMESÝ ÝÇÝN PROGRAMI VE YETKÝ BELGESÝNÝ PROGRAMI ALDIÐINIZ TARAFA HEMEN ÝADE EDÝNÝZ. PROGRAMI YÜKLEDÝYSENÝZ, PROGRAMI ALDIÐINIZ TARAFLA GÖRÜÞÜNÜZ.
+
+"IBM", International Business Machines Corporation ya da yan kuruluþlarýndan herhangi biri anlamýndadýr.
+
+"Lisans Bilgileri" ("LB") bir Programa iliþkin özel bilgiler saðlayan bir belge anlamýndadýr. Programýn LB'si http://www.ibm.com/software/sla/ adresinde bulunabilir. LB'si ayný zamanda, bir sistem komutu kullanýlarak eriþilen Program dizinindeki bir kütükte bulunabilir ya da Programla birlikte bir kitapçýk biçiminde gönderilebilir.
+
+"Program", orijinalleri ve onun tüm kýsmi veya tam kopyalarý da dahil olmak üzere, aþaðýdakiler anlamýndadýr: 1) makinede okunabilir komutlar ve veriler, 2) bileþenleri, 3) iþitsel-görsel içerik (örneðin, görüntüler, metinler, kayýtlar ya da resimler), 4) iliþkili lisanslý malzeme, ve 5) lisans kullanýmý belgeleri veya anahtarlarý ve dokümantasyonu,
+
+"Yetki Belgesi" (Proof of Entitlement - "POE"), bir Programý belirli bir düzeyde kullanmaya yetkiniz olduðunu gösteren bir delil anlamýndadýr. Bu düzey, örneðin iþlemci ya da kullanýcý sayýsýyla ölçülebilir. POE, ayný zamanda varsa gelecekteki yükseltme ücretleri ve olasý özel olanaklar ya da promosyon olanaklarýndan yararlanmaya uygun olduðunuzu gösterir. IBM Size bir POE saðlamazsa, üzerinde Programýn adýnýn ve kullaným düzeyinin belirtilmesi koþuluyla, Programý edindiðiniz tarafýn verdiði (IBM ya da satýcýsý) orijinal satýþ makbuzu ya da diðer satýþ kayýtlarý IBM tarafýndan kabul edilebilir. 
+
+"Siz" ve "Sizin" sözcükleri, tek bir kiþi ya da tek bir tüzel kiþilik için kullanýlýr.
+
+Bu Sözleþme Bölüm 1 - Genel Koþullar, Bölüm 2 - Ülkeye Özgü Koþullar (varsa), Lisans Bilgileri ve Yetki Belgesini içerir ve bu Programýn kullanýmýna iliþkin Sizle IBM arasýndaki sözleþmenin tamamýný oluþturur. Bu Sözleþme, Programý kullanmanýzla ilgili olarak IBM'le aranýzda daha önce gerçekleþtirilen her türlü sözlü ve yazýlý iletiþimin yerine geçer. Bölüm 2'de ve Lisans Bilgilerinde yer alan koþullar, Bölüm 1'dekilerin yerine geçebilir veya bunlarý deðiþtirebilir. Bu Sözleþme ile IBM Uluslararasý Passport Olanaðý Sözleþmesinin koþullarý arasýnda bir çeliþki olduðunda, IBM Uluslararasý Passport Olanaðý Sözleþmesinin koþullarý bu Sözleþme koþullarýnýn önüne geçer. 
+
+1. Yetki 
+
+Lisans 
+
+Programýn sahibi IBM ya da bir IBM saðlayýcýsýdýr. Program telif hakkýna tabidir ve lisanslanýr, satýlmaz. 
+
+Programý kanuni yollarla edindiðinizde, IBM, Programý kullanmanýz için Size münhasýr olmayan bir lisans verir. 
+
+1) Programý POE'de belirtilen düzeye kadar kullanabilir ve 2) bu tür bir kullanýmý desteklemek için kopyalarýný ve yedek kopyalarýný çýkarabilir ve kurabilirsiniz. Bu lisansýn koþullarý, çýkardýðýnýz her kopya için geçerlidir. Programýn her bir tam ya da kýsmi kopyasýna, telif hakký bildirimini ve mülkiyeti belirleyen diðer tüm iþaretleri eklemelisiniz.
+
+Programý bir program yükseltmesi olarak edindiyseniz, yükseltmeyi kurduktan sonra, yükseltme yaptýðýnýz eski Programý kullanamaz ya da baþka bir tarafa devredemezsiniz.
+
+Bu Programý kullanan herkesin (yerel ya da uzaktan eriþim ile), yalnýzca Sizin yetkilendirildiðiniz kullanýmýnýz kapsamýnda Programý kullanmasýný ve bu Sözleþmenin koþullarýna uymasýný saðlamayý kabul etmiþ sayýlýrsýnýz. 
+
+1) Programý bu Sözleþmede belirtilenler dýþýnda baþka bir biçimde kullanamaz, kopyalayamaz, deðiþtiremez ya da daðýtamazsýnýz; 2) geçerli yasalarýn sözleþme ile deðiþtirilmesine olanak tanýmayarak açýkça izin verdiði durumlar dýþýnda, Programý ters çeviremez, ters derleyemez veya baþka yöntemlerle çevirisini yapamazsýnýz; ya da 3) Programý alt lisanslayamaz, Programý kiralayamaz ya da kiraya veremezsiniz.
+
+Bu Sözleþmenin koþullarýna uymamanýz durumunda, IBM lisansýnýzý sona erdirebilir. IBM lisansýnýzý sona erdirirse, Programýn tüm kopyalarýný ve POE'sini imha etmeniz gerekir.
+
+Para Ýadesi Garantisi 
+
+Herhangi bir nedenle Programdan memnun kalmazsanýz ve orijinal lisans sahibiyseniz, fatura tarihinden itibaren 30 gün içinde Programý ve POE'sini Programý edindiðiniz tarafa iade etmeniz durumunda, Program için ödediðiniz ücreti geri alabilirsiniz. Programý bir yerden yüklediyseniz, paranýzýn iade edilmesine iliþkin yönergeler için Programý aldýðýnýz tarafla temasa geçebilirsiniz.
+
+Programýn Devredilmesi 
+
+Programý ve tüm lisans haklarýnýzý, bu Sözleþmenin koþullarýný kabul etmesi koþuluyla baþka bir tarafa devredebilirsiniz. Programý devrettiðinizde, Programýn POE'si de içinde olmak üzere bu Sözleþmenin bir kopyasýný da devretmeniz gerekir. Devretme iþlemi gerçekleþtikten sonra, Programý Siz kullanamazsýnýz. 
+
+2. Ücretler 
+
+Bir Program lisansý için ödenmesi gereken ücret bir kerelik bir ücrettir.
+
+Bir kerelik ücretler, POE'de belirtilen, edinilen kullaným düzeyine baðlýdýr. IBM, bu Sözleþmenin baþka bir yerinde aksi belirtilenler dýþýnda, muaccel olmuþ ya da ödenmiþ ücretler için Size bir kredi vermez ya da geri ödeme yapmaz.
+
+Kullaným düzeyini yükseltmek istediðinizde, IBM'e ya da Programý edindiðiniz tarafa bunu bildiriniz ve varsa uygulanabilir ücretleri ödeyiniz. 
+
+Herhangi yetkili bir makam, Programla ilgili olarak, IBM'in net gelirine dayananlar hariç olmak üzere bir vergi, resim, harç veya baþkaca mali yükün ödenmesini zorunlu kýlarsa, belirtilen bu tutarý ödemeyi veya bunlardan muafsanýz, bu belgeyi IBM'e saðlamayý kabul edersiniz. Programla ilgili olarak, o Programý edindiðiniz tarihten sonraki tüm kiþisel mülkiyet vergilerinden Siz sorumlusunuz. 
+
+3. Garanti Yoktur 
+
+TABÝ BULUNDUÐU KANUNLARIN GARANTÝ KAPSAMI DIÞINDA TUTULAMAYACAÐINI BELÝRTTÝÐÝ GARANTÝLER DIÞINDA IBM, PROGRAMA VEYA TEKNÝK DESTEÐE ÝLÝÞKÝN OLARAK, ÝHLAL YAPILMAYACAÐINA DAÝR GARANTÝLER ÝLE TÝCARÝLÝK VE BELÝRLÝ BÝR AMACA UYGUNLUK ÝÇÝN ZIMNÝ GARANTÝLER DE DAHÝL, VE FAKAT BUNLARLA SINIRLI OLMAKSIZIN, AÇIK VEYA ZIMNÝ HÝÇBÝR GARANTÝ VERMEZ VEYA KOÞUL ÖNE SÜRMEZ 
+
+Yukarýdaki ifade, IBM'in tüm program geliþtiricileri ve saðlayýcýlarý için de geçerlidir. 
+
+IBM dýþý ürünlerin üreticileri, saðlayýcýlarý ya da yayýmcýlarý kendi garantilerini saðlayabilir.
+
+IBM aksini belirtmedikçe teknik destek saðlamaz.
+
+4. Sorumluluklarýn Sýnýrý 
+
+IBM'in bir kusuru veya sorumluluklarýný yerine getirmemesinden kaynaklanan zararlarýnýzý IBM'den talep etmeye hak kazandýðýnýz durumlar olabilir. Bu tür her durumda, zararýnýzý IBM'den talep etmenize olanak saðlayan yasal dayanak (Sözleþmenin esaslý ihlali, ihmal, yanlýþ beyan, diðer ahdi iddialar veya haksýz fiil iddialarý dahil olmak üzere) her ne olursa olsun, IBM yalnýzca: 1) ölüm dahil cismani zarar ile taþýnmaz ve taþýnabilir kiþisel mallara verilen zararlardan; ve 2) iddiaya konu olan Programa iliþkin ücreti, aþmamak koþuluyla, herhangi diðer gerçek doðrudan zararlardan sorumlu olur.
+
+Sorumluluklarýn bu sýnýrý, IBM'in Program geliþtiricileri ve saðlayýcýlarý için de geçerli olup, IBM'in, Program geliþtiricilerinin ve saðlayýcýlarýnýn toplu olarak sorumlu olduklarý azami tutardýr. 
+
+Olasýlýklarý önceden bildirilmiþ olsa bile IBM, IBM'in Program geliþtiricileri veya saðlayýcýlarý:
+
+1. verilerdeki kayýp veya hasardan;   
+
+2. özel, arýzi veya dolaylý zararlardan veya sonuçta ortaya çýkan ekonomik zararlardan; veya   
+
+3. kar kaybý, iþ kaybý, gelir kaybý, itibar kaybý veya tahmin edilen tasarrufun kaybýndan hiçbir koþul altýnda sorumlu olmaz.
+   
+BAZI HUKUK DÜZENLERÝ ARIZÝ VEYA SONUÇTA ORTAYA ÇIKAN ZARARLARIN HARÝÇ TUTULMASINA YA DA SINIRLANMASINA ÝZÝN VERMEZ, BU DURUMDA YUKARIDAKÝ SINIRLAMALAR YA DA ÝSTÝSNALAR SÝZÝN ÝÇÝN GEÇERLÝ OLMAYABÝLÝR. 
+
+5. Genel
+
+1. Bu Sözleþmenin hiçbir koþulu, tüketicilerin sözleþme yoluyla vazgeçilemeyen veya sýnýrlandýrýlamayan yasal haklarýný etkilemez. 
+
+2. Bu Sözleþmenin herhangi bir hükmü geçersiz ya da uygulanamaz olduðunda, Sözleþmenin geri kalan hükümleri tam olarak yürürlükte kalmaya ve geçerli olmaya devam eder. 
+
+3. Uygulanabilir tüm ihracat ve ithalat yasa ve yönetmeliklerine uymayý kabul edersiniz. 
+
+4. IBM'in iþ yaptýðý her yerde isim, telefon numarasý ve e-posta adresi de dahil olmak üzere, sizin iletiþim bilgilerinizi olduðunuz kiþilerle ilgili bilgileri IBM'in saklamasýna ve kullanmasýna izin vermeyi kabul edersiniz.  Bu bilgiler IBM ile Sizin iþ iliþkiniz ile baðlantýlý olarak iþlenecek ve kullanýlacak ve IBM'in müteahhitlerine, Çözüm Ortaklarý'na ve tayin ettiði taraflara, Sizinle iletiþim kurmak da dahil olmak üzere, ortaklaþa gerçekleþtirdikleri iþ faaliyetleri ile tutarlý amaçlarda kullanýlmak üzere, verilebilecektir (örneðin sipariþlerin iþleme konulmasý için, tanýtýmlar için ve pazar araþtýrmasý için).  
+
+5. Yerel yasalarýn, sözleþme ile deðiþtirilmesine veya sýnýrlandýrýlmasýna olanak tanýmayarak aksini belirttiði durumlar dýþýnda, taraflardan hiçbiri, dava nedeninin doðuþundan 2 yýldan fazla bir süre geçtikten sonra yasal bir iþleme baþvuramaz. 
+
+6. Taraflardan hiçbiri, elinde olmayan nedenlerden ötürü yükümlülüklerini yerine getirememekten sorumlu tutulamaz.  
+
+7. Bu Sözleþme herhangi bir üçüncü kiþi için bir dava hakký ya da bir dava nedeni yaratmamaktadýr ve ayrýca yukarýdaki "Sorumluluklarýn Sýnýrý" baþlýklý bölümde izin verildiði ölçüde IBM'in yasal olarak sorumlu olduðu (ölüm dahil) cismani zarar veya taþýnmaz ve taþýnabilir kiþisel mallara verilen zararlar hariç olmak üzere, üçüncü kiþiler tarafýndan size yöneltilen iddialar karþýsýnda IBM'in sorumluluðu bulunmamaktadýr.
+
+6. Yetkili Hukuk ve Yetkili Mahkeme 
+
+Yetkili Hukuk  
+
+Taraflar, kanunlarýn ihtilafý prensibine bakýlmaksýzýn, bu Sözleþmenin konusundan doðan veya bir biçimde bu Sözleþmenin konusu ile ilgili olan haklar, görevler ve yükümlülüklerin, Sözleþmenin karþýlýklý akdedildiði ülkenin kanunlarýna tabi olup, yine bunlarýn yorumlanmasý ve uygulanmasýnda bu kanunlarýn geçerli olduðunu kabul ederler. 
+
+Birleþmiþ Milletler'in Uluslararasý Mal Satýþlarýna iliþkin Sözleþme Bildirgesi geçerli deðildir.
+
+Yetkili Mahkeme 
+
+Taraflarýn tüm hak, görev ve yükümlülükleri, Program lisansýný edindiðiniz ülkenin mahkemelerine tabidir.    
+
+Bölüm 2 - Ülkeye Özgü Koþullar
+
+Yetkili Hukuk ve Yetkili Mahkeme (Bölüm 6)
+
+Yetkili Mahkeme 
+
+Bu bölüme aþaðýdaki özel durumlar eklenmiþtir: 
+
+Türkiye'de  bu Sözleþmeden kaynaklanan ya da bu Sözleþmeyle ilgili tüm anlaþmazlýklar Türkiye Cumhuriyeti'nin, Ýstanbul Merkez (Sultanahmet) Ticaret Mahkemelerinde ve Ýcra Dairelerinde çözülecektir.
+  
+Z125-5589-03 (11/2002)
+
+
+
+LÝSANS BÝLGÝLERÝ
+
+Aþaðýda listelenen programlar, Garantisi Verilmeyen Programlar Ýçin Uluslararasý Program Lisansý Sözleþmesi kayýt ve koþullarýna ek olarak aþaðýdaki kayýt ve koþullar kapsamýnda lisanslanmýþtýr.
+
+Program Adý: IBM WebSphere MQ for Wndows - GUI Administrator, SupportPac: MO71 V7.0
+Program Numarasý: SupportPac MO71
+Evde Kullaným için Yetki/Taþýnabilir Bilgisayarda Kullaným için Yetki: Programýn, her iki makinede ayný anda etkin kullanýmda olmamasý koþuluyla birincil makineye ve bir baþka makineye depolanabileceði anlamýndadýr.
+
+Diðer IBM Programlarý için Sýnýrlý Kullaným Haklarý
+
+Bu Programý, "Diðer IBM Programlarý" kapsamýnda sýnýflandýran baþka bir IBM Programý'nýn ("Asýl Program") bir bölümü olarak edindiyseniz, bu Programý yalnýzca Asýl Programý desteklemek amacýyla almýþ olursunuz ve Asýl Programýn lisansýnda bu Programý kullaným haklarýnýz sýnýrlanýr. Bu Programa iliþkin olarak Asýl Programýn lisans koþullarý tarafýndan sýnrýlandýrýlmayan ayrý bir lisans edinmek istiyorsanýz, lütfen IBM Satýþ Temsilcinizle baðlantý kurun.
+
+Tanýmlanmýþ Ýþletim Ortamý
+
+Programýn belirtimleri ve tanýmlanmýþ iþletim ortamý bilgileri, Programla birlikte gönderilen, varsa READ-ME dosyasý gibi belgelerde veya IBM tarafýndan yayýnlanan duyuru mektubu gibi diðer bilgilerde bulunabilir. Bu tür belgelerin ve diðer Programa iliþkin içeriðin yalnýzca Ýngilizce olarak saðlanabileceðini kabul edersiniz.
+
+Programa Özgü Koþullar
+
+1. Bu Program IBM WebSphere MQ V7.0 (veya daha sonraki bir sürümü) veya daha sonra baþka bir þekilde adlandýrýlan herhangi bir baþka devam ürünüyle ("Asýl Program") ile birlikte kullanýlmak üzere saðlanýr.
+
+2. Bu Programý kullaným lisansýnýz, Asýl Programý kullanmak üzere geçerli bir lisans edinmenize baðlýdýr. Asýl Programý kullaným lisansýnýzýn sona ermesi durumunda, bu Programý kullaným lisansýnýz da otomatik olarak ve derhal sona erdirilir.
+
+3. Size, bu Programý yalnýzca Asýl Programla doðrudan baðlantýlý olarak kullanmanýz için yetki verilir ve bu Programý herhangi bir baþka baðlamda kullanmanýz veya kullanma giriþiminde bulunmanýz açýkça yasaklanýr.
+
+4. Bu lisansýn amacý açýsýndan, Uluslararasý Program Lisans Sözleþmesi'nin (UPLS) veya Garanti Verilmeyen Programlar Ýçin Uluslararasý Lisans Sözleþmesi'nin "Programýn Devri" baþlýklý bölümünde yer alan hükümler (uygulanabiliyorsa) silinir ve aþaðýdaki paragrafla deðiþtirilir:
+
+"Bu Programý ve Sizin tüm lisans hak ve yükümlülüklerinizi bir üçüncü kiþiye ("Devralan Taraf") yalnýzca aþaðýdaki koþullarla devredebilirsiniz:
+
+(i) Sizin üçüncü kiþi teþebbüsünün %50'sinden fazlasýný kontrol etmeniz, üçüncü kiþinin sizin teþebbüsünüzün %50'sinden fazlasýný kontrol etmesi veya sizin ve ilgili üçüncü kiþinin birlikte oluþturduðu teþebbüsün %50'den fazlasýnýn ayný üçüncü kiþi tarafýndan kontrol edilmesi; ve
+
+(ii) Devralan Taraf'ýn bu Sözleþmenin koþullarýný kabul etmesi. Bu Programý devrettiðinizde, Bu Programýn Yetki Belgesi de dahil olmak üzere, bu Sözleþmenin bir kopyasýný da devretmeniz gerekir.
+
+Devretme iþlemi gerçekleþtikten sonra, Programý kullanamazsýnýz."
+
+
+
+D/N:  L-AFOS-7NJNBM
+P/N:  L-AFOS-7NJNBM 

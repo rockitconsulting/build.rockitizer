@@ -1,0 +1,1 @@
+mqsc.exe -m XFSI602E -g -f C:\Services\Tools\mo72\Windows -i LOCAL_IPINS_QueueSheet.xlsm.mqsc

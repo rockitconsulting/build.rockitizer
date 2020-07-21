@@ -1,0 +1,74 @@
+/*
+*	Copyright 2015 rockit.consulting GbR  (www.rockit.consulting)
+*
+*/
+
+ext {
+}
+
+
+
+task copyWildcardConfig(dependsOn:prepareBroker) << {
+  def wildcards = new File("${barPropertiesOut}${fileSeparator}wildcard.properties")
+  config.brokerProjectDirs.eachWithIndex { projDir,idx ->  
+    new File(projDir).eachFileRecurse(groovy.io.FileType.FILES) { file ->
+	    	if(file.name.endsWith('wildcard.properties')) {
+	    	    file.eachLine { line ->
+	    	    	if(!wildcards.exists()||!wildcards.text.contains(line)) {
+	    	    		wildcards << line << lineSeparator
+	    	    	}
+	    	    }
+		    }
+		}
+	}
+}
+
+
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*        					Override Bars with wildcards parrallel and sequential                                                  */
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+task wildcardBars(dependsOn:["doWildcardBars${parallel}"]) << {
+	bars.each { bar ->
+		if(hasProperty("doOverrideBars${parallel}-${bar}")) {
+			logger.lifecycle ext."doOverrideBars${parallel}-${bar}" //captured output from console
+		}
+	}
+} 
+
+
+
+task doWildcardBars(dependsOn:[findBarFiles,prepareBroker,copyWildcardConfig])
+
+bars.each { bar ->
+    	task "wildcardBar-${bar}" << {
+    		def result = javaexec {
+    		      def cmdArgs = ["-runtime",'-b', "${barByName(bar)}", "-p", file {"${barPropertiesOut}${fileSeparator}wildcard.properties"}]
+    		      logger.lifecycle "override bar " + cmdArgs.join(" ")
+	       		  classpath brokerClasspath
+	              main = "com.ibm.broker.config.util.ApplyBarOverride"
+	              args = cmdArgs
+             }
+        }
+        doWildcardBars.dependsOn "wildcardBar-${bar}"
+}
+
+
+
+
+task doWildcardBarsParallel(dependsOn:[findBarFiles,prepareBroker,copyWildcardConfig]) << {
+    ant.parallel(threadsPerProcessor: 1) {
+		bars.each { bar ->
+	    		ant.java(fork:'true',failonerror:'yes',classname:"com.ibm.broker.config.util.ApplyBarOverride",classpath:brokerClasspath.flatten().join(';')) {
+					arg(line:"-runtime -b ${barByName(bar)} -p  ${file {barPropertiesOut.path+fileSeparator+'wildcard.properties'}}")
+
+				}
+        }
+    }
+    
+}
+
+

@@ -1,0 +1,33 @@
+/*
+*	Copyright 2015 rockit.consulting GbR  (www.rockit.consulting)
+*
+*/
+
+task deployBars << {
+	config.barToExecutionGroup.flatten().each { bar, exgroups  ->
+	   exgroups.each { exgroup ->
+          if(hasProperty("deployBar-${bar}-${exgroup}")) {
+          	log.lifecycle ext."deployBar-${bar}-${exgroup}" //captured output from console
+          }
+	   }
+	}        
+
+}
+
+config.barToExecutionGroup.flatten().each { bar, exgroups  ->
+   exgroups.each { exgroup ->
+	    task "deployBar-${bar}-${exgroup}" (dependsOn:overrideBars) << {
+		    new ByteArrayOutputStream().withStream { os ->
+		        def result = javaexec {
+               	    def cmdArgs = ["-n", "${configPath}${fileSeparator}${config.broker}", "-e", "${exgroup}", "-a","${barByName(bar)}","${deployOverwrite?'-m':''}", "-w","600"]
+	    			logger.lifecycle "deploy${deployOverwrite?'Overwrite':''} " + cmdArgs.join(" ")
+	    			classpath brokerClasspath
+   					main = "com.ibm.broker.config.util.Deploy"
+               		args = cmdArgs
+	    		}
+	    		ext."deployBar-${bar}-${exgroup}" = os.toString()
+	    	}
+	    }		 
+   		deployBars.dependsOn "deployBar-${bar}-${exgroup}"
+   }
+}

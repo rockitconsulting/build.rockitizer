@@ -1,0 +1,194 @@
+/*
+*	Copyright 2015 rockit.consulting GbR  (www.rockit.consulting)
+*
+*/
+
+
+ext {
+  barFiles = []
+  
+  brokerConfDir="${configPath}${fileSeparator}bars"
+  
+  brokerClasspath =   [
+			            "${projectDir}${fileSeparator}lib${fileSeparator}${brokerVersion}",
+						"${projectDir}${fileSeparator}lib${fileSeparator}mq"
+					  ].inject([]) {result , folder ->  result << file{folder}.listFiles() }
+  
+ 
+ getFileExtension = { fileName ->
+    fileName.lastIndexOf('.')>0 ? fileName.substring( fileName.lastIndexOf('.'),fileName.length() ): fileName
+ }
+  
+  getFilesProjects={ workspace, proj, ext, modelMode=false ->
+		def files = []
+		if(config.deployApplicationName) {
+			proj << config.deployApplicationName.split(' ')[0]
+		 }
+  
+	     proj.each { projName ->
+	       def projFolder = new File("${brokerProjectsTargetDir}${fileSeparator}${workspace}${fileSeparator}${projName}")
+	       if(projFolder&&projFolder.exists()) {
+		     	projFolder.eachFileRecurse(groovy.io.FileType.FILES) {
+	       		if( ext.contains( getFileExtension(it.name) ) && 
+					( modelMode ||  
+					( !modelMode &&  !it.name.contains("_SUB")&& !it.name.contains("_sub") && !config.forceFlowExclude.contains(it.name) ) 
+				) 
+		    )  {
+	        		files << new File("${brokerProjectsTargetDir}${fileSeparator}${workspace}${(!modelMode?'':fileSeparator+projName)}").toURI().relativize( it.toURI() ).path.replaceAll("/","\\\\")
+	       	 	}
+	     	 }
+	       }
+	     }
+	     files.join(' ')
+  }
+  
+  
+  barByName =  { barName ->
+      	    def barFile = barFiles?.find {it.name == barName }
+    	    if(!barFile) {
+	    	    throw new  Throwable("no bar ${barName} in folder ${barTargetOut} found. Use <createBars> Task with  <-i> to log the compilation error out !!!")
+    	    } 
+    	    barFile    	
+  }
+  
+  
+}
+
+
+/*
+*  Init tasks run always
+*/
+
+
+task readProjectStructureFromConfig  {
+	def result = [:]
+	config.projectToBar.each { projToBars ->
+		projToBars.each { prj, bars ->
+			bars.each { bar -> 
+			   if(!result[bar]) { result[bar] = [] }
+		 	   result[bar] <<  prj
+		 	}
+	 	}
+	}
+	project.ext.barToProjects=result
+	
+}
+
+
+
+/* create folders, prepare environment */
+task prepareBroker (dependsOn:readProjectStructureFromConfig) {
+    
+	buildDir = new File(buildDir, "${config.deployApplicationName?config.deployApplicationName.split(' ')[0]:config.broker}.${environment}")
+    project.ext.barPropertiesIn=new File(buildDir, "bar.properties${fileSeparator}in")
+    project.ext.barPropertiesIn.mkdirs()
+    
+    project.ext.barPropertiesOut=new File(buildDir, "bar.properties${fileSeparator}out")
+    project.ext.barPropertiesOut.mkdirs()
+    
+    project.ext.barTargetOut=new File(buildDir, "bar.target")
+    project.ext.barTargetOut.mkdirs()
+    
+    project.ext.brokerProjectsTargetDir=new File(buildDir,"projects.target")
+    project.ext.brokerProjectsTargetDir.mkdirs()
+    def bars = []
+    barToProjects.each {bar, prj ->
+    	new File(brokerProjectsTargetDir, bar).mkdirs()
+    	bars << "${bar}.bar"
+    }
+    project.ext.bars = bars 
+}
+
+
+
+task  allProjectFiles  {
+		def allProjectFiles = []
+		config.brokerProjectDirs.each { dir ->
+			new File(dir).eachFileRecurse(groovy.io.FileType.FILES) { f -> allProjectFiles << f.path }
+		}
+		project.ext.allProjectFiles = allProjectFiles
+  }
+  
+
+
+
+allprojects {
+  
+  println "######################## Broker Environment ##################################"
+  println "# brokerFile    = ${config.broker}" 
+  println "# brokerVersion = ${brokerVersion}"
+  println "# libs           = ${projectDir}${fileSeparator}${brokerVersion}${fileSeparator}lib"
+  println "# barstoProject  = ${barToProjects}"
+  println "# classpath      = ${brokerClasspath}"
+  println "# projectDirs    = ${config.brokerProjectDirs}"
+  println "# workspaceLocation     = ${buildDir}"  
+  println "# deployOverwrite       = ${deployOverwrite}"
+  println "# overrideSourceBars    = ${overrideSourceBars}"
+  println "# parallelExecution     = ${parallelExecution}"
+  println "# parallel              = ${parallel}"
+  println "# decoupled             = ${decoupled?:'false'}"
+  println "# deployApplicationName = ${config.deployApplicationName?:'No deployApplicationName defined in Config.groovy, proceed in Flows mode'}"
+  println "# testProjectDir = = ${config.testProjectDir}"  
+  println "#############################################################################"
+  
+}
+
+/*
+* end init tasks
+*/
+
+
+
+
+
+task findBarFiles  (dependsOn:readProjectStructureFromConfig) << {
+	description 'Pick up the real bars in sources/target folder.'
+	def files = []
+	def dirs = overrideSourceBars ? config.brokerProjectDirs:[barTargetOut as String]
+	dirs.each { dir ->
+	   	 new File(dir).eachFileRecurse(groovy.io.FileType.FILES) { f -> files << f }
+	}
+
+	project.ext.barFiles = files.findAll{ file -> file.name.endsWith(".bar") }
+    
+}
+
+
+
+
+task cleanProjectsTargetDir << {
+   description "Cleans properties workspace and bars"
+   brokerProjectsTargetDir.deleteDir()
+   barTargetOut.deleteDir()
+   brokerProjectsTargetDir.mkdir()
+   barTargetOut.mkdir()
+}
+
+
+
+
+task copyProjectsToBuildTarget(dependsOn: [cleanProjectsTargetDir, prepareBroker]) 
+
+barToProjects.each {bar, prj ->
+		config.brokerProjectDirs.eachWithIndex { projDir,idx ->
+			task "copy${new File(projDir).name.capitalize()}${idx}ToBuildTarget-${bar}-Task"(type:Copy)  {
+			    from "${projDir}"
+				exclude '**/*.metadata','**/*.svn'
+			    into ("${brokerProjectsTargetDir}${fileSeparator}${bar}")
+			}
+	copyProjectsToBuildTarget.dependsOn "copy${new File(projDir).name.capitalize()}${idx}ToBuildTarget-${bar}-Task"			
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

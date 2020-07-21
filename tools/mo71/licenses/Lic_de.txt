@@ -1,0 +1,215 @@
+Internationale Nutzungsbedingungen für Programme ohne Gewährleistung
+
+Teil 1 - Allgemeine Bestimmungen
+
+Durch Herunterladen, Installation, Kopieren, Zugreifen auf das Programm oder Nutzung des Programms erklären Sie sich mit den Bedingungen dieser Vereinbarung einverstanden. Wenn Sie diese Bedingungen im Auftrag einer anderen Person oder eines Unternehmens oder einer anderen juristischen Person akzeptieren, gewährleisten Sie, dass Sie berechtigt sind, diese Person, dieses Unternehmen oder diese juristische Person zur Einhaltung dieser Bedingungen zu verpflichten. Wenn Sie mit den Bedingungen dieser Vereinbarung nicht einverstanden sind,
+
+- dürfen Sie das Programm nicht herunterladen, installieren, kopieren, darauf zugreifen oder es benutzen; und 
+
+- müssen das Programm sowie den zugehörigen Berechtigungsnachweis umgehend an die Stelle zurückgeben, bei der Sie das Programm erworben haben, um eine Rückerstattung des bezahlten Betrags zu veranlassen. Wenn Sie das Programm heruntergeladen haben, wenden Sie sich an die Stelle, bei der Sie das Programm erworben haben. 
+
+"IBM" steht für International Business Machines Corporation oder eine IBM Tochtergesellschaft. 
+
+Die "Lizenzinformation" ist ein Dokument, das programmspezifische Informationen enthält. Die Lizenzinformation eines Programms kann unter http://www.ibm.com/software/sla/ abgerufen werden. Darüber hinaus kann sie in einer Datei im Verzeichnis des Programms zur Verfügung gestellt oder über einen entsprechenden Systembefehl abgerufen werden oder ist dem Programm als Broschüre beigelegt. 
+
+Das "Programm" umfasst die folgenden Komponenten einschließlich des Originals und aller vollständigen und Teilkopien: 1) maschinenlesbare Instruktionen und Daten, 2) Komponenten, 3) audiovisuelles Material (z. B. Abbildungen, Texte, Aufzeichnungen oder Grafiken), 4) zugehöriges Lizenzmaterial und 5) Lizenznutzungsdokumente oder -schlüssel sowie Dokumentationen. 
+
+Ein "Berechtigungsnachweis" belegt Ihre Berechtigung zur Nutzung eines Programms in einer definierten Programmstufe. Diese Stufe kann z. B. anhand der Anzahl der Prozessoren oder Benutzer ermittelt werden. Der Berechtigungsnachweis gibt darüber hinaus Aufschluss über Ihren Anspruch auf die Preise für zukünftige Upgrades (sofern vorhanden) sowie über mögliche Sonder- und Werbeaktionen. Wenn Ihnen von IBM kein Berechtigungsnachweis zur Verfügung gestellt wird, akzeptiert IBM ggf. den Originalverkaufsbeleg oder einen gleichwertigen Verkaufsbeleg Ihrer Verkaufsstelle (entweder IBM oder ein IBM Reseller) für das Programm, vorausgesetzt, auf diesem ist der Name des Programms und die erworbene Nutzungsstufe dokumentiert. 
+
+"Sie" und "Ihr" bezieht sich entweder auf eine Einzelperson oder eine einzelne juristische Person. 
+
+Diese Vereinbarung umfasst Teil 1 - Allgemeine Bestimmungen, Teil 2 - Länderspezifische Bedingungen (sofern vorhanden), Lizenzinformationen und Berechtigungsnachweis und stellt eine vollständige Vereinbarung zwischen Ihnen und IBM zur Nutzung des Programms dar. Sie ersetzt alle zuvor getroffenen mündlichen oder schriftlichen Absprachen zwischen Ihnen und IBM in Bezug auf die Nutzung des Programms. Die Bedingungen von Teil 2 und die Lizenzinformationen können die Bedingungen in Teil 1 ersetzen oder ergänzen. Im Falle eines Widerspruchs zwischen den Bedingungen dieser Vereinbarung und den Bedingungen des IBM International Passport Advantage Vertrags gelten die Bedingungen der zuletzt genannten Vereinbarung.
+
+1. Berechtigung
+
+Lizenz
+
+Das Programm ist Eigentum von IBM oder eines IBM Lieferanten und wird urheberrechtlich geschützt und lizenziert, jedoch nicht verkauft. 
+
+IBM erteilt Ihnen eine nicht ausschließliche Lizenz zur Nutzung des Programms, wenn Sie dieses rechtmäßig erworben haben. 
+
+Sie dürfen 1) das Programm in dem im Berechtigungsnachweis definierten Umfang nutzen und 2) Kopien des Programms, einschließlich einer Sicherungskopie, zur Unterstützung dieser Nutzung erstellen und installieren. Die Bedingungen dieser Lizenz gelten für jede Kopie. Sie verpflichten sich, auf jeder Kopie oder Teilkopie des Programms den Copyrightvermerk und alle anderen Eigentumshinweise anzubringen. 
+
+Wenn Sie das Programm als Programmupgrade erwerben, dürfen Sie nach der Installation des Upgrades die Vorversion nicht mehr verwenden oder an Dritte weitergeben. 
+
+Sie verpflichten sich sicherzustellen, dass jeder Benutzer das Programm (unabhängig davon, ob der Zugriff lokal oder von einem fernen System aus erfolgt) bestimmungsgemäß verwendet und die Bedingungen dieser Vereinbarung beachtet. 
+
+Es ist Ihnen untersagt, 1) das Programm abweichend von den Bestimmungen dieser Vereinbarung zu nutzen, zu kopieren, zu ändern oder weiterzugeben; 2) umzuwandeln (reverse assemble, reverse compile), sofern eine solche Umwandlung nicht durch ausdrückliche gesetzliche Regelung unabdingbar vorgesehen ist; oder 3) das Programm in Unterlizenz zu vergeben, zu vermieten oder anderweitig weiterzugeben. 
+
+IBM kann Ihre Lizenz kündigen, wenn Sie die Bedingungen dieser Vereinbarung nicht einhalten. In diesem Fall sind Sie verpflichtet, alle Kopien des Programms sowie den zugehörigen Berechtigungsnachweis zu vernichten.
+
+Geld-zurück-Garantie
+
+Falls Sie aus irgendeinem Grund mit dem Programm nicht zufrieden sind und wenn Sie der ursprüngliche Lizenznehmer des Programms sind, können Sie es zusammen mit dem zugehörigen Berechtigungsnachweis innerhalb von 30 Tagen nach dem Datum der Rechnungsstellung gegen Erstattung des gezahlten Betrags an die Stelle zurückgeben, bei der Sie das Programm erworben haben. Wenn Sie das Programm heruntergeladen haben, erhalten Sie von der Stelle, bei der Sie das Programm erworben haben, weitere Anweisungen zur Erstattung des gezahlten Betrags. 
+
+Programmübertragung
+
+Sie können ein Programm und alle Lizenzrechte und -verpflichtungen nur an Dritte übertragen, wenn diese sich mit den Bedingungen dieser Vereinbarung einverstanden erklären. Wenn Sie das Programm übertragen, müssen Sie auch eine Kopie dieser Vereinbarung einschließlich des zugehörigen Berechtigungsnachweises beifügen. Nach der Übertragung sind Sie nicht mehr berechtigt, das Programm weiterhin zu nutzen.
+
+2. Gebühren
+
+Bei dem für eine Programmlizenz zu bezahlenden Betrag handelt es sich um eine Einmalgebühr. 
+
+Einmalgebühren basieren auf der erworbenen Nutzungsstufe, die im Berechtigungsnachweis dokumentiert ist. IBM gewährt keine Gutschriften oder Rückerstattungen für bereits fällige oder gezahlte Gebühren, mit Ausnahme anders lautender Bestimmungen in dieser Vereinbarung. 
+
+Wenn Sie die Nutzungsstufe erhöhen wollen, müssen Sie IBM oder die Stelle, bei der Sie das Programm erworben haben, benachrichtigen und die anfallenden Gebühren bezahlen. 
+
+Wenn eine andere Stelle für das Programm Zölle, Steuern, Abgaben oder Gebühren erhebt, die nicht in den IBM Gebühren enthalten sind, erklären Sie sich mit der Zahlung des angegebenen Betrags einverstanden oder verpflichten sich zur Bereitstellung der für die Freistellung erforderlichen Unterlagen. Ab dem Datum des Kaufes sind Sie verantwortlich für alle das Programm betreffenden Vermögenssteuern. 
+
+3. Gewährleistungsausschluss
+
+Vorbehaltlich einer gesetzlichen Gewährleistung, die nicht ausgeschlossen werden kann, gibt IBM keine ausdrückliche oder implizite Gewährleistung für die Marktfähigkeit, die Eignung für einen bestimmten Zweck oder die Freiheit von Rechten Dritter in Bezug auf das Programm oder die technische Unterstützung. 
+
+Dieser Gewährleistungsausschluss gilt auch für die IBM Programmlieferanten. 
+
+Hersteller, Lieferanten oder Herausgeber von Nicht-IBM Programmen können ihre eigenen Gewährleistungen mitliefern.
+
+IBM bietet keine technische Unterstützung, sofern dies nicht ausdrücklich angegeben ist. 
+
+4. Haftungsbegrenzung
+
+Soweit Sie aus Verschulden der IBM oder aus sonstigen Gründen von der IBM Schadensersatz fordern, ist die Haftung der IBM unabhängig von der Rechtsgrundlage, auf der Ihr Schadensersatzanspruch an IBM beruht (einschließlich Verletzung wesentlicher Vertragspflichten, Fahrlässigkeit, unrichtiger Angaben oder anderer Ansprüche aus dem Vertrag oder auf Grund unerlaubter Handlungen) und außer in Fällen der gesetzlich zwingenden Haftung, begrenzt auf: 1) Personenschäden (einschließlich Tod) und Schäden an Immobilien und beweglichen Sachen und 2) bei anderen direkten Schäden bis zu den Gebühren für das Programm, das Grundlage des Rechtsanspruches ist.
+
+Diese Haftungsbegrenzung gilt auch für Programmlieferanten. Dies ist der maximale Betrag, für den IBM und diese gemeinsam haftbar gemacht werden können. 
+
+Auf keinen Fall sind IBM oder ihre Programmlieferanten in folgenden Fällen haftbar, auch wenn auf die Möglichkeit solcher Schäden hingewiesen wurde: 
+
+1. Verlust oder Beschädigung von Daten; 
+
+2. unmittelbare, mittelbare oder sonstige Folgeschäden; oder 
+
+3. entgangener Gewinn, entgangene Geschäftsabschlüsse, Umsätze, Schädigung des guten Namens oder Verlust erwarteter Einsparungen.
+
+Einige Rechtsordnungen erlauben nicht den Ausschluss oder die Begrenzung von Folgeschäden, so dass obige Einschränkungen und Ausschlüsse möglicherweise nicht anwendbar sind.
+
+5. Allgemeines
+
+1. Keine Bestimmung in dieser Vereinbarung betrifft Verbraucherschutzrechte und sonstige Regeln, die gesetzlich unabdingbar sind. 
+
+2. Falls eine der Bedingungen dieser Vereinbarung im Rahmen des geltenden Rechts ungültig oder undurchführbar ist, sind die übrigen Bedingungen dieser Vereinbarung davon nicht betroffen und gelten weiterhin in vollem Umfang. 
+
+3. Sie erklären sich mit allen geltenden Gesetzen zur Kontrolle von Im- und Export, Verordnungen und Bestimmungen einverstanden. 
+
+4. Sie erklären sich damit einverstanden, dass IBM Ihre persönlichen Daten einschließlich Name, Telefonnummern und E-Mail-Adressen speichert und verwendet. Diese Informationen werden im Rahmen unserer Geschäftsbeziehung verarbeitet und verwendet und dürfen Vertragsnehmern, Business Partnern und Bevollmächtigten von IBM für die Durchführung der gemeinsamen Geschäftsaktivitäten einschließlich der Kommunikation mit Ihnen (z. B. zur Bestellverarbeitung, zu Werbezwecken oder für Marktuntersuchungen) zur Verfügung gestellt werden. 
+
+5. Sowohl Sie als auch IBM verpflichten sich, keine Klage im Rahmen dieser Vereinbarung später als zwei Jahre nach Auftreten des Klagegegenstands einzureichen, soweit keine anders lautenden gesetzlichen Regelungen unabdingbar vorgesehen sind. 
+
+6. Weder Sie noch IBM sind für die Nichterfüllung von vertraglichen Verpflichtungen aus Gründen haftbar, die von den Vertragspartnern nicht beeinflusst werden können. 
+
+7. Aus dieser Vereinbarung ergibt sich kein Recht auf Klage oder Klagegegenstand für Dritte, und IBM ist nicht haftbar für Ansprüche Dritter gegen Sie, die nicht im zuvor aufgeführten Abschnitt zur Haftungsbegrenzung spezifiziert sind, und für Personenschäden (einschließlich Tod) und Schäden an Immobilien und beweglichen Sachen, für die IBM nach den gesetzlichen Bestimmungen haftbar ist.  
+
+6. Geltendes Recht, Rechtsprechung und Schiedsspruchverfahren
+
+Geltendes Recht
+
+Sowohl Sie als auch IBM sind damit einverstanden, dass die Gesetze des Landes zur Anwendung kommen, in dem Sie die Programmlizenz erworben haben, um die Rechte, Pflichten und Verpflichtungen von Ihnen und IBM, die sich aus dem Inhalt dieser Vereinbarung ergeben oder in irgendeiner Weise damit in Zusammenhang stehen, zu regeln, zu interpretieren und durchzuführen, ungeachtet unterschiedlicher Rechtsgrundlagen. 
+
+Die Vertragskonvention der Vereinten Nationen für den internationalen Warenverkauf kommt nicht zur Anwendung.
+
+Rechtsprechung
+
+Alle Rechte, Pflichten und Verpflichtungen unterliegen der Rechtsprechung des Landes, in dem die Programmlizenz erworben wurde. 
+
+Teil 2 - Länderspezifische Bedingungen 
+
+EUROPA, MITTLERER OSTEN, AFRIKA (EMEA)
+
+Gewährleistungsausschluss (Abschnitt 3): In der Europäischen Gemeinschaft wird am Anfang dieses Abschnitts Folgendes eingefügt:
+
+In der Europäischen Gemeinschaft sind für Konsumenten unter den geltenden nationalen rechtlichen Bestimmungen Rechte für den Verkauf von Konsumgütern definiert. Diese Rechte sind von den Bestimmungen in diesem Abschnitt 3 nicht betroffen.
+
+Haftungsbegrenzung (Abschnitt 4): In Österreich und der Schweiz wird dieser Abschnitt vollständig durch folgende Regelungen ersetzt:
+
+Vorausgesetzt, dass keine anderweitigen verbindlichen Rechtsbestimmungen gelten: 
+
+1. Die Haftung von IBM für Schäden und Verluste, die als Folge der Erfüllung der Bestimmungen dieser Vereinbarung oder in Zusammenhang mit dieser Vereinbarung verursacht wurden oder die auf einem anderen, mit dieser Vereinbarung in Zusammenhang stehenden Grund beruhen, ist begrenzt auf die Kompensation der Schäden und Verluste, die als unmittelbare und direkte Folge der Nichterfüllung solcher Verpflichtungen (bei Verschulden von IBM) oder Gründe entstanden und belegt sind. Der Höchstbetrag entspricht hierbei den von Ihnen für das Programm bezahlten Gebühren.
+
+Die obige Einschränkung gilt nicht für Personenschäden (einschließlich Tod) und für direkte Schäden an Immobilien und beweglichen Sachen, für die IBM rechtlich haftbar ist. 
+
+2. Auf keinen Fall ist IBM in folgenden Fällen haftbar, auch wenn auf die Möglichkeit solcher Schäden hingewiesen wurde: 1) Verlust oder Beschädigung von Daten; 2) spezielle mittelbare oder Folgeschäden oder andere geschäftliche Folgeschäden; 3) entgangene Gewinne, auch wenn sie als direkte Folge des Ereignisses entstanden sind, das zu den Schäden geführt hat; oder 4) entgangene Geschäftsabschlüsse, Umsätze, Schädigung des guten Namens oder Verlust erwarteter Einsparungen. 
+
+3. Die in dieser Vereinbarung spezifizierten Haftungsbegrenzungen und -ausschlüsse gelten nicht nur für die von IBM durchgeführten Aktivitäten, sondern auch für die Aktivitäten von IBM Lieferanten. Sie legen den Höchstbetrag fest, für den IBM und IBM Lieferanten gemeinsam haftbar sind. 
+
+Geltendes Recht, Rechtsprechung und Schiedsspruchverfahren (Abschnitt 6)
+
+Rechtsprechung
+
+Folgende Ausnahmen werden zu diesem Abschnitt hinzugefügt:
+
+In Österreich gilt als Gerichtsstand für alle aus dieser Vereinbarung erwachsenden und mit dieser in Zusammenhang stehenden Streitfälle einschließlich Streitfällen bezüglich ihres Vorhandenseins das zuständige Gericht in Wien, Österreich (Innenstadt). 
+
+ÖSTERREICH: Gewährleistungsausschluss (Abschnitt 3): Die Bedingungen dieses Abschnitts werden vollständig durch den folgenden Text ersetzt:
+
+Die folgende begrenzte Gewährleistung kommt zur Anwendung, wenn Sie für den Erwerb des Programms eine Gebühr bezahlt haben:
+
+Der Gewährleistungszeitraum beträgt zwölf Monate ab dem Datum der Lieferung. Als Begrenzungszeitraum für Kunden mit laufenden Verfahren wegen Verstößen gegen die Gewährleistungsbestimmungen gilt mindestens die gesetzlich vereinbarte Zeitdauer. 
+
+Die Gewährleistung für ein IBM Programm umfasst die Funktionalität des Programms bei normalem Gebrauch und die Übereinstimmung des Programms mit den geltenden Spezifikationen. 
+
+IBM gewährleistet, dass das Programm bei Nutzung in der angegebenen Betriebsumgebung seinen Spezifikationen entspricht. IBM gewährleistet keinen ununterbrochenen oder fehlerfreien Betrieb des Programms oder die Korrektur aller Programmfehler. Für die Ergebnisse aus der Nutzung des Programms sind Sie selbst verantwortlich. 
+
+Die Gewährleistung gilt nur für den unveränderten Teil des Programms. 
+
+Wenn das Programm innerhalb des Gewährleistungszeitraums nicht wie zugesichert funktioniert und das Problem mit Hilfe der bereitgestellten Informationen nicht behoben werden kann, sind Sie berechtigt, das Programm bei der Stelle zurückzugeben, bei der das Programm gekauft wurde. Sie erhalten die bezahlten Gebühren dann zurück. Wenn Sie das Programm heruntergeladen haben, wird Ihnen der gezahlte Betrag von der Stelle zurückerstattet, bei der Sie das Programm erworben haben. 
+
+Sofern durch die geltenden gesetzlichen Regelungen nicht anders vorgesehen, sind unsere Verpflichtungen auf die genannten Bestimmungen begrenzt. 
+
+Allgemeines (Abschnitt 5): Zu Unterziffer 4 wird Folgendes hinzugefügt:
+
+Im Rahmen dieser Bestimmung umfassen die Kontaktinformationen auch Ihre persönlichen Informationen als juristische Person, z. B. Umsatzdaten und andere Informationen zu Geschäftsaktivitäten. 
+
+DEUTSCHLAND: Gewährleistungsausschluss (Abschnitt 3): Es gelten dieselben Änderungen wie in Gewährleistungsausschluss (Abschnitt 3) oben unter Österreich. 
+
+Haftungsbegrenzung (Abschnitt 4): Der folgende Absatz wird diesem Abschnitt hinzugefügt:
+
+Die in diesem Abschnitt genannten Begrenzungen und Ausschlüsse entfallen bei Vorsatz und grober Fahrlässigkeit der IBM. 
+
+Allgemeines (Abschnitt 5): Die Bestimmungen in Unterziffer 5 werden durch Folgendes ersetzt: 
+
+Für alle Ansprüche, die aus dieser Vereinbarung entstehen, gilt eine gesetzliche Begrenzungsfrist von drei Jahren. Ausgenommen von dieser Regelung sind die unter Abschnitt 3 (Gewährleistungsausschluss) dieser Vereinbarung aufgeführten Fälle. 
+
+SCHWEIZ: Allgemeines (Abschnitt 5): Zu Unterziffer 4 wird Folgendes hinzugefügt:
+
+Im Rahmen dieser Bestimmung umfassen die Kontaktinformationen auch Ihre persönlichen Informationen als juristische Person, z. B. Umsatzdaten und andere Informationen zu Geschäftsaktivitäten. 
+
+Z125-5589-03 (01/2003)
+
+
+
+LIZENZINFORMATION
+
+Für die Lizenzierung der nachfolgend aufgelisteten Programme gelten zusätzlich zu den Bedingungen in Internationale Nutzungsbedingungen für Programme ohne Gewährleistung die folgenden Vertragsbedingungen.
+
+Programmname: IBM WebSphere MQ for Wndows - GUI Administrator, SupportPac: MO71 V7.0
+Programmnummer: SupportPac MO71
+Berechtigung zur Nutzung auf Heimcomputer/tragbarem Computer: Das Programm darf auf der primären Maschine und einer weiteren Maschine unter der Voraussetzung installiert werden, dass es nicht auf beiden Maschinen gleichzeitig ausgeführt wird.
+
+Eingeschränkte Nutzungsrechte für andere IBM Programme
+
+Haben Sie dieses Programm als Teil eines anderen IBM Programms ("Hauptprogramm") bezogen und ist dieses Programm dort unter "Andere IBM Programme" aufgelistet, so dient dieses Programm nur zur Unterstützung des Hauptprogramms und Ihre Rechte zur Nutzung des Programms werden durch die Lizenz des Hauptprogramms eingeschränkt. Wenn Sie eine separate Lizenz für dieses Programm erwerben möchten, die nicht durch die Lizenz des Hauptprogramms eingeschränkt wird, wenden Sie sich bitte an Ihren IBM Vertriebsbeauftragten.
+
+Spezifizierte Einsatzbedingungen
+
+Die Programmspezifikationen und die Angaben zu den spezifizierten Einsatzbedingungen befinden sich in der mit dem Programm gelieferten Dokumentation (sofern verfügbar), wie z. B. in einer Readme-Datei, oder in anderen, von IBM veröffentlichten Informationen, wie z. B. in einer Vertriebsfreigabe. Sie sind damit einverstanden, dass Dokumentationen dieser Art und andere Programminhalte nur in englischer Sprache zur Verfügung gestellt werden.
+
+Programmspezifische Bedingungen
+
+1. Dieses Programm wird zur Nutzung mit IBM WebSphere MQ V7.0 (oder höher) oder einem Nachfolgeprogramm, das unter einer anderen Produktbezeichnung vertrieben wird ("Hauptprogramm"), bereitgestellt.
+
+2. Ihre Lizenz für dieses Programm ist davon abhängig, ob Sie eine gültige Lizenz für das Hauptprogramm besitzen. Wenn Ihre Lizenz für das Hauptprogramm abläuft, endet automatisch mit sofortiger Wirkung auch Ihre Lizenz für dieses Programm.
+
+3. Sie dürfen dieses Programm nur in direkter Verbindung mit dem Hauptprogramm verwenden; die Nutzung in Verbindung mit anderen Programmen ist Ihnen ausdrücklich untersagt.
+
+4. Zum Zwecke dieser Lizenz werden die Bedingungen unter "Programmübertragung" in den Internationalen Nutzungsbedingungen für Programmpakete oder den Internationalen Nutzungsbedingungen für Programme ohne Gewährleistung (sofern zutreffend) außer Kraft gesetzt und durch folgende Regelungen ersetzt:
+
+"Sie dürfen das Programm und alle Ihre Lizenzrechte und Verpflichtungen nur dann an einen Dritten ("Empfänger") übertragen, wenn folgende Bedingungen erfüllt sind:
+
+(i) Sie kontrollieren mehr als fünfzig Prozent (50 %) der Firma des Empfängers, der Empfänger kontrolliert mehr als fünfzig Prozent (50 %) Ihrer Firma oder die Firma des Empfängers bzw. Ihre Firma werden jeweils zu mehr als fünfzig Prozent (50 %) von derselben Drittfirma kontrolliert.
+
+(ii) Der Empfänger erklärt sein Einverständnis mit den Bedingungen dieser Vereinbarung. Wenn Sie das Programm übertragen, müssen Sie außerdem eine Kopie dieser Vereinbarung sowie den zugehörigen Berechtigungsnachweis weitergeben.
+
+Nach der Übertragung sind Sie nicht mehr zur Nutzung des Programms berechtigt."
+
+
+D/N:  L-AFOS-7NJNBM
+P/N:  L-AFOS-7NJNBM 

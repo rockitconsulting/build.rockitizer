@@ -1,0 +1,24 @@
+# prevent java.lang.OutOfMemoryError: PermGen space
+org.gradle.jvmargs : -XX:MaxPermSize=512m
+org.gradle.daemon=true
+#org.gradle.parallel=true
+
+
+#####Broker native IBM JVM
+org.gradle.java.home=C:\\rockit\\IBM\\MQSI\\9.0.0.2\\jre17
+brokerToolkitDir=C:\\rockit\\IBM\\IntegrationToolkit90
+buildDir=c:\\temp\\gradle_build
+
+#barSourceLocation - configurable
+#flows.properties - multiple files externalize over configuration
+#-Pbroker = 'XFSI506EIB9.broker'  - broker file has to be copied in gradle 
+#broker = 'XFSI506EIB9.broker'
+
+#bartoExecutionGroup externalize -P
+#barToExecutionGroup {        WPPS_PROCESS.bar=['MWPPS_PROCESS']           WPPS_SYSTEM_IN.bar=['MWPPS_SYSTEM_IN']          WPPS_SYSTEM_OUT.bar=['MWPPS_SYSTEM_OUT']         }
+
+brokerVersion = ib9
+
+deployOverwrite=true
+parallelExecution=true    
+

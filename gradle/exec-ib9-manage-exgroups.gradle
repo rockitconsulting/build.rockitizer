@@ -1,0 +1,96 @@
+/*
+*	Copyright 2015 rockit.consulting GbR  (www.rockit.consulting)
+*
+*/
+
+
+ext {
+	  
+	  manageExecutionGroupTask = { mode, exgroup ->
+		        def result = javaexec {
+               	    def cmdArgs = [mode, "-n", "${configPath}${fileSeparator}${config.broker}", "-e", "${exgroup}", "-w","600"]
+	    			logger.lifecycle "executionGroup-${exgroup} " +   cmdArgs.join(" ")
+	    			classpath brokerClasspath
+   					main = (['-start','-stop'].contains(mode)?"com.ibm.broker.config.util.MessageFlowControl":"com.ibm.broker.config.util.ExecutionGroupControl")
+               		args = cmdArgs
+	    		}
+	  }
+
+}
+
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*        					stop/start/create/delete execution groups sequential                                                  */
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+task startExecutionGroups() 
+
+
+
+config.barToExecutionGroup.flatten().each { bar, exgroups  ->
+   exgroups.each { exgroup ->
+	    task "startExecutionGroup-${exgroup}" () << {
+			manageExecutionGroupTask('-start',exgroup)	    
+		}		 
+   		startExecutionGroups.dependsOn "startExecutionGroup-${exgroup}"
+   }
+}
+
+
+
+
+
+task stopExecutionGroups() 
+
+
+
+config.barToExecutionGroup.flatten().each { bar, exgroups  ->
+   exgroups.each { exgroup ->
+	    task "stopExecutionGroup-${exgroup}" () << {
+			manageExecutionGroupTask('-stop',exgroup)
+	    }		 
+   		stopExecutionGroups.dependsOn "stopExecutionGroup-${exgroup}"
+   }
+}
+
+
+
+
+
+task deleteExecutionGroups()
+
+
+
+config.barToExecutionGroup.flatten().each { bar, exgroups  ->
+   exgroups.each { exgroup ->
+	    task "deleteExecutionGroup-${exgroup}" () << {
+	    	manageExecutionGroupTask('-delete',exgroup)
+	    }		 
+   		deleteExecutionGroups.dependsOn "deleteExecutionGroup-${exgroup}"
+   }
+}
+
+
+
+
+task createExecutionGroups()
+
+
+
+config.barToExecutionGroup.flatten().each { bar, exgroups  ->
+   exgroups.each { exgroup ->
+	    task "createExecutionGroup-${exgroup}" () << {
+			manageExecutionGroupTask('-create',exgroup)
+	    }		 
+   		createExecutionGroups.dependsOn "createExecutionGroup-${exgroup}"
+   }
+}
+
+
+
+
+
+
+//mqsistopmsgflow IB9NODE -e default -z -j

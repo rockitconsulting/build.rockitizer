@@ -1,0 +1,140 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+
+/*
+*	Copyright 2015 rockit.consulting GbR  (www.rockit.consulting)
+*
+*/
+
+def mqscCreateCmd = """
+					DEFINE QLOCAL(@queuename@.BACKOUT) + 
+					       DESCR('GENERATED BACKOUT QUEUE') + 
+					       REPLACE
+					CLEAR  QLOCAL(@queuename@)
+					DELETE QLOCAL(@queuename@)
+					DEFINE QLOCAL(@queuename@) + 
+					       DESCR('GENERATED INPUT  QUEUE') + 
+					       DEFPSIST(YES) + 
+					       BOQNAME(@queuename@.BACKOUT) + 
+					       BOTHRESH(999999999) + 
+					       DEFPRTY(0) + 
+					       DEFBIND(OPEN) + 
+					       REPLACE
+"""
+
+def mqscDeleteCmd = """
+					DELETE QLOCAL(@queuename@)
+					DELETE QLOCAL(@queuename@.BACKOUT)
+"""
+
+
+def templates = [
+					'MqCreate':mqscCreateCmd,
+					'MqDelete':mqscDeleteCmd
+]
+
+
+ext {	
+
+	 createScriptByTemplate = { templateName ->
+			
+			if(!templates[templateName]) {
+				throw new  Throwable("no templateName ${templateName} in templates ${templates} has been found !!!")
+			}
+			
+			def flowprops = new File("${barPropertiesOut}${fileSeparator}flows.properties")
+			if(!flowprops.exists()) {
+				throw new  Throwable("no ${barPropertiesOut}${fileSeparator}flows.properties found . Use <checkConfig> Task to generate environment dependend configuration !!!")
+			}	
+		    
+		    def cmd = new StringBuffer()
+			flowprops.eachLine { line ->
+				   if(!line.trim()||line.trim().startsWith('#')) { return }
+		   	       def key = line?.split('=')[0].trim()
+		   	       def value = line?.split('=')[1].trim()
+		   	       if( (!key || !value) || (templateName=='MqCreate' && value.toLowerCase().contains('.backout')) ) {
+		   	       		return
+		   	       }
+		   	       
+		   	       if  (key.endsWith('queueName')) {
+		   	       	 
+		   	       	 if (templateName=='MqCreate' && value.length()>40) { 
+		   	       	   throw new  Throwable("Queue name $value has length of ${value.length()} characters  which oversizes MQ Limit of 48 !!!")
+		   	       	 }
+		   	       	 
+		   	         def curr= templates[templateName].replaceAll('@queuename@',value)
+		   	       	 cmd << (cmd.contains(curr)?'':curr.stripIndent())	
+		   	       }
+		   	       
+			}
+			def mqsc = new File("${scriptsOut}${fileSeparator}${templateName}.mqsc")
+			mqsc.withWriter() { it << cmd }
+			mqsc
+	}
+	
+
+    mqmgr = { 
+        def separator= Os.isFamily(Os.FAMILY_WINDOWS)?'':''// Very strange bug, before it worked with \\ escaped port for mo72, but currently no longer. (Unknow Host erorr) 
+		def root = new XmlSlurper().parseText(new File("${configPath}${fileSeparator}${config.broker}").text)
+		if (config.queueManager) //ib10 node 
+			"-m  ${config.queueManager.name} -l -h ${config.queueManager.host}${separator}(${config.queueManager.listenerPort}${separator}) -c ${config.queueManager.svrconn}"
+		else //ib9 mode
+			"-m  ${root.@queueManager} -l -h ${root.@host}${separator}(${root.@listenerPort}${separator}) -c ${root.@svrconn}"
+	}
+
+	
+	
+	execTaskMQSC= { 
+		new ByteArrayOutputStream().withStream { os ->
+	        def result = exec {
+				
+				if(Os.isFamily(Os.FAMILY_WINDOWS)) {
+		        	def cmdArgs = ['/c', "${projectDir}${fileSeparator}tools${fileSeparator}mo72${fileSeparator}mqsc.exe ${mqmgr()} -g -f ${configPath}${fileSeparator}${config.mqcfg?:'MQMON.CFG'} -i ${mqCmdScript}"]
+		        	logger.lifecycle cmdArgs.join(' ')
+		            executable = 'cmd'
+		            args = cmdArgs
+	            } else {
+	                 logger.info "${projectDir}${fileSeparator}tools${fileSeparator}mo72${fileSeparator}mqsc ${mqmgr()} -g -f ${configPath}${fileSeparator}${config.mqcfg?:'MQMON.CFG'} -i ${mqCmdScript}"
+				     executable "${projectDir}${fileSeparator}tools${fileSeparator}mo72${fileSeparator}mqsc"
+	    			 args = "${mqmgr()} -g -f ${configPath}${fileSeparator}${config.mqcfg?:'MQMON.CFG'} -i ${mqCmdScript}".split('\\s+').toList()
+	    			 
+		        }	        	
+	        }
+	    }
+	
+	}
+
+
+}
+
+
+task prepareMqEnvPlugin (dependsOn:prepareBroker) << {
+	project.ext.scriptsOut=new File(buildDir, "scripts")
+	project.ext.scriptsOut.mkdirs()
+}
+
+
+
+
+task createMqCmdCreate(dependsOn:["configure${decoupled}", prepareMqEnvPlugin]) << {
+	project.ext.mqCmdScript = createScriptByTemplate('MqCreate')
+}
+
+
+task createMqCmdDelete(dependsOn:["configure${decoupled}", prepareMqEnvPlugin]) << { 
+	project.ext.mqCmdScript =  createScriptByTemplate('MqDelete')
+}
+
+
+
+
+task  createMqEnv(dependsOn:[createMqCmdCreate]) << {
+   execTaskMQSC()
+}
+
+
+task deleteMqEnv(dependsOn:[createMqCmdDelete]) << {
+   execTaskMQSC()
+}
+
+
+	

@@ -1,0 +1,197 @@
+Acordo Internacional de Licenciamento para Programas Não-garantidos
+
+Parte 1 - Termos Gerais
+
+AO FAZER DOWNLOAD, INSTALAR, COPIAR, ACESSAR/ACEDER OU UTILIZAR O PROGRAMA, O CLIENTE CONCORDA COM OS TERMOS DESTE ACORDO. SE O CLIENTE ACEITAR ESTES TERMOS EM NOME DE OUTRA PESSOA OU DE UMA EMPRESA OU OUTRA ENTIDADE LEGAL, O CLIENTE DECLARA E GARANTE QUE POSSUI TOTAL AUTORIDADE PARA VINCULAR TAL PESSOA, EMPRESA OU ENTIDADE LEGAL A ESTES TERMOS. SE O CLIENTE NÃO CONCORDAR COM ESTES TERMOS, 
+
+- NÃO FAÇA DOWNLOAD, INSTALE, COPIE, ACESSE/ACEDA OU UTILIZE O PROGRAMA; E
+
+- DEVOLVA IMEDIATAMENTE O PROGRAMA E A PROVA DE TITULARIDADE À PARTE DA QUAL VOCÊ OS ADQUIRIU/A QUEM OS ADQUIRIU PARA OBTER UM REEMBOLSO DO VALOR PAGO. SE O CLIENTE FEZ DOWNLOAD DO PROGRAMA, ENTRE EM CONTATO COM A ENTIDADE ONDE O ADQUIRIU/A QUEM O ADQUIRIU.
+
+"IBM" significa International Business Machines Corporation ou uma das suas subsidiárias.
+
+"Informações sobre Licenciamento" ("LI") é um documento que fornece informações específicas sobre um Programa. A LI do Programa está disponível no endereço http://www.ibm.com/software/sla/. A LI também pode ser encontrada num arquivo/ficheiro no diretório/directório do Programa, utilizando um comando do sistema ou como um folheto ("booklet") que acompanha o Programa.
+
+"Programa" significa, incluindo o original e todas as cópias totais ou parciais:  1) instruções e dados legíveis por máquina, 2) componentes, 3) conteúdo áudio-visual/audiovisual (como imagens, textos, gravações ou figuras), 4) materiais licenciados relacionados e 5) documentos ou chaves de utilização da licença e a documentação.
+
+Uma "Prova de Titularidade" ("PoE") é evidência da autorização do Cliente para utilizar um Programa num nível especificado. Este nível pode ser medido, por exemplo, pelo número de processadores ou usuários/utilizadores. A PoE também é a evidência da elegibilidade do Cliente para futuras atualizações/actualizações, caso existam, e possíveis oportunidades especiais ou promocionais. Se a IBM não oferecer ao Cliente uma PoE, a IBM pode aceitar o recibo de pagamento de venda original ou outro registro/registo de venda de quem (seja a IBM ou seu revendedor) o Cliente adquiriu o Programa, contanto que ele especifique o nome do Programa e o nível de utilização adquirido.
+
+"Cliente" e "do Cliente" significa uma pessoa individual ou a uma entidade legal única.
+
+Este Acordo inclui a Parte 1 - Termos Gerais, Parte 2 - Termos Exclusivos do País (se houver algum), Informações sobre Licenciamento e Prova de Titularidade e é o acordo completo entre o Cliente e a IBM relativo à utilização do Programa. Este Acordo substitui qualquer comunicação anterior oral ou escrita entre o Cliente e a IBM relativa à utilização do Programa. Os termos da Parte 2 e as Informações sobre Licenciamento podem substituir ou modificar os da Parte 1. Em caso de conflito entre os termos deste Acordo e os do Acordo IBM International Passport Advantage, prevalecem os termos deste último.
+
+1. Titularidade
+
+Licença
+
+O Programa é de propriedade da IBM ou de um fornecedor da IBM e é protegido por copyright e licenciado, não é vendido.
+
+A IBM concede ao Cliente uma licença não exclusiva para utilizar o Programa quando o Cliente a adquira legalmente.
+
+O Cliente pode 1) utilizar o Programa até o nível de utilização especificado na PoE e 2) fazer e instalar cópias, incluindo uma cópia de backup, para suportar tal utilização. Os termos desta licença aplicam-se a cada cópia que o Cliente fizer. O Cliente reproduzirá todos os avisos de copyright e todas as outras legendas de propriedade em cada cópia, ou cópia parcial do Programa.
+
+Se o Cliente adquirir o Programa como uma atualização/actualização (upgrade) de programa, após a instalação do upgrade, o Cliente não poderá utilizar o Programa a partir do qual fez o upgrade nem poderá transferi-lo para terceiros.
+
+O Cliente deverá garantir que qualquer pessoa que utilize o Programa (por acesso local ou remoto) o faça apenas para a utilização autorizada do Cliente e de acordo com os termos deste Acordo.
+
+O Cliente não pode 1) utilizar, copiar, modificar ou distribuir o Programa, exceto/excepto conforme estabelecido neste Acordo; 2) montar ou compilar inversamente, ou de qualquer outra forma, traduzir o Programa exceto/excepto conforme especificamente permitido por lei, sem a possibilidade de renúncia contratual; ou 3) sublicenciar, alugar ou arrendar o Programa.
+
+A IBM pode terminar a licença do Cliente se este não cumprir com os termos deste Acordo. Se a IBM assim o fizer, o Cliente deverá destruir todas as cópias do Programa e a sua PoE.
+
+Garantia de Reembolso
+
+Se, por qualquer razão, o Cliente não estiver satisfeito com o Programa e for o licenciado original, é possível obter um reembolso do valor pago pelo Cliente, se dentro de 30 dias a partir da data da fatura/factura, o Cliente devolver o Programa e a sua PoE à entidade da qual/a quem o Cliente os obteve. Se o Cliente fez download do Programa, poderá entrar em contato/contacto com a entidade da qual/a quem o adquiriu para obter instruções sobre como obter o reembolso.
+
+Transferência do Programa
+
+O Cliente pode transferir um Programa e todos os direitos de licença e obrigações do Cliente para qualquer outra parte apenas se tal parte concordar com os termos deste Acordo. Quando o Cliente transfere o Programa, também deve transferir uma cópia deste Acordo, incluindo a PoE do Programa. Após a transferência, o Cliente não pode utilizar o Programa.
+
+2. Encargos
+
+O valor a ser pago por uma licença do Programa é um encargo único.
+
+Os encargos únicos são baseados no nível de utilização adquirido que está especificado na PoE. A IBM não oferece créditos ou reembolsos para encargos já vencidos ou pagos, exceto/excepto conforme especificado neste Acordo. 
+
+Se o Cliente desejar aumentar o nível de utilização, deverá notificar a IBM ou a entidade da qual/a quem adquiriu o Programa e pagar os encargos aplicáveis.
+
+Se qualquer autoridade impuser um imposto, taxa ou contribuição, excluindo os inerentes ao rendimento líquido da IBM, sobre o Programa, o Cliente concorda em pagar o valor especificado ou fornecer documentação relativa à respectiva isenção. O Cliente é responsável por quaisquer taxas que incidam sobre a propriedade pessoal do Programa a partir da data que o Cliente o adquiriu.
+
+3. Sem Garantia
+
+SUJEITA A QUAISQUER GARANTIAS ESTATUTÁRIAS QUE NÃO POSSAM SER EXCLUÍDAS, A IBM NÃO OFERECE GARANTIAS OU CONDIÇÕES, SEJAM EXPRESSAS OU IMPLÍCITAS, INCLUINDO MAS NÃO SE LIMITANDO ÀS GARANTIAS OU CONDIÇÕES IMPLÍCITAS DE MERCADO, ADEQUAÇÃO A UM DETERMINADO PROPÓSITO/FIM E NÃO-VIOLAÇÃO, RELATIVAS AO PROGRAMA OU SUPORTE TÉCNICO, SE HOUVER.
+
+A exclusão também se aplica a qualquer uma das entidades que desenvolvam software e fornecedores da IBM.
+
+Fabricantes, fornecedores ou publicadores de Programas não-IBM podem fornecer as suas próprias garantias.
+
+A IBM não fornece suporte técnico, a menos que especifique de outra forma.
+
+4. Limitação de Responsabilidade
+
+Podem surgir circunstâncias em que, devido ao não cumprimento/incumprimento das suas responsabilidades pela IBM, o Cliente tenha direito de exigir que a IBM o compense por danos sofridos. Em cada um desses casos, independentemente da base sobre a qual Cliente tenha direito a pedir indenizações/indemnizações, incluindo uma violação essencial deste Acordo, negligência, falsas declarações, ou qualquer outra reclamação contratual ou extracontratual, a IBM é somente responsável por não mais que: 1) por danos pessoais (incluindo morte) e danos a bens imóveis e bens móveis, e 2) pelo montante por danos ou perdas reais, até ao máximo dos encargos referentes ao Programa objeto/objecto de reclamação.
+
+Esta limitação de responsabilidade também se aplica às entidades que desenvolvem software e fornecedores da IBM. Este é o limite máximo pelo qual a IBM, entidades que desenvolvem software e fornecedores da IBM são coletivamente/colectivamente responsáveis.
+
+EM CASO ALGUM A IBM, ENTIDADES QUE DESENVOLVEM SOFTWARE OU FORNECEDORES DA IBM SERÃO RESPONSABILIZADOS POR QUALQUER UM DOS SEGUINTES, MESMO SE INFORMADOS DE SUA POSSIBILIDADE:
+
+1. PERDA OU DANOS EM DADOS;
+
+2. DANOS ESPECIAIS, INCIDENTAIS OU INDIRETOS/INDIRECTOS OU QUAISQUER DANOS CONSEQÜENCIAIS/CONSEQUENCIAIS; OU
+
+3. LUCROS CESSANTES, NEGÓCIOS, RECEITA, CLIENTELA OU LUCROS ANTECIPADOS.
+
+ALGUMAS JURISDIÇÕES NÃO PERMITEM A EXCLUSÃO OU LIMITAÇÃO DE DANOS INCIDENTAIS OU CONSEQÜENCIAIS/CONSEQUENCIAIS, DESTA FORMA, A EXCLUSÃO OU LIMITAÇÃO ACIMA PODE NÃO SE APLICAR AO CLIENTE.
+
+5. Geral
+
+1. Nada neste Acordo afeta/afecta quaisquer direitos estatutários dos consumidores que não sejam passíveis de renúncia ou limitação contratual.
+
+2. No caso de qualquer disposição deste Acordo ser considerada inválida ou não ineficaz, as restantes disposições do Acordo permanecem em vigor.
+
+3. O Cliente concorda em agir em conformidade com todas as leis e regulamentos de exportação e importação aplicáveis.
+
+4. O Cliente concorda em permitir que a IBM armazene e utilize as informações sobre contato/contacto do Cliente, incluindo nomes, números de telefone e endereços de e-mail, onde quer que tenha negócios. Tais informações serão processadas e utilizadas tendo em conta e em relação ao relacionamento comercial existente entre a IBM e o Cliente e podem ser fornecidas a subcontratados, Parceiros de Negócios e procuradores da IBM para utilizações consistentes com as suas atividades/actividades comerciais coletivas/colectivas, incluindo comunicações com o Cliente (por exemplo, para processamento de encomendas, para promoções e pesquisas de mercado).
+
+5. Salvo de outra forma prevista pela lei local, sem possibilidade de renúncia ou limitação contratual, o início de qualquer ação/acção judicial, ou outra relacionada com o presente Acordo, não deverá ser posterior a dois (2) anos da data da ocorrência do fato/facto que constituir causa para a referida ação/acção.
+
+6. Nem o Cliente nem a IBM serão responsabilizados por falhas no cumprimento das suas obrigações devido a causas fora de seu controle.
+
+7. Este Acordo não criará nenhum direito ou causa de ação/acção para qualquer terceiro, nem a IBM será responsabilizada por quaisquer reclamações de terceiros contra o Cliente, exceto/excepto, conforme permitido pela seção/secção de Limitação de Responsabilidade acima, para danos corporais (incluindo morte) ou danos em bens imóveis e móveis sobre as quais a IBM é legalmente responsável.
+
+6. Lei Aplicável, Jurisdição e Arbitragem
+
+Lei Aplicável
+
+O Cliente e a IBM concordam com a aplicação das leis do país no qual o Cliente adquiriu a licença do Programa para reger, interpretar e fazer cumprir todos os direitos, deveres e obrigações do Cliente e da IBM decorrentes, ou de qualquer maneira relacionados, com este Acordo, sem atender aos princípios sobre conflitos de leis.
+
+A Convenção das Nações Unidas sobre Acordos para Venda Internacional de Mercadorias não é aplicável.
+
+Jurisdição
+
+Todos os direitos, deveres e obrigações do Cliente e da IBM estão sujeitos aos tribunais do país em que o Cliente adquiriu a licença do Programa.
+
+Parte 2 - Termos Exclusivos do País
+
+AMÉRICAS
+
+BRASIL: Lei Aplicável, Jurisdição e Arbitragem (Seção/Secção 6):A seguinte exceção/excepção está incluída nesta seção/secção:
+
+Qualquer litígio emergente deste Acordo será dirimido exclusivamente pelo tribunal do Rio de Janeiro, RJ.
+
+EUROPA, ORIENTE MÉDIO, ÁFRICA (EMEA)
+
+Sem Garantia (Seção/Secção 3): Na União Européia/Europeia, é incluído o seguinte no início desta seção/secção:
+
+Na União Européia/Europeia, os consumidores possuem direitos legais ao abrigo da legislação nacional aplicável que regula a venda de bens de consumo. Tais direitos não são afetados/afectados pelas provisões desta Seção/Secção 3.
+
+Limitação de Responsabilidade (Seção/Secção 4):Em Portugal, os termos a seguir substituem os termos desta seção/secção na sua totalidade:
+
+Salvo disposição legal imperativa em contrário:
+
+1. A responsabilidade da IBM por danos e perdas que possam surgir como conseqüência/consequência do cumprimento das suas obrigações ou devido a qualquer outro motivo relacionado com este Acordo, encontra-se limitada à compensação apenas pelos danos e perdas provados e que surjam de fato/facto como conseqüência/consequência direta/directa e imediata do não cumprimento das referidas obrigações, pelo montante máximo igual aos encargos que o Cliente pagou pelo Programa.
+
+O limite de responsabilidade indicado acima, não se aplica a danos corporais (incluindo os que provoquem morte), por danos ou perdas em bens imóveis e móveis pelos quais a IBM seja legalmente responsável.
+
+2. EM CASO ALGUM A IBM, OU QUALQUER UMA DAS ENTIDADES QUE DESENVOLVEM SOFTWARE SERÁ RESPONSÁVEL POR, MESMO SE INFORMADO DA POSSIBILIDADE DA SUA OCORRÊNCIA, 1) PERDA OU DANOS EM DADOS; 2) DANOS INCIDENTAIS OU INDIRETOS/INDIRECTOS, OU POR QUAISQUER DANOS ECONÔMICOS/ECONÓMICOS CONSEQÜENCIAIS/CONSEQUÊNCIAIS; 3) LUCROS CESSANTES, MESMO QUE ESTES SEJAM CONSEQÜÊNCIA/CONSEQUÊNCIA IMEDIATA DO EVENTO QUE GEROU OS DANOS; OU 4) PERDA DE NEGÓCIOS, RECEITAS, CLIENTELA OU ECONOMIAS PREVISTAS.
+
+3. A limitação e a exclusão de responsabilidade estabelecidas aqui aplicam-se não somente às atividades/actividades executadas pela IBM mas também às atividades/actividades executadas pelos seus fornecedores e entidades que desenvolvem software e representam o valor máximo pelo qual a IBM bem como os seus fornecedores e entidades que desenvolvem software são coletivamente/colectivamente responsáveis.
+
+Lei Aplicável, Jurisdição e Arbitragem (Seção/Secção 6)
+
+Lei Aplicável
+
+A frase "as leis do país em que o Cliente adquiriu a licença do Programa" é substituída por 1) "as leis de França" no Cabo Verde e Guiné-Bissau e 2) "as leis de Inglaterra" em Angola, Moçambique e São Tomé.
+
+Jurisdição
+
+As seguintes exceções/excepções estão incluídas nesta seção/secção:
+
+Em Angola, Moçambique e São Tomé, todas as divergências decorridas deste Acordo ou relacionadas com a sua execução, incluindo procedimentos sumários, serão submetidas à jurisdição exclusiva dos tribunais da Inglaterra.
+
+Em Cabo Verde e Guiné-Bissau, todas as divergências decorrentes deste Acordo ou relacionadas com a sua violação ou execução, incluindo procedimentos sumários, serão definidas exclusivamente pelo Tribunal Comercial de Paris.
+
+Em Portugal, qualquer reclamação legal decorrente deste Acordo será instaurada e dirimida exclusivamente pelo tribunal competente de Lisboa.
+
+Z125-5589-03 (11/2002)
+
+
+
+INFORMAÇÕES SOBRE LICENCIAMENTO
+
+Os Programas abaixo indicados estão licenciados sob/ao abrigo dos seguintes termos e condições além daqueles constantes do Acordo Internacional de Licenciamento para Programas Não-garantidos.
+
+Nome do Programa: IBM WebSphere MQ for Wndows - GUI Administrator, SupportPac: MO71 V7.0
+Número do Programa: SupportPac MO71
+Autorização para Utilização em Computador Pessoal/Portátil: O Programa pode ser armazenado na máquina principal ou em outra máquina, desde que o Programa não esteja em uso ativo/activo em ambas as máquinas ao mesmo tempo.
+
+Direitos de Utilização Limitados para Outros Programas IBM
+
+Se o Cliente adquiriu este Programa como parte de outro Programa IBM ("Programa Principal"), a licença do Programa Principal listará/referirá tal Programa em "Outros Programas IBM". Nesse caso, o Cliente recebeu o referido Programa apenas para dar suporte ao Programa Principal e os seus direitos de utilização estão limitados pela licença do Programa Principal. O Cliente deverá entrar em contato/contacto com o Representante de Vendas IBM para adquirir uma licença separada para tal Programa que não esteja limitada pelos termos da licença do Produto Principal.
+
+Ambiente Operacional/Operativo Especificado
+
+As especificações do programa e a informação especificada do ambiente operacional/operativo podem ser encontradas na documentação que acompanha o programa, se disponíveis, como um arquivo/ficheiro "readme" ou outra informação publicada pela IBM, tal como uma carta de anúncio. O Cliente concorda que tal documentação e outro conteúdo do Programa pode ser fornecido apenas no idioma Inglês.
+
+Termos Exclusivos do Programa
+
+1. Este Programa é fornecido para uso com o IBM WebSphere MQ V7.0 (ou posterior) ou qualquer nova denominação subseqüente do mesmo (o "Programa Principal"). 
+
+2. A licença do Cliente para usar este Programa é dependente da existência de uma licença válida para usar o Programa Principal. Se o Cliente vier a não ser mais licenciado para usar o Programa Principal, a licença do Cliente para usar este Programa será encerrada automaticamente com efeito imediato.
+
+3. O Cliente está autorizado apenas ao uso deste Programa diretamente em conjunto com o Programa Principal, e o Cliente está especificamente proibido de usar, ou tentar usar, este Programa em qualquer outra conexão.
+
+4. Para a finalidade desta licença, as provisões de "Transferência do Programa" do Contrato de Licença do Programa Internacional, ou do Contrato de Licença Internacional para Programas Não-Garantidos (conforme aplicável) são excluídas e substituídas pelas seguintes: 
+
+"O Cliente pode apenas transferir o Programa e todos os direitos de licença e obrigações do Cliente a outro parceiro (o "Transferente"), com a seguinte condição:
+
+(i) o Cliente exerce controle majoritário sobre essa parte, a qual controla o Cliente majoritariamente, ou esta parte e o Cliente são comumente controladas majoritariamente por outra parte em comum; e
+
+(ii) o Transferente concorda com os termos deste Contrato. Quando o Cliente transfere o Programa, também deve transferir uma cópia deste Contrato/Acordo, incluindo a PoE do Programa. 
+
+Após a transferência, o Cliente não poderá utilizar o Programa."
+
+
+
+
+D/N:  L-AFOS-7NJNBM
+P/N:  L-AFOS-7NJNBM 
