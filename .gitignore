@@ -1,0 +1,12 @@
+
+.settings/org.eclipse.buildship.core.prefs
+.project
+lib/brokerutil.jar
+lib/IntegrationAPI.jar
+lib/jetty-client.jar
+lib/jetty-http.jar
+lib/jetty-io.jar
+lib/jetty-util.jar
+lib/websocket-api.jar
+lib/websocket-client.jar
+lib/websocket-common.jar
