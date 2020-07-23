@@ -19,6 +19,7 @@ apply from: "$scriptDir/exec-ib9-deployBars.gradle"  , to: project // broker
 apply from: "$scriptDir/plugin-wildcards.gradle"  , to: project // daimler wildcards 
 apply from: "$scriptDir/plugin-mq-environment.gradle"  , to: project // mq environment
 apply from: "$scriptDir/plugin-test-framework.gradle",  to: project //test framework
+apply from: "$scriptDir/plugin-assembly.gradle",  to: project //test framework
 apply from: "$scriptDir/all-ib9-exec.gradle"  , to: project //  execution tasks 
 
 

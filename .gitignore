@@ -10,3 +10,4 @@ lib/jetty-util.jar
 lib/websocket-api.jar
 lib/websocket-client.jar
 lib/websocket-common.jar
+.gradle/2.6/*

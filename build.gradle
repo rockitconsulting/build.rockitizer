@@ -1,5 +1,6 @@
 /**** gradle root project "build.rockitizer" ****/
 plugins {
+	id 'base'
     id 'java'
     id 'maven'
 }

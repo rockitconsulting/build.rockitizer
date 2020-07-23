@@ -9,11 +9,7 @@ ext {
   
   brokerConfDir="${configPath}${fileSeparator}bars"
   
-  brokerClasspath =   [
-			            "${projectDir}${fileSeparator}lib${fileSeparator}${brokerVersion}",
-						"${projectDir}${fileSeparator}lib${fileSeparator}mq"
-					  ].inject([]) {result , folder ->  result << file{folder}.listFiles() }
-  
+ 
  
  getFileExtension = { fileName ->
     fileName.lastIndexOf('.')>0 ? fileName.substring( fileName.lastIndexOf('.'),fileName.length() ): fileName
@@ -89,6 +85,11 @@ task prepareBroker (dependsOn:readProjectStructureFromConfig) {
     project.ext.barTargetOut=new File(buildDir, "bar.target")
     project.ext.barTargetOut.mkdirs()
     
+    project.ext.assemblyOut=new File(buildDir, "assembly")
+    project.ext.assemblyOut.mkdirs()
+    
+    
+    
     project.ext.brokerProjectsTargetDir=new File(buildDir,"projects.target")
     project.ext.brokerProjectsTargetDir.mkdirs()
     def bars = []
@@ -115,12 +116,10 @@ task  allProjectFiles  {
 allprojects {
   
   println "######################## Broker Environment ##################################"
-  println "# brokerFile    = ${config.broker}" 
-  println "# brokerVersion = ${brokerVersion}"
-  println "# libs           = ${projectDir}${fileSeparator}${brokerVersion}${fileSeparator}lib"
-  println "# barstoProject  = ${barToProjects}"
-  println "# classpath      = ${brokerClasspath}"
-  println "# projectDirs    = ${config.brokerProjectDirs}"
+  println "# brokerFile            = ${config.broker}" 
+  println "# iib libs              = ${projectDir}${fileSeparator}lib"
+  println "# barstoProject         = ${barToProjects}"
+  println "# projectDirs           = ${config.brokerProjectDirs}"
   println "# workspaceLocation     = ${buildDir}"  
   println "# deployOverwrite       = ${deployOverwrite}"
   println "# overrideSourceBars    = ${overrideSourceBars}"
@@ -128,7 +127,7 @@ allprojects {
   println "# parallel              = ${parallel}"
   println "# decoupled             = ${decoupled?:'false'}"
   println "# deployApplicationName = ${config.deployApplicationName?:'No deployApplicationName defined in Config.groovy, proceed in Flows mode'}"
-  println "# testProjectDir = = ${config.testProjectDir}"  
+  println "# testProjectDir        = ${config.testProjectDir}"  
   println "#############################################################################"
   
 }
@@ -162,6 +161,9 @@ task cleanProjectsTargetDir << {
    barTargetOut.deleteDir()
    brokerProjectsTargetDir.mkdir()
    barTargetOut.mkdir()
+   assemblyOut.deleteDir()
+   assemblyOut.mkdir()
+   
 }
 
 

@@ -1,0 +1,33 @@
+/*
+*	Package assembly
+*
+*/
+
+
+	project.ext.group = 'io.github.build.rockitizer'
+	
+	project.ext.archiveFileName ="${config.deployApplicationName}-${hasProperty('projVersion') ? project.projVersion :'1.0.0.0-SNAPSHOT'}.zip"
+	project.ext.destinationDirectory=file("$assemblyOut")
+    
+    
+	
+
+task packageDistribution(type: Zip)  {
+	   from (fileTree(dir: "$barTargetOut")) { 
+		   include '*.bar'
+	   }
+	   from (file("$configPath").parent) {
+	   	   include "${file(configPath).name}/**"	
+	   }
+  	   archiveName "$archiveFileName"
+   	   destinationDir(file("$destinationDirectory"))
+	   
+	   doLast {
+	   	  logger.lifecycle "assembling $archiveFileName to $destinationDirectory"
+	   }
+	 
+}
+
+
+
+

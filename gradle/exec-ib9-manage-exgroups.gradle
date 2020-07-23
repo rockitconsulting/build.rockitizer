@@ -10,7 +10,7 @@ ext {
 		        def result = javaexec {
                	    def cmdArgs = [mode, "-n", "${configPath}${fileSeparator}${config.broker}", "-e", "${exgroup}", "-w","600"]
 	    			logger.lifecycle "executionGroup-${exgroup} " +   cmdArgs.join(" ")
-	    			classpath brokerClasspath
+	    			classpath sourceSets.main.runtimeClasspath.asPath
    					main = (['-start','-stop'].contains(mode)?"com.ibm.broker.config.util.MessageFlowControl":"com.ibm.broker.config.util.ExecutionGroupControl")
                		args = cmdArgs
 	    		}

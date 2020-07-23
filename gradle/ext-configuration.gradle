@@ -50,7 +50,6 @@ def loadConfiguration() {
     project.ext.parallel=parallelExecution.toBoolean()?'Parallel':''
     project.ext.decoupled= config.decoupled?'Decoupled':''
  	
- 	project.ext.brokerVersion=hasProperty('brokerVersion') ? brokerVersion : config.brokerVersion
  	project.ext.brokerToolkitDir=hasProperty('brokerToolkitDir') ? brokerToolkitDir : config.brokerToolkitDir
  	project.ext.testProjectDir=hasProperty('testProjectDir') ? testProjectDir : config.testProjectDir
     

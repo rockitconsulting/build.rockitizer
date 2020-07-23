@@ -56,7 +56,7 @@ bars.each { bar ->
 	 task "readBar-${bar}"<< {
 	        def result = javaexec {
       	           logger.lifecycle "writing ${bar} to ${barPropertiesIn}${fileSeparator}${bar}.properties"
-			       classpath brokerClasspath
+			       classpath sourceSets.main.runtimeClasspath.asPath
 			       main = "com.ibm.broker.config.util.ReadBar"
 			       args = ["-runtime", "-b", "${barByName(bar)}","-r"]
 	               standardOutput = new FileOutputStream("${barPropertiesIn}${fileSeparator}${bar}.properties")
@@ -72,7 +72,7 @@ bars.each { bar ->
 task doReadBarsParallel(dependsOn:[findBarFiles,prepareBroker]) << {
     ant.parallel(threadsPerProcessor: 1) {
 		bars.each { bar ->
-	    		ant.java(outputproperty: "${bar}", fork:'true',failonerror:'yes',classname:"com.ibm.broker.config.util.ReadBar",classpath:brokerClasspath.flatten().join(';')) {
+	    		ant.java(outputproperty: "${bar}", fork:'true',failonerror:'yes',classname:"com.ibm.broker.config.util.ReadBar",classpath:sourceSets.main.runtimeClasspath.asPath) {
 					arg(line:"-runtime -b ${barByName(bar)} -r")
 				}
         }

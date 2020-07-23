@@ -48,7 +48,7 @@ bars.each { bar ->
     		def result = javaexec {
     		      def cmdArgs = ["-runtime",'-b', "${barByName(bar)}", "-p", file {"${barPropertiesOut}${fileSeparator}wildcard.properties"}]
     		      logger.lifecycle "override bar " + cmdArgs.join(" ")
-	       		  classpath brokerClasspath
+	       		  classpath sourceSets.main.runtimeClasspath.asPath
 	              main = "com.ibm.broker.config.util.ApplyBarOverride"
 	              args = cmdArgs
              }
@@ -62,7 +62,7 @@ bars.each { bar ->
 task doWildcardBarsParallel(dependsOn:[findBarFiles,prepareBroker,copyWildcardConfig]) << {
     ant.parallel(threadsPerProcessor: 1) {
 		bars.each { bar ->
-	    		ant.java(fork:'true',failonerror:'yes',classname:"com.ibm.broker.config.util.ApplyBarOverride",classpath:brokerClasspath.flatten().join(';')) {
+	    		ant.java(fork:'true',failonerror:'yes',classname:"com.ibm.broker.config.util.ApplyBarOverride",classpath:sourceSets.main.runtimeClasspath.asPath ) {
 					arg(line:"-runtime -b ${barByName(bar)} -p  ${file {barPropertiesOut.path+fileSeparator+'wildcard.properties'}}")
 
 				}

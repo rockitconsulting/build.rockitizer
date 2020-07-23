@@ -21,7 +21,7 @@ config.barToExecutionGroup.flatten().each { bar, exgroups  ->
 		        def result = javaexec {
                	    def cmdArgs = ["-n", "${configPath}${fileSeparator}${config.broker}", "-e", "${exgroup}", "-a","${barByName(bar)}","${deployOverwrite?'-m':''}", "-w","600"]
 	    			logger.lifecycle "deploy${deployOverwrite?'Overwrite':''} " + cmdArgs.join(" ")
-	    			classpath brokerClasspath
+	    			classpath sourceSets.main.runtimeClasspath.asPath
    					main = "com.ibm.broker.config.util.Deploy"
                		args = cmdArgs
 	    		}

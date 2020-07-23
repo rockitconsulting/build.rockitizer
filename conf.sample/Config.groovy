@@ -6,7 +6,8 @@
    
  
 /* Uncomment if you have application */   
-/*#deployApplicationName='sample_app'  */  
+deployApplicationName='sample_app'
+    
     
 projectToBar = [
 		['commons_folder':['MY_BARFILE_1_NOEXT','MY_BARFILE_2_NOEXT']],

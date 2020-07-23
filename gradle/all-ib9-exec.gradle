@@ -11,11 +11,13 @@ task checkConfig(group:'build', dependsOn:["configure${decoupled}", deltaBars])
 task checkConfigDeploy(group:'build', dependsOn:[ "configure${decoupled}", deltaBars ,deployBars])
 task buildConfigDeploy(group:'build', dependsOn:[ createBars, "configure${decoupled}", deltaBars, deployBars])
 task packConfigDeploy(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, deployBars])
+task packConfigDeployAssemble(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, deployBars, packageDistribution])
 
 
 configure.mustRunAfter  packageBars
 deltaBars.mustRunAfter  configure
 deployBars.mustRunAfter  deltaBars
+packageDistribution.mustRunAfter  deltaBars
 
 
 /*
