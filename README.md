@@ -11,7 +11,44 @@ The sample configuration is to find under ${build.rockitizer.home}/conf.sample f
 - Config.groovy - **main configuration file** 
 - MQMON.CFG - MO71 configuration file for the MQ Connectivity. All QMGRs needs to be configured in order to be able to create MQ Infrastructure from the flows.properties
 
+---
+**NOTE**
+
+The best practice is to copy the conf.sample to conf in your project, as it holds the project specific configuration and documentation and will be added to assembly.
+
+---
+
+
+
 ## Usage
+Build can be triggered from any ide with gradle pluging or directly from command line. 
+
+---
+**Additonal PARAMS**
+
+```
+-PconfigPath - path to your project conf (same structure as conf.sample) folder, 
+e.g. -PconfigPath=C:\\github\\RockitizerDemo\\conf
+```
+
+```
+-Penv - your environment configured in Config.groovy, 
+the correspondent <env>.porperties file with placeholder replacements must exist
+```
+
+```
+-PdeployOverwrite=true|false  replace the whole applications during deployment (true) or just update them (false)
+```
+
+```
+-PbuildDir=C:\\rockit\gradle_build providing working dir. Default specified in gradle.properties and is set to c:\\temp\\gradle_build
+```
+
+```
+-PprojVersion=1.3  Project version for assembly
+```
+
+---
 
 Gradle Tasks tab:
 ```
