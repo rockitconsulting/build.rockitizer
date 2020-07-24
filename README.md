@@ -7,9 +7,9 @@ The sample configuration is to find under ${build.rockitizer.home}/conf.sample f
   - flows.properties - overridable properties autodiscovered from bar, the values can be configured over placeholders @key@
   - flows.properties.ignore - the overridable properties to ignore. All properties needs to be known by configuration system, otherwise the configuration integrity violated.
   - idep.properties - sample file for environment dependent properties following the naming convention:<env>.properties. The current active environment must be supplied over cmd. 
-- broker files 
+- broker files: <BROKER>.broker file for IIB connectivity. The environment specific file needs to be configured under respective environment in **Config.groovy**
 - Config.groovy - **main configuration file** 
-- MQMON.CFG 
+- MQMON.CFG - MO71 configuration file for the MQ Connectivity. All QMGRs needs to be configured in order to be able to create MQ Infrastructure from the flows.properties
 
 ## Usage
 
