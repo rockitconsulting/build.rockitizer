@@ -11,7 +11,7 @@ createMqEnv packConfigDeployAssemble
 
 Project settings tab: 
 ```
--PconfigPath=C:\\rockit\\projects\\github\\test.rockitizer.demo\\RockitizerDemo\\conf -Penv=demo -PdeployOverwrite=false -PbuildDir=C:\\rockit\gradle_build -PprojVersion=1.3 --info
+-PconfigPath=C:\\github\\RockitizerDemo\\conf -Penv=demo -PdeployOverwrite=false -PbuildDir=C:\\rockit\gradle_build -PprojVersion=1.3 --info
 ```
 
 
