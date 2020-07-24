@@ -1,6 +1,15 @@
 # build.rockITizer
-DevOps Framework for build, configuration, packaging, deployment, IaC for IBM Integration Bus products
+DevOps Framework for build, configuration, packaging, deployment and MQ/EG infrastructure management for IBM Integration Bus product family.
 
+## Configuration
+The sample configuration is to find under ${build.rockitizer.home}/conf.sample folder:
+- bars 
+  - flows.properties - overridable properties autodiscovered from bar, the values can be configured over placeholders @key@
+  - flows.properties.ignore - the overridable properties to ignore. All properties needs to be known by configuration system, otherwise the configuration integrity violated.
+  - idep.properties - sample file for environment dependent properties following the naming convention:<env>.properties. The current active environment must be supplied over cmd. 
+- broker files 
+- Config.groovy - **main configuration file** 
+- MQMON.CFG 
 
 ## Usage
 
@@ -13,7 +22,6 @@ Project settings tab:
 ```
 -PconfigPath=C:\\github\\RockitizerDemo\\conf -Penv=demo -PdeployOverwrite=false -PbuildDir=C:\\rockit\gradle_build -PprojVersion=1.3 --info
 ```
-
 
 ## Tasks 
 
