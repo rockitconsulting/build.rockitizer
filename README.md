@@ -23,17 +23,14 @@ The best practice is to copy the conf.sample to conf in your project, as it hold
 ## Usage
 Build can be triggered from any ide with gradle pluging or directly from command line. 
 
----
 **Additonal PARAMS**
 
 ```
--PconfigPath - path to your project conf (same structure as conf.sample) folder, 
-e.g. -PconfigPath=C:\\github\\RockitizerDemo\\conf
+-PconfigPath - path to your project conf (same structure as conf.sample) folder, e.g. -PconfigPath=C:\\github\\RockitizerDemo\\conf
 ```
 
 ```
--Penv - your environment configured in Config.groovy, 
-the correspondent <env>.porperties file with placeholder replacements must exist
+-Penv - your environment configured in Config.groovy, the correspondent <env>.porperties file with placeholder replacements must exist
 ```
 
 ```
@@ -48,14 +45,12 @@ the correspondent <env>.porperties file with placeholder replacements must exist
 -PprojVersion=1.3  Project version for assembly
 ```
 
----
-
-Gradle Tasks tab:
+**Gradle Tasks tab (see Tasks below):**
 ```
 createMqEnv packConfigDeployAssemble
 ```
 
-Project settings tab: 
+**Project settings tab:**
 ```
 -PconfigPath=C:\\github\\RockitizerDemo\\conf -Penv=demo -PdeployOverwrite=false -PbuildDir=C:\\rockit\gradle_build -PprojVersion=1.3 --info
 ```
