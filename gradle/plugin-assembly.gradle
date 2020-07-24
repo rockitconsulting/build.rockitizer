@@ -5,8 +5,7 @@
 
 
 	project.ext.group = 'io.github.build.rockitizer'
-	
-	project.ext.archiveFileName ="${config.deployApplicationName}-${hasProperty('projVersion') ? project.projVersion :'1.0.0.0-SNAPSHOT'}.zip"
+	project.ext.archiveFileName ="${config.deployApplicationName.split(' ')[0]}-${hasProperty('projVersion') ? project.projVersion :'1.0.0.0-SNAPSHOT'}.zip"
 	project.ext.destinationDirectory=file("$assemblyOut")
     
     

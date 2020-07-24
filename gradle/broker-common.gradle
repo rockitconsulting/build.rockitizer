@@ -120,7 +120,7 @@ allprojects {
   println "# iib libs              = ${projectDir}${fileSeparator}lib"
   println "# barstoProject         = ${barToProjects}"
   println "# projectDirs           = ${config.brokerProjectDirs}"
-  println "# workspaceLocation     = ${buildDir}"  
+  println "# buildDir              = ${buildDir}"  
   println "# deployOverwrite       = ${deployOverwrite}"
   println "# overrideSourceBars    = ${overrideSourceBars}"
   println "# parallelExecution     = ${parallelExecution}"

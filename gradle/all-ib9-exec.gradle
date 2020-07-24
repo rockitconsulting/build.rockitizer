@@ -17,7 +17,7 @@ task packConfigDeployAssemble(group:'build', dependsOn:[ packageBars, "configure
 configure.mustRunAfter  packageBars
 deltaBars.mustRunAfter  configure
 deployBars.mustRunAfter  deltaBars
-packageDistribution.mustRunAfter  deltaBars
+packageDistribution.mustRunAfter  overrideBars
 
 
 /*

@@ -15,7 +15,8 @@ loadConfiguration()
 def loadConfiguration() { 
     def environment = hasProperty('env') ? env : 'idep'
     project.ext.environment = environment
-
+    
+    
     
  	project.ext.configPath= hasProperty('configPath') ? configPath : (projectDir.path+fileSeparator+'conf.sample')
  	println "Environment is set to $environment and -PconfigPath to ${configPath}"
