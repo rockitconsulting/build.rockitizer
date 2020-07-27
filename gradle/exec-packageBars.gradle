@@ -47,7 +47,7 @@ task doPackageBarsParallel(dependsOn:[copyProjectsToBuildTarget , readProjectStr
 		  barToProjects.each { bar, projects  ->
 				if(config.deployApplicationName) {
 		    		ant.java(fork:'true',failonerror:'yes',classname:"com.ibm.broker.config.appdev.FlowRendererBAR", classpath:sourceSets.main.runtimeClasspath.asPath) {
-						arg(line:"-w ${brokerProjectsTargetDir}${fileSeparator}${bar}${fileSeparator} -a ${barTargetOut}${fileSeparator}${bar}.bar -k ${config.deployApplicationName} -i")
+						arg(line:"-w ${brokerProjectsTargetDir}${fileSeparator}${bar}${fileSeparator} -a ${barTargetOut}${fileSeparator}${bar}.bar -k ${config.deployApplicationName} ${config.deployLibraryName?'-y ' +config.deployLibraryName:''}   -i")
 					}		
 				}
 				

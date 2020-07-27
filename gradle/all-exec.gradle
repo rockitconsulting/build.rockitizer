@@ -12,6 +12,7 @@ task checkConfigDeploy(group:'build', dependsOn:[ "configure${decoupled}", delta
 task buildConfigDeploy(group:'build', dependsOn:[ createBars, "configure${decoupled}", deltaBars, deployBars])
 task packConfigDeploy(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, deployBars])
 task packConfigDeployAssemble(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, deployBars, packageDistribution])
+task cleanBars(group:'build', dependsOn:[ "configure${decoupled}", cleanEG])
 
 
 configure.mustRunAfter  packageBars

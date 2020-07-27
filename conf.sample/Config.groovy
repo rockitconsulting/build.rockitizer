@@ -7,7 +7,11 @@
  
 /* Uncomment if you have application */   
 deployApplicationName='sample_app'
-    
+
+/*
+deployApplicationName='RockitizerDemo SecondAppForMultibar'
+deployLibraryName='sharedLib staticLib'  
+*/     
     
 projectToBar = [
 		['commons_folder':['MY_BARFILE_1_NOEXT','MY_BARFILE_2_NOEXT']],
@@ -39,9 +43,6 @@ environments {
 	    	 listenerPort='1414'
 	    	 svrconn='SYSTEM.BKR.CONFIG'
 	    }
-    }
-    
-    idep {
 	    /* List of parent workspace with projects  comma separated */   
 		brokerProjectDirs=[
 		    'C:\\temp',
