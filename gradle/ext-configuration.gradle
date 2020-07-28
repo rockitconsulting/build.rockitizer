@@ -46,6 +46,7 @@ def loadConfiguration() {
     project.ext.config = config
 
     project.ext.deployOverwrite=( hasProperty('deployOverwrite') ? deployOverwrite : config.deployOverwrite ).toBoolean()
+    project.ext.deployOverwrite=( hasProperty('enableMonitoring') ? deployOverwrite : config.deployOverwrite ).toBoolean()
     project.ext.parallelExecution=hasProperty('parallelExecution') ? parallelExecution : config.parallelExecution
     project.ext.overrideSourceBars=hasProperty('overrideSourceBars')?true:false
     project.ext.parallel=parallelExecution.toBoolean()?'Parallel':''

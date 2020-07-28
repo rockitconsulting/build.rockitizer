@@ -122,6 +122,7 @@ allprojects {
   println "# projectDirs           = ${config.brokerProjectDirs}"
   println "# buildDir              = ${buildDir}"  
   println "# deployOverwrite       = ${deployOverwrite}"
+  println "# enableMonitoring      = ${enableMonitoring}"
   println "# overrideSourceBars    = ${overrideSourceBars}"
   println "# parallelExecution     = ${parallelExecution}"
   println "# parallel              = ${parallel}"
