@@ -58,6 +58,7 @@ createMqEnv packConfigDeployAssemble
 ## Tasks 
 
 ### Build, Config, Deploy
+- task _**cleanBars**_ cleans execution groups/integrations server resources, as the default build mode has no preclean in order to support incremental deployment with multiple bars
 - task _**checkConfig**_ checks configuration consistency: all overridable properties are known by framework (existing in flows.properties), all environment dependent placeholders replaced
 - task _**checkConfigDeploy**_ is an Ops task which checks the consistency for the given environment, configures the bars via baroverride and deployes the bar files
 - task _**buildConfigDeploy**_: long runnning createBar and after that checkConfig, configure and deploy tasks
@@ -76,8 +77,11 @@ Both tasks require the broker project to be configured in order to extract the q
 ```
 /*   for multibar use:   deployApplicationName='RockitizerDemo SecondAppForMultibar'  */   
 deployApplicationName='RockitizerDemo'
-  
-    
+
+/*
+deployLibraryName='sharedLib staticLib'    
+*/
+
 projectToBar = [
 	        ['*':['RockitizerDemo']],
 ]
