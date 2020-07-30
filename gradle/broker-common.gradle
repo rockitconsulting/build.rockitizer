@@ -148,7 +148,6 @@ task findBarFiles  (dependsOn:readProjectStructureFromConfig) << {
 	dirs.each { dir ->
 	   	 new File(dir).eachFileRecurse(groovy.io.FileType.FILES) { f -> files << f }
 	}
-
 	project.ext.barFiles = files.findAll{ file -> file.name.endsWith(".bar") }
     
 }
@@ -176,7 +175,7 @@ barToProjects.each {bar, prj ->
 		config.brokerProjectDirs.eachWithIndex { projDir,idx ->
 			task "copy${new File(projDir).name.capitalize()}${idx}ToBuildTarget-${bar}-Task"(type:Copy)  {
 			    from "${projDir}"
-				exclude '**/*.metadata','**/*.svn', buildDir
+				exclude '**/*.metadata','**/*.svn', "**/${file(buildDir).parentFile.name}/**"
 			    into ("${brokerProjectsTargetDir}${fileSeparator}${bar}")
 			}
 	copyProjectsToBuildTarget.dependsOn "copy${new File(projDir).name.capitalize()}${idx}ToBuildTarget-${bar}-Task"			
