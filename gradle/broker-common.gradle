@@ -48,6 +48,21 @@ ext {
   }
   
   
+	addDependencies =  { projectDescriptions, prjName ->
+				def dependencies = []
+				
+//				println "--------------> $prjName"
+				def path = projectDescriptions.find { path -> path.endsWith("${prjName}${File.separator}.project") }
+				def projectDescription = new XmlSlurper().parseText(new File(path).text)
+				projectDescription.projects.'*'.findAll { node ->  node.name() == 'project' }.each { lib ->
+//					println " found lib --------------> ${lib.text()}"
+					dependencies << lib.text()
+					dependencies << addDependencies(projectDescriptions, lib.text())
+				}
+				dependencies
+	}
+  
+  
 }
 
 
@@ -110,6 +125,21 @@ task  allProjectFiles  {
 		project.ext.allProjectFiles = allProjectFiles
   }
   
+  
+
+  
+task  allProjectExtractDependencies  {
+		def dependencies = []
+		if(config.deployApplicationName) {
+			def projectDescriptions = allProjectFiles.findAll { file -> file.endsWith(".project") }
+			config.deployApplicationName.split(' ').each { app ->
+			  dependencies << addDependencies( projectDescriptions, app )
+			}
+			config.deployLibraryName=dependencies.flatten().join(' ')
+		}
+		
+		
+  }
 
 
 
@@ -128,6 +158,7 @@ allprojects {
   println "# parallel              = ${parallel}"
   println "# decoupled             = ${decoupled?:'false'}"
   println "# deployApplicationName = ${config.deployApplicationName?:'No deployApplicationName defined in Config.groovy, proceed in Flows mode'}"
+  println "# deployLibraryName     = ${config.deployLibraryName?:'No library dependencies discovered'}"
   println "# testProjectDir        = ${config.testProjectDir}"  
   println "#############################################################################"
   
