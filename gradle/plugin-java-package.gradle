@@ -39,12 +39,12 @@ def toJavaPath ( clazz ) {
 	 		path = path.substring( path.indexOf(target) + target.length() , path.length() )
 	 	}
 	 }
-	 path = path.replace('\\','/')
+	 
 	 logger.lifecycle  " class extracted with package ${path}" 
 	 if(clazz.path == path) {
 	 	throw new Exception("Path cannot be enhanced because the classes are not placed in one of the following folders [out, classes, target]")
 	 }
-	 path
+	 path.replace('\\','/')
 }
 
 
