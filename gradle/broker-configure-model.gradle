@@ -55,7 +55,7 @@ ext {
 
 		flowProperties.each { k,v -> 
 		  if( k.contains('ApplicationConfiguration')&&k.contains('queueName') ) {
-		  	logger.lifecycle "Extend MQ Model with $k=$v"
+		  	logger.lifecycle "[build:rockITizer] Extend MQ Model with $k=$v"
 		    if( !model[v] ) {      
 		    	model[v] = [ ['type':'ComIbmMQOutput', 'qname':v.trim(), 'cname':k.trim(),'flowname':k.trim(), key:k.trim() ] ]
 		    } else {
@@ -75,7 +75,7 @@ ext {
 			    def flowSrcPath =  findProjectFileByName(relPathWithExtension)
 			    
 			    def flowname =  relFlowPath.split('\\\\').last()
-				logger.lifecycle "flow ${flowname}"
+				logger.lifecycle "[build:rockITizer] flow ${flowname}"
 			    
 			    getFlowConnectorNodes(flowSrcPath).each { node ->
 				    def cimpl = implementations[getConnectorType(node)]

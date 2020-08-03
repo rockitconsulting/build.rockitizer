@@ -35,7 +35,7 @@ barToProjects.each { bar, projects  ->
 	    new ByteArrayOutputStream().withStream { os ->
 	        def result = exec {
 	        	def cmdArgs = ['/c', "${brokerToolkitDir}${fileSeparator}mqsicreatebar.exe -data  ${brokerProjectsTargetDir}${fileSeparator}${bar} -b ${barTargetOut}${fileSeparator}${bar}.bar -p ${projects.join(' ')} -o ${getFilesProjects(bar, projects,['.mset'])} ${getFilesProjects(bar, projects,['.msgflow'])}"]
-	        	logger.lifecycle cmdArgs.join(' ')
+	        	logger.lifecycle "[build:rockITizer] ${cmdArgs.join(' ')}"
 	            executable = 'cmd'
 	            args = cmdArgs
 	        }

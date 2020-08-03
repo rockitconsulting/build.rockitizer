@@ -9,6 +9,7 @@ ext {
   
   brokerConfDir="${configPath}${fileSeparator}bars"
   
+  allProjectFolders = []
  
  
  getFileExtension = { fileName ->
@@ -48,17 +49,28 @@ ext {
   }
   
   
-	addDependencies =  { projectDescriptions, prjName ->
-				def dependencies = []
+  addDependencies =  { projectDescriptions, prjName ->
+				//keeping the list of projects for java enhancement
+				allProjectFolders << prjName
 				
-//				println "--------------> $prjName"
+				def dependencies = []
 				def path = projectDescriptions.find { path -> path.endsWith("${prjName}${File.separator}.project") }
+				if(!path) {
+					throw new  Throwable("The reference to ${prjName} was found, but project location is not configured. Kindly add the path to the  ${prjName} workspace under Config.groovy -> brokerProjectDirs for Env:${environment}")
+				} 
+				
+				logger.lifecycle "[build:rockITizer] addDependencies: discovering dependency for $prjName using $path"
+				
 				def projectDescription = new XmlSlurper().parseText(new File(path).text)
-				projectDescription.projects.'*'.findAll { node ->  node.name() == 'project' }.each { lib ->
-//					println " found lib --------------> ${lib.text()}"
-					dependencies << lib.text()
-					dependencies << addDependencies(projectDescriptions, lib.text())
+				//add sharedLibraryNature as dependency for packaging
+				if ( projectDescription.text().contains('com.ibm.etools.msgbroker.tooling.sharedLibraryNature')) {
+					logger.lifecycle "[build:rockITizer] addDependencies: adding dependency ${prjName}"
+					dependencies << prjName
 				}
+				//check recursive
+				projectDescription.projects.'*'.findAll { node ->  node.name() == 'project' }.each { lib ->
+					dependencies << addDependencies(projectDescriptions, lib.text())
+				}	
 				dependencies
 	}
   
@@ -135,7 +147,7 @@ task  allProjectExtractDependencies  {
 			config.deployApplicationName.split(' ').each { app ->
 			  dependencies << addDependencies( projectDescriptions, app )
 			}
-			config.deployLibraryName=dependencies.flatten().join(' ')
+			config.deployLibraryName=dependencies.flatten().unique().join(' ')
 		}
 		
 		

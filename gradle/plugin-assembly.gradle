@@ -22,7 +22,7 @@ task packageDistribution(type: Zip)  {
    	   destinationDir(file("$destinationDirectory"))
 	   
 	   doLast {
-	   	  logger.lifecycle "assembling $archiveFileName to $destinationDirectory"
+	   	  logger.lifecycle "[build:rockITizer] assembling $archiveFileName to $destinationDirectory"
 	   }
 	 
 }

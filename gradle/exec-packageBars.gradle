@@ -16,7 +16,7 @@ ext {
 /*        					Create Bars parrallel and sequential                                                  */
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-task packageBars(dependsOn:["doPackageBars${parallel}", "repackBars"]) {
+task packageBars(dependsOn:["prepareJavaForBars", "doPackageBars${parallel}"]) {
 	barToProjects.each { bar, projects  ->
 		if(hasProperty("doPackageBars${parallel}-${bar}")) {
 			logger.lifecycle ext."doPackageBars${parallel}-${bar}" //captured output from console
@@ -46,9 +46,11 @@ task doPackageBarsParallel(dependsOn:[copyProjectsToBuildTarget , readProjectStr
       ant.parallel(threadsPerProcessor: 1) {
 		  barToProjects.each { bar, projects  ->
 				if(config.deployApplicationName) {
+		    		def cmdArgs = "-w ${brokerProjectsTargetDir}${fileSeparator}${bar}${fileSeparator} -a ${barTargetOut}${fileSeparator}${bar}.bar -k ${config.deployApplicationName} ${config.deployLibraryName?'-y ' +config.deployLibraryName:''}   -i"
 		    		ant.java(fork:'true',failonerror:'yes',classname:"com.ibm.broker.config.appdev.FlowRendererBAR", classpath:sourceSets.main.runtimeClasspath.asPath) {
-						arg(line:"-w ${brokerProjectsTargetDir}${fileSeparator}${bar}${fileSeparator} -a ${barTargetOut}${fileSeparator}${bar}.bar -k ${config.deployApplicationName} ${config.deployLibraryName?'-y ' +config.deployLibraryName:''}   -i")
-					}		
+						arg(line:cmdArgs)
+					}
+				    logger.lifecycle "[build:rockITizer] packageBar: $cmdArgs"
 				}
 				
 				

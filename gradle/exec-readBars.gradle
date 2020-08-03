@@ -55,7 +55,7 @@ task doReadBars(dependsOn:[cleanPropsInBuild, findBarFiles,prepareBroker])
 bars.each { bar ->
 	 task "readBar-${bar}"<< {
 	        def result = javaexec {
-      	           logger.lifecycle "writing ${bar} to ${barPropertiesIn}${fileSeparator}${bar}.properties"
+      	           logger.lifecycle "[build:rockITizer] writing ${bar} to ${barPropertiesIn}${fileSeparator}${bar}.properties"
 			       classpath sourceSets.main.runtimeClasspath.asPath
 			       main = "com.ibm.broker.config.util.ReadBar"
 			       args = ["-runtime", "-b", "${barByName(bar)}","-r"]

@@ -45,7 +45,7 @@ task deployBars << {
 	config.barToExecutionGroup.flatten().each { bar, exgroups  ->
 	   exgroups.each { exgroup ->
           if(hasProperty("deployBar-${bar}-${exgroup}")) {
-          	log.lifecycle ext."deployBar-${bar}-${exgroup}" //captured output from console
+          	logger.lifecycle ext."deployBar-${bar}-${exgroup}" //captured output from console
           }
 	   }
 	}   
@@ -65,7 +65,7 @@ config.barToExecutionGroup.flatten().each { bar, exgroups  ->
 		    new ByteArrayOutputStream().withStream { os ->
 		        def result = javaexec {
                	    def cmdArgs = ["-n", "${configPath}${fileSeparator}${config.broker}", "-e", "${exgroup}", "-a","${barByName(bar)}","${deployOverwrite?'-m':''}", "-w","600"]
-	    			logger.lifecycle "deploy${deployOverwrite?'Overwrite':''} " + cmdArgs.join(" ")
+	    			logger.lifecycle "[build:rockITizer] deploy${deployOverwrite?'Overwrite':''} " + cmdArgs.join(" ")
 	    			classpath sourceSets.main.runtimeClasspath.asPath
    					main = "com.ibm.broker.config.util.Deploy"
                		args = cmdArgs

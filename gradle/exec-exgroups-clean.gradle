@@ -7,7 +7,7 @@ task cleanEG << {
 	config.barToExecutionGroup.flatten().each { bar, exgroups  ->
 	   exgroups.each { exgroup ->
           if(hasProperty("cleanEG-${bar}-${exgroup}")) {
-          	log.lifecycle ext."cleanEG-${bar}-${exgroup}" //captured output from console
+          	logger.lifecycle ext."cleanEG-${bar}-${exgroup}" //captured output from console
           }
 	   }
 	}        

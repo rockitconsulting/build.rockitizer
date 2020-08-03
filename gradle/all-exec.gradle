@@ -14,7 +14,8 @@ task packConfigDeploy(group:'build', dependsOn:[ packageBars, "configure${decoup
 task packConfigDeployAssemble(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, deployBars, packageDistribution])
 task cleanBars(group:'build', dependsOn:[ "configure${decoupled}", cleanEG])
 
-
+packageBars.mustRunAfter  prepareJavaForBars
+prepareJavaForBars.mustRunAfter copyProjectsToBuildTarget
 configure.mustRunAfter  packageBars
 deltaBars.mustRunAfter  configure
 deployBars.mustRunAfter  deltaBars

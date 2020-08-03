@@ -37,7 +37,7 @@ bars.each { bar ->
 		  	} else {
 				cmdArgs = ["-runtime",'-b', "${barByName(bar)}", "-p", file {"${barPropertiesOut}${fileSeparator}flows.properties"}]
 			}
-			logger.lifecycle "override bar " + cmdArgs.join(" ")
+			logger.lifecycle "[build:rockITizer] override bar " + cmdArgs.join(" ")
 			def result = javaexec {
 	       		  classpath sourceSets.main.runtimeClasspath.asPath
 	              main = "com.ibm.broker.config.util.ApplyBarOverride"
