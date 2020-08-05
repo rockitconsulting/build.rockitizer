@@ -44,4 +44,7 @@ dependencies {
     compile 'com.ibm.mq:com.ibm.mq.allclient:9.1.4.0'
 }
 
+archivesBaseName='build.rockitizer'
+group = 'io.github.rockitconsulting'
+version = project.hasProperty('projVersion') ? project.projVersion :'1.0.5.3-SNAPSHOT'
 
