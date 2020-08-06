@@ -28,12 +28,3 @@ task packageDistribution(type: Zip)  {
 }
 
 
-def dir = 'build/outputs/artifacts' 
-def f = file("${assemblyOut}${File.separator}${archiveFileName}")
-artifacts {
-    archives file: f, name: f.getName(), type: 'zip'
-}
-
-
-
-
