@@ -50,6 +50,8 @@ ext {
   
   
   addDependencies =  { projectDescriptions, prjName ->
+  
+  				if(environment=='idep'){return}
 				//keeping the list of projects for java enhancement
 				allProjectFolders << prjName
 				
