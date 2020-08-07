@@ -20,6 +20,9 @@ def loadConfiguration() {
     
  	project.ext.configPath= hasProperty('configPath') ? configPath : (projectDir.path+fileSeparator+'conf.sample')
  	println "Environment is set to $environment and -PconfigPath to ${configPath}"
+ 	
+
+ 	
      
  /*
  	if(!hasProperty('configPath')) {
@@ -39,13 +42,15 @@ def loadConfiguration() {
     }
     
     def config = new ConfigSlurper("$environment").parse(configFile.toURL())
-    
+    project.ext.deployOverwrite=( hasProperty('deployOverwrite') ? deployOverwrite : config.deployOverwrite ).toBoolean()
 	
     project.ext.configPath=configPath
 	/* setting cmd and global parameters */
     project.ext.config = config
-
-    project.ext.deployOverwrite=( hasProperty('deployOverwrite') ? deployOverwrite : config.deployOverwrite ).toBoolean()
+ 	
+    config.deployApplicationName = hasProperty('deployApplicationName') ? deployApplicationName : config.deployApplicationName
+    //adding default corrections for compatiblity with ibm specific pattern "App1 App2 App3"
+    config.deployApplicationName = config.deployApplicationName.trim().split(',').join(' ').replaceAll(" +", " ")
     project.ext.deployOverwrite=( hasProperty('enableMonitoring') ? deployOverwrite : config.deployOverwrite ).toBoolean()
     project.ext.parallelExecution=hasProperty('parallelExecution') ? parallelExecution : config.parallelExecution
     project.ext.overrideSourceBars=hasProperty('overrideSourceBars')?true:false

@@ -45,6 +45,15 @@ Build can be triggered from any ide with gradle pluging or directly from command
 -PprojVersion=1.3  Project version for assembly
 ```
 
+```
+-PdeployApplicationName=RockitizerDemo,SecondAppForMultibar  option for deploying of the app subset only 
+```
+
+```
+-PenableMonitoring=true  enable (default)/disable flow monitoring on local/remote broker  
+```
+
+
 **Gradle Tasks tab (see Tasks below):**
 ```
 createMqEnv packConfigDeployAssemble
@@ -78,9 +87,6 @@ Both tasks require the broker project to be configured in order to extract the q
 /*   for multibar use:   deployApplicationName='RockitizerDemo SecondAppForMultibar'  */   
 deployApplicationName='RockitizerDemo'
 
-/*
-deployLibraryName='sharedLib staticLib'    
-*/
 
 projectToBar = [
 	        ['*':['RockitizerDemo']],
