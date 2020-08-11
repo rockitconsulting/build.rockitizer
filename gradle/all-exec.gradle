@@ -36,7 +36,6 @@ task deleteEnvironment(group:'build', dependsOn:[deleteMqEnv, deleteExecutionGro
 */
 
 task generateTestStubs(group:'build', dependsOn:[generateMqProperties])
-//gradlew  generateConnectors -PconfigPath=c:\work\projects\ib9rockitizer\proj\wppsconf -Penv=dect   -Pdecoupled
  
  
 task usage(group:'build') {
