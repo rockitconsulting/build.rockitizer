@@ -1,0 +1,124 @@
+/*
+*	Copyright 2015 rockit.consulting GbR  (www.rockit.consulting)
+*
+*/
+
+ext {
+	fileSeparator=System.getProperty('file.separator')
+	lineSeparator=System.getProperty('line.separator')
+}
+
+
+
+loadConfiguration()
+
+def loadConfiguration() { 
+    project.ext.environment = hasProperty('env') ? env : 'idep'
+ 	
+ 	/* initialize configuration and validate mandatory params */
+ 	project.ext.configPath= hasProperty('configPath') ? configPath : (projectDir.path+fileSeparator+'conf.sample')
+ 	logger.lifecycle "[build.rockitizer] Environment is set to '$environment' and -PconfigPath to '${configPath}'"
+ 	
+    logger.lifecycle "[build.rockitizer] loading and validating configuration from '${configPath}'"
+    if(!new File(configPath).exists()) {
+    	throw new Throwable("[build.rockitizer] ERROR: -PconfigPath '${configPath}' does  not exist, please provide a valid path")
+    }
+ 	
+    project.ext.configFile = file("${project.ext.configPath}${fileSeparator}Config.groovy")
+
+    if(!configFile.exists()) {
+    	throw new Throwable("[build.rockitizer] ERROR: mandatory Config.groovy file is not available under Build Configuration Path '${configPath}'")
+    }
+    project.ext.config = new ConfigSlurper("$environment").parse(configFile.toURL())
+    
+    
+    validateMandatoryStructure()
+    
+    validateConfigurationArtifacts()
+
+
+   /* initialize optional params */
+
+    project.ext.incrementalDeployment=( hasProperty('deployOverwrite') ? !(deployOverwrite.toBoolean()) : hasProperty('incrementalDeployment')? incrementalDeployment : true ).toBoolean()
+ 	
+    config.deployApplicationName = hasProperty('deployApplicationName') ? deployApplicationName : config.deployApplicationName
+    //adding default corrections for compatiblity with ibm specific pattern "App1 App2 App3"
+    config.deployApplicationName = config.deployApplicationName.trim().split(',').join(' ').replaceAll(" +", " ")
+    		
+	project.ext.assemblyFileName =hasProperty('assemblyFileName') ? assemblyFileName : config.deployApplicationName.split(' ')[0]
+	project.ext.assemblyFileVersion = hasProperty('assemblyFileVersion') ? project.assemblyFileVersion :'undefined-version'
+    
+    project.ext.enableMonitoring=( hasProperty('enableMonitoring') ? enableMonitoring : false ).toBoolean()
+    project.ext.parallelExecution=hasProperty('parallelExecution') ? parallelExecution : config.parallelExecution
+    project.ext.overrideSourceBars=hasProperty('overrideSourceBars')?true:false
+    project.ext.parallel=parallelExecution.toBoolean()?'Parallel':''
+    project.ext.decoupled= config.decoupled?'Decoupled':''
+ 	
+ 	project.ext.brokerToolkitDir=hasProperty('brokerToolkitDir') ? brokerToolkitDir : config.brokerToolkitDir
+ 	project.ext.testProjectDir=hasProperty('testProjectDir') ? testProjectDir : config.testProjectDir
+ 
+    logger.lifecycle "[build.rockitizer] configuration validated and loaded successfully"   
+}
+
+
+
+
+def validateMandatoryStructure() {
+	validateMandatoryParam ('barToExecutionGroup')
+	validateMandatoryParam ('brokerProjectDirs')
+	validateMandatoryParam ('projectToBar')
+	validateMandatoryParam ('broker')
+	validateMandatoryParam ('deployApplicationName')
+
+}
+
+def validateMandatoryParam ( p ) {
+	if(!config.getProperty(p)) {
+		throw new Throwable("[build.rockitizer] ERROR: '$p' mapping needs to be configured  in '${configFile.absolutePath}'")
+	}
+
+}
+
+
+def validateConfigurationArtifacts() {
+    def brkfile = file("${configPath}/${config.broker}")
+    if(!brkfile.exists()) {
+	    throw new Throwable("[build.rockitizer] ERROR: broker file '${brkfile.absolutePath}' is missing. Please create your broker file which is required for deployment")
+    }
+
+   def flowprops = file("${configPath}/bars/flows.properties")
+   if(!flowprops.exists()) {
+        flowprops.createNewFile()
+        logger.warn("[build.rockitizer] WARNING: empty '${flowprops.absolutePath}' file has been created. Please use it for configuration of overridable properties")
+   }
+
+   def flowpropsignore = file("${configPath}/bars/flows.properties.ignore")
+   if(!flowpropsignore.exists()) {
+        flowpropsignore.createNewFile()
+        logger.warn("[build.rockitizer] WARNING: empty '${flowpropsignore.absolutePath}' file has been created. Please use it for properties that are not relevant fo configuration and can be ignored")
+   }
+
+   
+   def envprops = file("${configPath}/bars/${environment}.properties")
+   if(!envprops.exists()) {
+        envprops.createNewFile()
+        logger.warn("[build.rockitizer] WARNING: empty '${envprops.absolutePath}' file has been created. Please place there your environment dependent configuration")
+   }
+  
+  
+  //validating source folders  
+  config.brokerProjectDirs.each { dir ->
+	if(!file(dir).exists()) {
+	   throw new Throwable("[build.rockitizer] ERROR: Config.groovy brokerProjectDirs references to non-existing project source folder ${dir}")
+    }
+  }
+}
+
+
+task printConfig (group:'build') << {
+    description = 'printg out configuration'
+    //config.flatten().inject[:] {result, key, value ->
+	config.flatten().each {
+	   println "$it"	 
+    } 
+}

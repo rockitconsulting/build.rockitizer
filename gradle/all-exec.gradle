@@ -12,6 +12,7 @@ task checkConfigDeploy(group:'build', dependsOn:[ "configure${decoupled}", delta
 task buildConfigDeploy(group:'build', dependsOn:[ createBars, "configure${decoupled}", deltaBars, deployBars])
 task packConfigDeploy(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, deployBars])
 task packConfigDeployAssemble(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, deployBars, packageDistribution])
+task packConfigAssemble(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, packageDistribution])
 task cleanBars(group:'build', dependsOn:[ "configure${decoupled}", cleanEG])
 
 packageBars.mustRunAfter  prepareJavaForBars
@@ -31,23 +32,29 @@ task deleteEnvironment(group:'build', dependsOn:[deleteMqEnv, deleteExecutionGro
 
 
 
-/*
-* Test Framework 
-*/
-
-task generateTestStubs(group:'build', dependsOn:[generateMqProperties])
- 
  
 task usage(group:'build') {
 println """
-Common Usage:  gradlew <target> -PconfigPath=<pathToConfig> -Penv=<environment> -i (optional info logging)
+Common Usage:  
+	gradlew <task> -PconfigPath=<pathToConfig> -Penv=<environment>  -PincrementalDeployment=<default:true|false>  -i (optional logging info)
+
+Tasks: 
+	createEnvironment        -  creates EGs and MQ Objects, using the EG from Config.groovy and Queues from flows
+	deleteEnvironment        -  deletes EGs and MQ Objects, using the EG from Config.groovy and Queues from flows
+	packConfigDeploy         -  configure, validate, package and deploy apps: iib-style (fast) 
+	packConfigDeployAssemble -  configure, validate, package, deploy and assemble apps: iib-style (fast)
+	packConfigAssemble       -  configure, validate, package and assemble apps: iib-style (fast)
+	cleanBars                -  cleans EG
+
+Params:
+	incrementalDeployment=<default:true|false>    -  Incremental or FullDeployment (delete all resources) mode
+	deployApplicationName=<App1, App2, App3>      -  Optional param to support agile incremental deployments of application subset from Config.groovy
+	buildPath=<pathToGradleWorkspace>             -  Optional param to override the buildpath from gradle.properties, e.g. can be used to route build & assembly to current jenkins workspace
+	assemblyFileName=<projName>                   -  Assembly file name, if not specified uses the name of the first Application
+	assemblyFileVersion=<projVersion>             -  Assembly file version, if not specified used 'unspecified-version'
+	enableMonitoring=<default:false|true>         -  Enables flow monitoring on local/remote BRK
+
 	
-Targets: 
-		createEnvironment - creates EGs and MQ Objects
-		deleteEnvironment - deletes EGs and MQ Objects
-		buildConfigDeploy - create and deploy bars: mb-style  
-		packConfigDeploy -  package and deploy apps: iib-style (fast) 
-		generateTestStubs - generate model for test
 """
 
 

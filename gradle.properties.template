@@ -6,11 +6,13 @@ org.gradle.daemon=true
 
 #####Broker native IBM JVM
 org.gradle.java.home=C:\\rockit\\IBM\\MQSI\\9.0.0.2\\jre17
-brokerToolkitDir=C:\\rockit\\IBM\\IntegrationToolkit90
+## Only for legacy createBar needed
+#brokerToolkitDir=C:\\rockit\\IBM\\IntegrationToolkit90
 buildDir=c:\\temp\\gradle_build
 
 brokerVersion = ib9
 
-deployOverwrite=true
+incrementalDeployment=true
 parallelExecution=true    
+enableMonitoring=true
 

@@ -61,12 +61,12 @@ ext {
 					throw new  Throwable("The reference to ${prjName} was found, but project location is not configured. Kindly add the path to the  ${prjName} workspace under Config.groovy -> brokerProjectDirs for Env:${environment}")
 				} 
 				
-				logger.lifecycle "[build:rockITizer] addDependencies: discovering dependency for $prjName using $path"
+				logger.info "[build:rockITizer] discover dependencies: for $prjName using $path"
 				
 				def projectDescription = new XmlSlurper().parseText(new File(path).text)
 				//add sharedLibraryNature as dependency for packaging
 				if ( projectDescription.text().contains('com.ibm.etools.msgbroker.tooling.sharedLibraryNature')) {
-					logger.lifecycle "[build:rockITizer] addDependencies: adding dependency ${prjName}"
+					logger.info "[build:rockITizer] addDependencies: adding dependency ${prjName}"
 					dependencies << prjName
 				}
 				//check recursive
@@ -104,7 +104,7 @@ task readProjectStructureFromConfig  {
 /* create folders, prepare environment */
 task prepareBroker (dependsOn:readProjectStructureFromConfig) {
     
-	buildDir = new File(buildDir, "${config.deployApplicationName?config.deployApplicationName.split(' ')[0]:config.broker}.${environment}")
+	buildDir = new File(buildDir, "${assemblyFileName}.${environment}")
     project.ext.barPropertiesIn=new File(buildDir, "bar.properties${fileSeparator}in")
     project.ext.barPropertiesIn.mkdirs()
     
@@ -127,6 +127,8 @@ task prepareBroker (dependsOn:readProjectStructureFromConfig) {
     	bars << "${bar}.bar"
     }
     project.ext.bars = bars 
+    
+    
 }
 
 
@@ -165,15 +167,16 @@ allprojects {
   println "# barstoProject         = ${barToProjects}"
   println "# projectDirs           = ${config.brokerProjectDirs}"
   println "# buildDir              = ${buildDir}"  
-  println "# deployOverwrite       = ${deployOverwrite}"
+  println "# incrementalDeployment = ${incrementalDeployment}"
   println "# enableMonitoring      = ${enableMonitoring}"
-  println "# overrideSourceBars    = ${overrideSourceBars}"
-  println "# parallelExecution     = ${parallelExecution}"
-  println "# parallel              = ${parallel}"
-  println "# decoupled             = ${decoupled?:'false'}"
+//println "# overrideSourceBars    = ${overrideSourceBars}"
+//println "# parallelExecution     = ${parallelExecution}"
+//println "# parallel              = ${parallel}"
+//println "# decoupled             = ${decoupled?:'false'}"
   println "# deployApplicationName = ${config.deployApplicationName?:'No deployApplicationName defined in Config.groovy, proceed in Flows mode'}"
-  println "# deployLibraryName     = ${config.deployLibraryName?:'No library dependencies discovered'}"
-  println "# testProjectDir        = ${config.testProjectDir}"  
+  println "# deployLibraryName     = ${config?.deployLibraryName?:'No shared library dependencies discovered'}"
+  println "# assemblyFileName      = ${assemblyFileName}"
+  println "# assemblyFileVersion   = ${assemblyFileVersion}"
   println "#############################################################################"
   
 }
@@ -218,8 +221,9 @@ task copyProjectsToBuildTarget(dependsOn: [cleanProjectsTargetDir, prepareBroker
 
 barToProjects.each {bar, prj ->
 		config.brokerProjectDirs.eachWithIndex { projDir,idx ->
+	
 			task "copy${new File(projDir).name.capitalize()}${idx}ToBuildTarget-${bar}-Task"(type:Copy)  {
-			    from "${projDir}"
+			    from "${file(projDir).absolutePath}"
 				exclude '**/*.metadata','**/*.svn', "**/${file(buildDir).parentFile.name}/**"
 			    into ("${brokerProjectsTargetDir}${fileSeparator}${bar}")
 			}

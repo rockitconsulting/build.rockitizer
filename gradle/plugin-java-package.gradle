@@ -23,7 +23,7 @@ ext {
 
 def enhanceProjWithJar(dir) {
 	def files = []
-	logger.lifecycle "[build:rockITizer] checking project ${dir} for java enhancement"
+	logger.info "[build:rockITizer] checking project ${dir} for java enhancement"
     dir.eachFileRecurse(groovy.io.FileType.FILES) { clz ->
 	    if( clz.name.endsWith('.class') ) {
 	    	files << clz
@@ -53,7 +53,7 @@ task prepareJavaForBars() << {
    
    def enhancementDirs = []
    barToProjects.each { bar, prj ->
-    	logger.lifecycle "[build:rockITizer] enhancing from ${brokerProjectsTargetDir}${fileSeparator}${bar}"
+    	logger.info "[build:rockITizer] enhancing from ${brokerProjectsTargetDir}${fileSeparator}${bar}"
     	
     	file("${brokerProjectsTargetDir}${fileSeparator}${bar}").eachFile ( groovy.io.FileType.DIRECTORIES) { dir ->  
     		if( !allProjectFolders.contains(dir.name) ) {

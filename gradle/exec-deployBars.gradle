@@ -17,19 +17,19 @@ buildscript {
 
 def enableMonitoring() { 
 					
- 
+
 			def root = new XmlSlurper().parseText(new File("${configPath}/${config.broker}").text)
-			println "Enabling monitoring for BRK  ${root.@host} ${root.@listenerPort}"
+			logger.lifecycle "[build:rockITizer] Enabling monitoring for BRK  uri://'${root.@host}':'${root.@listenerPort}'"
             BrokerConnectionParameters bcp = new IntegrationNodeConnectionParameters( "${root.@host}".toString() , Integer.valueOf("${root.@listenerPort}") );
         	BrokerProxy b = BrokerProxy.getInstance(bcp);
 	        
 	        b.getExecutionGroups(null).each { eg ->
 	        	eg.getApplications(null).each { app ->
-	        	  println "Enabled monitoring for Application: $app.name"
+	        	  logger.lifecycle "[build:rockITizer] Enabled monitoring for Application: '${app.name}'"
 	        	  app.setAllMessageFlowsRuntimeProperty("This/monitoring", "active");
 	        	}
 	        	eg.getMessageFlows(null).each { flow -> 
-	          	    println "Enabled monitoring for Flow: $flow.name"
+	          	    logger.lifecycle "[build:rockITizer] Enabled monitoring for Flow: '${flow.name}'"
 	        		flow.setRuntimeProperty("This/monitoring", "active"); 
 	        	}
            }
@@ -64,8 +64,8 @@ config.barToExecutionGroup.flatten().each { bar, exgroups  ->
 	    task "deployBar-${bar}-${exgroup}" (dependsOn:overrideBars) << {
 		    new ByteArrayOutputStream().withStream { os ->
 		        def result = javaexec {
-               	    def cmdArgs = ["-n", "${configPath}${fileSeparator}${config.broker}", "-e", "${exgroup}", "-a","${barByName(bar)}","${deployOverwrite?'-m':''}", "-w","600"]
-	    			logger.lifecycle "[build:rockITizer] deploy${deployOverwrite?'Overwrite':''} " + cmdArgs.join(" ")
+               	    def cmdArgs = ["-n", "${configPath}${fileSeparator}${config.broker}", "-e", "${exgroup}", "-a","${barByName(bar)}","${!incrementalDeployment?'-m':''}", "-w","600"]
+	    			logger.lifecycle "[build:rockITizer] deploy${!incrementalDeployment?'Overwrite':'Incrementaly'} " + cmdArgs.join(" ")
 	    			classpath sourceSets.main.runtimeClasspath.asPath
    					main = "com.ibm.broker.config.util.Deploy"
                		args = cmdArgs

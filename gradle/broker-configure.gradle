@@ -12,7 +12,9 @@ ext {
 
 
 task configure(dependsOn:prepareBroker) << {
-   description 'Copy config, fill placeholders, check configuration consistency.'
+    description 'Copy config, fill placeholders, check configuration consistency.'
+
+   
    copy {
 	    from "${brokerConfDir}${fileSeparator}flows.properties"
 	    into ("${barPropertiesOut}")

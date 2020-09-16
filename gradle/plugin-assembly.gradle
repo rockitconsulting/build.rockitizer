@@ -4,10 +4,16 @@
 */
 
 
-	project.ext.group = 'io.github.build.rockitizer'
-	project.ext.archiveFileName ="${config.deployApplicationName.split(' ')[0]}-${hasProperty('projVersion') ? project.projVersion :'1.0.0.0-SNAPSHOT'}.zip"
-	project.ext.destinationDirectory=file("$assemblyOut")
+//packConfigAssemble -pconfigPath=C:\\Daten\\workspaces\\conf -penv=env -PbuildDir=c:\\build\\rollout -PprojVersion=9.6.4 
+
+
+project.ext.group = 'io.github.build.rockitizer'
+project.ext.archiveFileName ="${assemblyFileName}-${assemblyFileVersion}.zip"
+project.ext.destinationDirectory=file("$assemblyOut")
+   
     
+
+
     
 	
 
