@@ -136,6 +136,7 @@ task prepareBroker (dependsOn:readProjectStructureFromConfig) {
 task  allProjectFiles  {
 		def allProjectFiles = []
 		config.brokerProjectDirs.each { dir ->
+		    logger.info "-> brokerProjectDirs: directory " + dir
 			new File(dir).eachFileRecurse(groovy.io.FileType.FILES) { f -> allProjectFiles << f.path }
 		}
 		project.ext.allProjectFiles = allProjectFiles
