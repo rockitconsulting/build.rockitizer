@@ -3,11 +3,7 @@ DevOps Framework for build, configuration, packaging, deployment and MQ/EG infra
 
 ### Youtube Video: <a href="https://youtu.be/SMTk9EoYofs" target="_blank">Boosting DevOps productivity with Build.RockITizer for IIB product family</a>
 
-[<img src="https://img.youtube.com/vi/SMTk9EoYofs/hqdefault.jpg" width="50%">](https://youtu.be/M9UwuL-QKzU)
-
-
 <br><br>
-
 
 ## Configuration
 The sample configuration is to find under ${build.rockitizer.home}/conf.sample folder:
