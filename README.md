@@ -95,7 +95,7 @@ Both tasks require the broker project to be configured in order to extract the q
 
 
 ### Config.groovy
-```
+```groovy
 /*   for multibar use:   deployApplicationName='RockitizerDemo SecondAppForMultibar'  */   
 deployApplicationName='RockitizerDemo'
 
