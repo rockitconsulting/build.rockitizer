@@ -29,50 +29,50 @@ Build can be triggered from any ide with gradle pluging or directly from command
 
 **Additonal PARAMS**
 
-```
+```bat
 -PconfigPath - path to your project conf (same structure as conf.sample) folder, e.g. -PconfigPath=C:\\github\\RockitizerDemo\\conf
 ```
 
-```
+```bat
 -Penv - your environment configured in Config.groovy, the correspondent <env>.porperties file with placeholder replacements must exist
 ```
 
-```
+```bat
 -PbrokerFile=my.broker - support for agile deployment, overriding the environment configuration of Config.groovy 
 ```
 
-```
+```bat
 -PdeployOverwrite=true|false  replace the whole applications during deployment (true) or just update them (false)
 ```
 
-```
+```bat
 -PbuildDir=C:\\rockit\gradle_build providing working dir. Default specified in gradle.properties and is set to c:\\temp\\gradle_build
 ```
 
-```
+```bat
 -PassemblyFileName=MyPackageName  Package name for assembly
 ```
 
-```
+```bat
 -PassemblyFileVersion=1.3  Project version for assembly
 ```
 
-```
+```bat
 -PdeployApplicationName=RockitizerDemo,SecondAppForMultibar  option for deploying of the app subset only 
 ```
 
-```
+```bat
 -PenableMonitoring=true  enable (default)/disable flow monitoring on local/remote broker  
 ```
 
 
 **Gradle Tasks tab (see Tasks below):**
-```
+```bat
 createMqEnv packConfigDeployAssemble
 ```
 
 **Project settings tab:**
-```
+```bat
 -PconfigPath=C:\\github\\RockitizerDemo\\conf -Penv=demo -PdeployOverwrite=false -PbuildDir=C:\\rockit\gradle_build -PprojVersion=1.3 --info
 ```
 
@@ -95,7 +95,7 @@ Both tasks require the broker project to be configured in order to extract the q
 
 
 ### Config.groovy
-```groovy
+```java
 /*   for multibar use:   deployApplicationName='RockitizerDemo SecondAppForMultibar'  */   
 deployApplicationName='RockitizerDemo'
 
