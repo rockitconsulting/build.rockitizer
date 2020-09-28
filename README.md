@@ -38,6 +38,10 @@ Build can be triggered from any ide with gradle pluging or directly from command
 ```
 
 ```
+-PbrokerFile=my.broker - support for agile deployment, overriding the environment configuration of Config.groovy 
+```
+
+```
 -PdeployOverwrite=true|false  replace the whole applications during deployment (true) or just update them (false)
 ```
 
@@ -46,7 +50,11 @@ Build can be triggered from any ide with gradle pluging or directly from command
 ```
 
 ```
--PprojVersion=1.3  Project version for assembly
+-PassemblyFileName=MyPackageName  Package name for assembly
+```
+
+```
+-PassemblyFileVersion=1.3  Project version for assembly
 ```
 
 ```
