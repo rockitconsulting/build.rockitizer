@@ -3,7 +3,7 @@ DevOps Framework for build, configuration, packaging, deployment and MQ/EG infra
 
 ### Youtube Video: <a href="https://www.youtube.com/watch?v=SMTk9EoYofs" target="_blank">Boosting DevOps productivity with Build.RockITizer for IIB product family</a>
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/SMTk9EoYofs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[<img src="https://i9.ytimg.com/vi/SMTk9EoYofs/maxresdefault.jpg" width="100%">](https://www.youtube.com/watch?v=SMTk9EoYofs)
 
 
 <br><br>
