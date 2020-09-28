@@ -2,6 +2,8 @@
 DevOps Framework for build, configuration, packaging, deployment and MQ/EG infrastructure management for IBM Integration Bus product family.
 
 ## Youtube Video: <a href="https://youtu.be/SMTk9EoYofs" target="_blank">Boosting DevOps productivity with Build.RockITizer for IIB product family</a>
+[<img src="https://img.youtube.com/vi/SMTk9EoYofs/maxresdefault.jpg" width="100%">](https://youtu.be/SMTk9EoYofs)
+
 
 ## Configuration
 The sample configuration is to find under ${build.rockitizer.home}/conf.sample folder:
