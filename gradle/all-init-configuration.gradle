@@ -38,10 +38,21 @@ def loadConfiguration() {
 
 
    /* initialize optional params */
+	if ( hasProperty('barToExecutionGroup') ) {
+	    logger.lifecycle "[build.rockitizer] barToExecutionGroup modified config detected ${barToExecutionGroup}"
+		   config.barToExecutionGroup.flatten().keySet().each{ bar ->
+			   config.barToExecutionGroup.remove("$bar")
+			   config.barToExecutionGroup << ["$bar":[barToExecutionGroup]]
+		   }
+		logger.lifecycle "[build.rockitizer] deploying to ${config.barToExecutionGroup.flatten ()}"		   
+	} 
 
-    project.ext.incrementalDeployment=( hasProperty('deployOverwrite') ? !(deployOverwrite.toBoolean()) : hasProperty('incrementalDeployment')? incrementalDeployment : true ).toBoolean()
  	
-    config.deployApplicationName = hasProperty('deployApplicationName') ? deployApplicationName : config.deployApplicationName
+    if( hasProperty('deployApplicationGroupName') && config.flatten()[deployApplicationGroupName].size()>0) {
+      config.deployApplicationName = config.flatten()[deployApplicationGroupName]
+    } else {
+      config.deployApplicationName = hasProperty('deployApplicationName') ? deployApplicationName : config.deployApplicationName
+    }
     //adding default corrections for compatiblity with ibm specific pattern "App1 App2 App3"
     config.deployApplicationName = config.deployApplicationName.trim().split(',').join(' ').replaceAll(" +", " ")
     		
@@ -66,7 +77,7 @@ def loadConfiguration() {
 
 
 def validateMandatoryStructure() {
-	if(project.gradle.startParameter.taskNames[0].contains('Deploy')) {
+	if(project.gradle.startParameter.taskNames[0]?.contains('Deploy')) {
 		validateMandatoryParam ('barToExecutionGroup')
 		validateMandatoryParam ('broker')
 	}
@@ -86,7 +97,7 @@ def validateMandatoryParam ( p ) {
 
 def validateConfigurationArtifacts() {
 
-	if(project.gradle.startParameter.taskNames[0].contains('Deploy')) {
+	if(project.gradle.startParameter.taskNames[0]?.contains('Deploy')) {
 	    def brkfile = file("${configPath}/${config.broker}")
 	    if(!brkfile.exists()) {
 		    throw new Throwable("[build.rockitizer] ERROR: broker file '${brkfile.absolutePath}' is missing. Please create your broker file which is required for deployment")

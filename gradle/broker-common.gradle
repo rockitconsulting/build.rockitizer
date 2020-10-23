@@ -144,19 +144,17 @@ task  allProjectFiles  {
   
   
 
-  
 task  allProjectExtractDependencies  {
 		def dependencies = []
 		if(config.deployApplicationName) {
 			def projectDescriptions = allProjectFiles.findAll { file -> file.endsWith(".project") }
-			config.deployApplicationName.split(' ').each { app ->
-			  dependencies << addDependencies( projectDescriptions, app )
+			config.deployApplicationName.tokenize(' ').each { app ->
+			  dependencies << addDependencies( projectDescriptions, app.trim() )
 			}
 			config.deployLibraryName=dependencies.flatten().unique().join(' ')
 		}
-		
-		
-  }
+}
+
 
 
 
@@ -231,16 +229,3 @@ barToProjects.each {bar, prj ->
 	copyProjectsToBuildTarget.dependsOn "copy${new File(projDir).name.capitalize()}${idx}ToBuildTarget-${bar}-Task"			
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

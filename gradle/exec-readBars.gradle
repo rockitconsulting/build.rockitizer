@@ -119,14 +119,47 @@ task deltaBars(dependsOn:[readBars, stripBars, combineBars]) << {
    def root = new File("${brokerConfDir}${fileSeparator}flows.properties").text
    def delta = new File("${barPropertiesOut}${fileSeparator}flows.properties.ignore")	
    def ignore = new File("${brokerConfDir}${fileSeparator}flows.properties.ignore").text   
+
+
+
+/*---------------------------------------   
+   def subflowspath = allProjectFiles.findAll { file -> file.endsWith(".subflow") }
+   def subflows = []
+   subflowspath.each { subflow ->
+   	subflows << file(subflow).name-'.subflow'
+   } 
+   
+   def flowspath = allProjectFiles.findAll { file -> file.endsWith(".msgflow") }
+   def flows = []
+   flowspath.each { flow ->
+   	 flows << file(flow).name-'.msgflow'
+   }
+   
+   
+   
+   if (flows.intersect(subflows)) {
+   	  throw new  TaskExecutionException(it, new Throwable("identical names for flows and subflows are not allowed  ${flows.intersect(subflows)} "))
+   }
+   logger.debug "subflows $subflows"
+*///---------------------------------------   
+   
    new File("${barPropertiesIn.path}${fileSeparator}combined.bar.properties").eachLine { line ->
       def key = line.split('=')[0].trim()
-   	  if( !root.contains(key) && !ignore.contains(key) ) { 
-   	     if( !delta.exists() || !delta.text.contains(key) )
-   	     delta << line.trim() + lineSeparator
-   	     logger.error " delta detected: ${line.trim()} " 
-   	  }
+
+/*
+      if ( subflows.contains( key.tokenize('#').first().tokenize('.').last()  )  ) {
+       	 return
+      }
+*/
+
+	  if( !root.contains(key) && !ignore.contains(key) ) {
+	   	     if( !delta.exists() || !delta.text.contains(key) )
+	   	     delta << line.trim() + lineSeparator
+	   	     logger.error " delta detected: ${line.trim()} " 
+	  }
+	  
    }
+   
    
    if(delta.exists()) {
       throw new  TaskExecutionException(it, new Throwable("delta detected. please configure delta in ${configPath}${fileSeparator}flows.properties.ignore file.  "))

@@ -17,7 +17,7 @@ apply from: "$scriptDir/exec-overrideBars.gradle"  , to: project // broker
 apply from: "$scriptDir/exec-exgroups-manage.gradle"  , to: project // broker 
 apply from: "$scriptDir/exec-exgroups-clean.gradle"  , to: project // broker
 apply from: "$scriptDir/exec-deployBars.gradle"  , to: project // broker
-apply from: "$scriptDir/plugin-wildcards.gradle"  , to: project // daimler wildcards 
+apply from: "$scriptDir/plugin-wildcards.gradle"  , to: project // customer specific wildcards 
 apply from: "$scriptDir/plugin-mq-environment.gradle"  , to: project // mq environment
 //apply from: "$scriptDir/plugin-test-framework.gradle",  to: project //test framework
 apply from: "$scriptDir/plugin-assembly.gradle",  to: project //test framework

@@ -33,7 +33,7 @@ bars.each { bar ->
     	task "overrideBar-${bar}" << {
 		  	def cmdArgs 
 		  	if(config.deployApplicationName) {
-			   cmdArgs = ["-runtime",'-b', "${barByName(bar)}", "-k", config.deployApplicationName.split(' ')[0] , "-r", "-p", file {"${barPropertiesOut}${fileSeparator}flows.properties"}]
+			   cmdArgs = ["-runtime",'-b', "${barByName(bar)}", "-r", "-p", file {"${barPropertiesOut}${fileSeparator}flows.properties"}]
 		  	} else {
 				cmdArgs = ["-runtime",'-b', "${barByName(bar)}", "-p", file {"${barPropertiesOut}${fileSeparator}flows.properties"}]
 			}
