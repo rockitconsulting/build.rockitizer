@@ -49,19 +49,21 @@ def enhanceProjWithJar(dir) {
 }
 
 
-task prepareJavaForBars() << {
-   
-   def enhancementDirs = []
-   barToProjects.each { bar, prj ->
-    	logger.info "[build:rockITizer] enhancing from ${brokerProjectsTargetDir}${fileSeparator}${bar}"
-    	
-    	file("${brokerProjectsTargetDir}${fileSeparator}${bar}").eachFile ( groovy.io.FileType.DIRECTORIES) { dir ->  
-    		if( !allProjectFolders.contains(dir.name) ) {
-    			return
-    		} 
-    		enhanceProjWithJar(dir)
-    	} 
-    }
+task prepareJavaForBars() {
+
+	doLast {	   
+	   def enhancementDirs = []
+	   barToProjects.each { bar, prj ->
+	    	logger.info "[build:rockITizer] enhancing from ${brokerProjectsTargetDir}${fileSeparator}${bar}"
+	    	
+	    	file("${brokerProjectsTargetDir}${fileSeparator}${bar}").eachFile ( groovy.io.FileType.DIRECTORIES) { dir ->  
+	    		if( !allProjectFolders.contains(dir.name) ) {
+	    			return
+	    		} 
+	    		enhanceProjWithJar(dir)
+	    	} 
+	    }
+	}	    
 }
 
 

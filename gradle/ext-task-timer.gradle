@@ -1,33 +1,42 @@
-/*
-*	Copyright 2015 rockit.consulting GbR  (www.rockit.consulting)
-*
-*/
-
-import org.gradle.logging.StyledTextOutput;
-import org.gradle.logging.StyledTextOutputFactory;
-import static org.gradle.logging.StyledTextOutput.Style;
-
-
-class TaskTimerListener implements TaskExecutionListener {
-
-    private Clock clock
-    def out
-    
-    public TaskTimerListener (services) {
-    	out = services.get(StyledTextOutputFactory).create("coloredFactory")
-    
-    }    
+import java.util.concurrent.TimeUnit
+// Log timings per task.
+class TimingsListener implements TaskExecutionListener, BuildListener {
+    private long startTime
+    private timings = []
 
     @Override
     void beforeExecute(Task task) {
-        clock = new org.gradle.util.Clock()
+        startTime = System.nanoTime()
     }
 
     @Override
     void afterExecute(Task task, TaskState taskState) {
-        task.project.logger.info "Execution of ${task.name} took ${clock.time}"
-        out.withStyle(Style.Info).println("Execution of [:${task.name}] took ${clock.time}")
+        def ms = TimeUnit.MILLISECONDS.convert(System.nanoTime() - startTime, TimeUnit.NANOSECONDS);
+        timings.add([ms, task.path])
+        task.project.logger.warn "${task.path} took ${ms}ms"
     }
+
+    @Override
+    void buildFinished(BuildResult result) {
+        println "Task timings:"
+        for (timing in timings) {
+            if (timing[0] >= 50) {
+                printf "%7sms  %s\n", timing
+            }
+        }
+    }
+
+    @Override
+    void buildStarted(Gradle gradle) {}
+
+    @Override
+    void projectsEvaluated(Gradle gradle) {}
+
+    @Override
+    void projectsLoaded(Gradle gradle) {}
+
+    @Override
+    void settingsEvaluated(Settings settings) {}
 }
 
-gradle.addListener new TaskTimerListener(getServices())
+gradle.addListener new TimingsListener()

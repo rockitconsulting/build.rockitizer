@@ -20,7 +20,7 @@ description = "IIB/IBM Message Broker build.rockITizer Application"
 
 
 
-task wrapper(type: Wrapper) {   
+wrapper {   
     def jvmOpts = "-Xms512m -Xmx1200m -XX:MaxPermSize=256m"
     inputs.property("jvmOpts", jvmOpts)
   

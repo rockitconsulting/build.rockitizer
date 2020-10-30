@@ -138,10 +138,12 @@ def validateConfigurationArtifacts() {
 }
 
 
-task printConfig (group:'build') << {
-    description = 'printg out configuration'
-    //config.flatten().inject[:] {result, key, value ->
-	config.flatten().each {
-	   println "$it"	 
-    } 
+task printConfig (group:'build')  {
+	doLast {
+	    description = 'printg out configuration'
+	    //config.flatten().inject[:] {result, key, value ->
+		config.flatten().each {
+		   println "$it"	 
+	    } 
+    }
 }

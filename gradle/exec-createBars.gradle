@@ -31,44 +31,48 @@ task createBars(dependsOn:["doCreateBars${parallel}"]) {
 task doCreateBars(dependsOn:[copyProjectsToBuildTarget, readProjectStructureFromConfig])
 
 barToProjects.each { bar, projects  ->
-	task "createBar-${bar}" << {
-	    new ByteArrayOutputStream().withStream { os ->
-	        def result = exec {
-	        	def cmdArgs = ['/c', "${brokerToolkitDir}${fileSeparator}mqsicreatebar.exe -data  ${brokerProjectsTargetDir}${fileSeparator}${bar} -b ${barTargetOut}${fileSeparator}${bar}.bar -p ${projects.join(' ')} -o ${getFilesProjects(bar, projects,['.mset'])} ${getFilesProjects(bar, projects,['.msgflow'])}"]
-	        	logger.lifecycle "[build:rockITizer] ${cmdArgs.join(' ')}"
-	            executable = 'cmd'
-	            args = cmdArgs
-	        }
-	        ext."doCreateBars-${bar}" = os.toString()
-	    }
+	task "createBar-${bar}" {
+		doLast {
+		    new ByteArrayOutputStream().withStream { os ->
+		        def result = exec {
+		        	def cmdArgs = ['/c', "${brokerToolkitDir}${fileSeparator}mqsicreatebar.exe -data  ${brokerProjectsTargetDir}${fileSeparator}${bar} -b ${barTargetOut}${fileSeparator}${bar}.bar -p ${projects.join(' ')} -o ${getFilesProjects(bar, projects,['.mset'])} ${getFilesProjects(bar, projects,['.msgflow'])}"]
+		        	logger.lifecycle "[build:rockITizer] ${cmdArgs.join(' ')}"
+		            executable = 'cmd'
+		            args = cmdArgs
+		        }
+		        ext."doCreateBars-${bar}" = os.toString()
+		    }
+		}
 	}
 	doCreateBars.dependsOn "createBar-${bar}"
 }
 
 
 
-task doCreateBarsParallel(dependsOn:[copyProjectsToBuildTarget , readProjectStructureFromConfig]) << {
-      ant.parallel(threadsPerProcessor: 1) {
-		  barToProjects.each { bar, projects  ->
-		  		def cmdArgs 
-		  		if(config.deployApplicationName) {
-		  			cmdArgs	= "${brokerToolkitDir}${fileSeparator}mqsicreatebar.exe -data ${brokerProjectsTargetDir}${fileSeparator}${bar} -b ${barTargetOut}${fileSeparator}${bar}.bar -a ${config.deployApplicationName} -deployAsSource" //-trace
-		  		} else {
-		  			cmdArgs	= """${brokerToolkitDir}${fileSeparator}mqsicreatebar.exe 
-					-data ${brokerProjectsTargetDir}${fileSeparator}${bar} 
-					-b ${barTargetOut}${fileSeparator}${bar}.bar 
-					-p ${projects.join(' ')} -o ${getFilesProjects(bar, projects,['.mset'])} 
-					${getFilesProjects(bar, projects,['.msgflow'])}""" //-trace
-		  		}
-	        	logger.lifecycle cmdArgs
-
- 
-				ant.exec(executable: 'cmd') {
-						arg(value: '/c')
-						arg(value: cmdArgs )
-				}
-    	   } 
-     }
+task doCreateBarsParallel(dependsOn:[copyProjectsToBuildTarget , readProjectStructureFromConfig]) {
+	doLast {
+	      ant.parallel(threadsPerProcessor: 1) {
+			  barToProjects.each { bar, projects  ->
+			  		def cmdArgs 
+			  		if(config.deployApplicationName) {
+			  			cmdArgs	= "${brokerToolkitDir}${fileSeparator}mqsicreatebar.exe -data ${brokerProjectsTargetDir}${fileSeparator}${bar} -b ${barTargetOut}${fileSeparator}${bar}.bar -a ${config.deployApplicationName} -deployAsSource" //-trace
+			  		} else {
+			  			cmdArgs	= """${brokerToolkitDir}${fileSeparator}mqsicreatebar.exe 
+						-data ${brokerProjectsTargetDir}${fileSeparator}${bar} 
+						-b ${barTargetOut}${fileSeparator}${bar}.bar 
+						-p ${projects.join(' ')} -o ${getFilesProjects(bar, projects,['.mset'])} 
+						${getFilesProjects(bar, projects,['.msgflow'])}""" //-trace
+			  		}
+		        	logger.lifecycle cmdArgs
+	
+	 
+					ant.exec(executable: 'cmd') {
+							arg(value: '/c')
+							arg(value: cmdArgs )
+					}
+	    	   } 
+	     }
+	}	     
 }  
 
 

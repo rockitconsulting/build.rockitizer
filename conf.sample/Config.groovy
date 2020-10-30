@@ -16,7 +16,9 @@ projectToBar = [
 ]
 
 
-
+brokerProjectDirs=[ // releative path to soure code of iib projects 
+		     'conf.sample'
+		  ]
 forceFlowExclude = []
     
 

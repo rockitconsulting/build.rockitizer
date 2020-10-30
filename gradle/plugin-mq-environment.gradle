@@ -107,33 +107,43 @@ ext {
 }
 
 
-task prepareMqEnvPlugin (dependsOn:prepareBroker) << {
-	project.ext.scriptsOut=new File(buildDir, "scripts")
-	project.ext.scriptsOut.mkdirs()
+task prepareMqEnvPlugin (dependsOn:prepareBroker) {
+	doLast {
+		project.ext.scriptsOut=new File(buildDir, "scripts")
+		project.ext.scriptsOut.mkdirs()
+	}		
 }
 
 
 
 
-task createMqCmdCreate(dependsOn:["configure${decoupled}", prepareMqEnvPlugin]) << {
-	project.ext.mqCmdScript = createScriptByTemplate('MqCreate')
+task createMqCmdCreate(dependsOn:["configure${decoupled}", prepareMqEnvPlugin]) {
+	doLast {
+		project.ext.mqCmdScript = createScriptByTemplate('MqCreate')
+	}	
 }
 
 
-task createMqCmdDelete(dependsOn:["configure${decoupled}", prepareMqEnvPlugin]) << { 
-	project.ext.mqCmdScript =  createScriptByTemplate('MqDelete')
+task createMqCmdDelete(dependsOn:["configure${decoupled}", prepareMqEnvPlugin]) {
+	doLast { 
+		project.ext.mqCmdScript =  createScriptByTemplate('MqDelete')
+	}
 }
 
 
 
 
-task  createMqEnv(dependsOn:[createMqCmdCreate]) << {
-   execTaskMQSC()
+task  createMqEnv(dependsOn:[createMqCmdCreate]) {
+	doLast {
+	   execTaskMQSC()
+	}   
 }
 
 
-task deleteMqEnv(dependsOn:[createMqCmdDelete]) << {
-   execTaskMQSC()
+task deleteMqEnv(dependsOn:[createMqCmdDelete]) {
+	doLast {
+	   execTaskMQSC()
+	}   
 }
 
 

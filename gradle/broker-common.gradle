@@ -188,29 +188,31 @@ allprojects {
 
 
 
-task findBarFiles  (dependsOn:readProjectStructureFromConfig) << {
-	description 'Pick up the real bars in sources/target folder.'
-	def files = []
-	def dirs = overrideSourceBars ? config.brokerProjectDirs:[barTargetOut as String]
-	dirs.each { dir ->
-	   	 new File(dir).eachFileRecurse(groovy.io.FileType.FILES) { f -> files << f }
+task findBarFiles  (dependsOn:readProjectStructureFromConfig) {
+	doLast {	
+		description 'Pick up the real bars in sources/target folder.'
+		def files = []
+		def dirs = overrideSourceBars ? config.brokerProjectDirs:[barTargetOut as String]
+		dirs.each { dir ->
+		   	 new File(dir).eachFileRecurse(groovy.io.FileType.FILES) { f -> files << f }
+		}
+		project.ext.barFiles = files.findAll{ file -> file.name.endsWith(".bar") }
 	}
-	project.ext.barFiles = files.findAll{ file -> file.name.endsWith(".bar") }
-    
 }
 
 
 
 
-task cleanProjectsTargetDir << {
-   description "Cleans properties workspace and bars"
-   brokerProjectsTargetDir.deleteDir()
-   barTargetOut.deleteDir()
-   brokerProjectsTargetDir.mkdir()
-   barTargetOut.mkdir()
-   assemblyOut.deleteDir()
-   assemblyOut.mkdir()
-   
+task cleanProjectsTargetDir  {
+   doLast {
+	   description "Cleans properties workspace and bars"
+	   brokerProjectsTargetDir.deleteDir()
+	   barTargetOut.deleteDir()
+	   brokerProjectsTargetDir.mkdir()
+	   barTargetOut.mkdir()
+	   assemblyOut.deleteDir()
+	   assemblyOut.mkdir()
+   }
 }
 
 

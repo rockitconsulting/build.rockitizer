@@ -31,8 +31,10 @@ task startExecutionGroups()
 
 config.barToExecutionGroup.flatten().each { bar, exgroups  ->
    exgroups.each { exgroup ->
-	    task "startExecutionGroup-${exgroup}" () << {
-			manageExecutionGroupTask('-start',exgroup)	    
+	    task "startExecutionGroup-${exgroup}" () {
+	    	doLast {
+				manageExecutionGroupTask('-start',exgroup)
+			}	    
 		}		 
    		startExecutionGroups.dependsOn "startExecutionGroup-${exgroup}"
    }
@@ -48,8 +50,10 @@ task stopExecutionGroups()
 
 config.barToExecutionGroup.flatten().each { bar, exgroups  ->
    exgroups.each { exgroup ->
-	    task "stopExecutionGroup-${exgroup}" () << {
-			manageExecutionGroupTask('-stop',exgroup)
+	    task "stopExecutionGroup-${exgroup}" () {
+	    	doLast {
+				manageExecutionGroupTask('-stop',exgroup)
+			}
 	    }		 
    		stopExecutionGroups.dependsOn "stopExecutionGroup-${exgroup}"
    }
@@ -65,8 +69,10 @@ task deleteExecutionGroups()
 
 config.barToExecutionGroup.flatten().each { bar, exgroups  ->
    exgroups.each { exgroup ->
-	    task "deleteExecutionGroup-${exgroup}" () << {
-	    	manageExecutionGroupTask('-delete',exgroup)
+	    task "deleteExecutionGroup-${exgroup}" () {
+	    	doLast {
+	    		manageExecutionGroupTask('-delete',exgroup)
+	    	}
 	    }		 
    		deleteExecutionGroups.dependsOn "deleteExecutionGroup-${exgroup}"
    }
@@ -81,8 +87,10 @@ task createExecutionGroups()
 
 config.barToExecutionGroup.flatten().each { bar, exgroups  ->
    exgroups.each { exgroup ->
-	    task "createExecutionGroup-${exgroup}" () << {
-			manageExecutionGroupTask('-create',exgroup)
+	    task "createExecutionGroup-${exgroup}" ()  {
+	    	doLast {
+				manageExecutionGroupTask('-create',exgroup)
+			}
 	    }		 
    		createExecutionGroups.dependsOn "createExecutionGroup-${exgroup}"
    }

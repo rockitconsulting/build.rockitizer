@@ -3,29 +3,32 @@
 *
 */
 
-task cleanEG << {
-	config.barToExecutionGroup.flatten().each { bar, exgroups  ->
-	   exgroups.each { exgroup ->
-          if(hasProperty("cleanEG-${bar}-${exgroup}")) {
-          	logger.lifecycle ext."cleanEG-${bar}-${exgroup}" //captured output from console
-          }
-	   }
-	}        
-
+task cleanEG {
+	doLast {
+		config.barToExecutionGroup.flatten().each { bar, exgroups  ->
+		   exgroups.each { exgroup ->
+	          if(hasProperty("cleanEG-${bar}-${exgroup}")) {
+	          	logger.lifecycle ext."cleanEG-${bar}-${exgroup}" //captured output from console
+	          }
+		   }
+		}        
+	}
 }
 
 config.barToExecutionGroup.flatten().each { bar, exgroups  ->
    exgroups.each { exgroup ->
-	    task "cleanEG-${bar}-${exgroup}" () << {
-		    new ByteArrayOutputStream().withStream { os ->
-		        def result = javaexec {
-               	    def cmdArgs = ["-n", "${configPath}${fileSeparator}${config.broker}", "-e", "${exgroup}", "-a","conf.sample/empty.bar","-m", "-w","600"]
-	    			classpath sourceSets.main.runtimeClasspath.asPath
-   					main = "com.ibm.broker.config.util.Deploy"
-               		args = cmdArgs
-	    		}
-	    		ext."cleanEG-${bar}-${exgroup}" = os.toString()
-	    	}
+	    task "cleanEG-${bar}-${exgroup}" () {
+	    	doLast {
+			    new ByteArrayOutputStream().withStream { os ->
+			        def result = javaexec {
+	               	    def cmdArgs = ["-n", "${configPath}${fileSeparator}${config.broker}", "-e", "${exgroup}", "-a","conf.sample/empty.bar","-m", "-w","600"]
+		    			classpath sourceSets.main.runtimeClasspath.asPath
+	   					main = "com.ibm.broker.config.util.Deploy"
+	               		args = cmdArgs
+		    		}
+		    		ext."cleanEG-${bar}-${exgroup}" = os.toString()
+		    	}
+		   } 	
 	    }		 
    		cleanEG.dependsOn "cleanEG-${bar}-${exgroup}"
    }

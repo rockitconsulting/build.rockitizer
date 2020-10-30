@@ -40,38 +40,38 @@ def enableMonitoring() {
 
 
 
-task deployBars << {
-
-	config.barToExecutionGroup.flatten().each { bar, exgroups  ->
-	   exgroups.each { exgroup ->
-          if(hasProperty("deployBar-${bar}-${exgroup}")) {
-          	logger.lifecycle ext."deployBar-${bar}-${exgroup}" //captured output from console
-          }
-	   }
-	}   
-	
-	
-	if( enableMonitoring ) {
-		enableMonitoring()
-    }
-            
-	
-	     
+task deployBars {
+	doLast {
+		config.barToExecutionGroup.flatten().each { bar, exgroups  ->
+		   exgroups.each { exgroup ->
+	          if(hasProperty("deployBar-${bar}-${exgroup}")) {
+	          	logger.lifecycle ext."deployBar-${bar}-${exgroup}" //captured output from console
+	          }
+		   }
+		}   
+		
+		
+		if( enableMonitoring ) {
+			enableMonitoring()
+	    }
+	}            
 }
 
 config.barToExecutionGroup.flatten().each { bar, exgroups  ->
    exgroups.each { exgroup ->
-	    task "deployBar-${bar}-${exgroup}" (dependsOn:overrideBars) << {
-		    new ByteArrayOutputStream().withStream { os ->
-		        def result = javaexec {
-               	    def cmdArgs = ["-n", "${configPath}${fileSeparator}${config.broker}", "-e", "${exgroup}", "-a","${barByName(bar)}","${!incrementalDeployment?'-m':''}", "-w","600"]
-	    			logger.lifecycle "[build:rockITizer] deploy${!incrementalDeployment?'Overwrite':'Incrementaly'} " + cmdArgs.join(" ")
-	    			classpath sourceSets.main.runtimeClasspath.asPath
-   					main = "com.ibm.broker.config.util.Deploy"
-               		args = cmdArgs
-	    		}
-	    		ext."deployBar-${bar}-${exgroup}" = os.toString()
-	    	}
+	    task "deployBar-${bar}-${exgroup}" (dependsOn:overrideBars) {
+	    	doLast {
+			    new ByteArrayOutputStream().withStream { os ->
+			        def result = javaexec {
+	               	    def cmdArgs = ["-n", "${configPath}${fileSeparator}${config.broker}", "-e", "${exgroup}", "-a","${barByName(bar)}","${!incrementalDeployment?'-m':''}", "-w","600"]
+		    			logger.lifecycle "[build:rockITizer] deploy${!incrementalDeployment?'Overwrite':'Incrementaly'} " + cmdArgs.join(" ")
+		    			classpath sourceSets.main.runtimeClasspath.asPath
+	   					main = "com.ibm.broker.config.util.Deploy"
+	               		args = cmdArgs
+		    		}
+		    		ext."deployBar-${bar}-${exgroup}" = os.toString()
+		    	}
+			}		    	
 	    }		 
    		deployBars.dependsOn "deployBar-${bar}-${exgroup}"
    }
