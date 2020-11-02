@@ -13,6 +13,7 @@ task buildConfigDeploy(group:'build', dependsOn:[ createBars, "configure${decoup
 task packConfigDeploy(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, deployBars])
 task packConfigDeployAssemble(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, deployBars, packageDistribution])
 task packConfigAssemble(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, packageDistribution])
+task packConfigOverrideAssemble(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, overrideBars, packageDistribution])
 task cleanBars(group:'build', dependsOn:[ "configure${decoupled}", cleanEG])
 
 packageBars.mustRunAfter  prepareJavaForBars
