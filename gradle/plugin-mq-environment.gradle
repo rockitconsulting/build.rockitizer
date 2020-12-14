@@ -6,7 +6,7 @@ import org.apache.tools.ant.taskdefs.condition.Os
 */
 
 def mqscCreateCmd = """
-					DEFINE QLOCAL(@queuename@.BACKOUT) + 
+					DEFINE QLOCAL(@queuename@.BO) + 
 					       DESCR('GENERATED BACKOUT QUEUE') + 
 					       REPLACE
 					CLEAR  QLOCAL(@queuename@)
@@ -14,8 +14,8 @@ def mqscCreateCmd = """
 					DEFINE QLOCAL(@queuename@) + 
 					       DESCR('GENERATED INPUT  QUEUE') + 
 					       DEFPSIST(YES) + 
-					       BOQNAME(@queuename@.BACKOUT) + 
-					       BOTHRESH(999999999) + 
+					       BOQNAME(@queuename@.BO) + 
+					       BOTHRESH(10) + 
 					       DEFPRTY(0) + 
 					       DEFBIND(OPEN) + 
 					       REPLACE
@@ -23,7 +23,7 @@ def mqscCreateCmd = """
 
 def mqscDeleteCmd = """
 					DELETE QLOCAL(@queuename@)
-					DELETE QLOCAL(@queuename@.BACKOUT)
+					DELETE QLOCAL(@queuename@.BO)
 """
 
 
@@ -51,13 +51,13 @@ ext {
 				   if(!line.trim()||line.trim().startsWith('#')) { return }
 		   	       def key = line?.split('=')[0].trim()
 		   	       def value = line?.split('=')[1].trim()
-		   	       if( (!key || !value) || (templateName=='MqCreate' && value.toLowerCase().contains('.backout')) ) {
+		   	       if( (!key || !value) || (templateName=='MqCreate' && value.toLowerCase().endsWith('.bo')) ) {
 		   	       		return
 		   	       }
 		   	       
 		   	       if  (key.endsWith('queueName')) {
 		   	       	 
-		   	       	 if (templateName=='MqCreate' && value.length()>40) { 
+		   	       	 if (templateName=='MqCreate' && value.length()>48) { 
 		   	       	   throw new  Throwable("Queue name $value has length of ${value.length()} characters  which oversizes MQ Limit of 48 !!!")
 		   	       	 }
 		   	       	 
