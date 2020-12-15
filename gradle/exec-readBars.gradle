@@ -179,6 +179,62 @@ task deltaBars(dependsOn:[readBars, stripBars, combineBars]) {
    
 }
 
+/* syncConfig */
+task syncConfig(dependsOn:[deltaBars]) {
+	doLast {
+	   description "syncConfig : check for validity and clean configuration properties"
+
+	   def root = new File("${brokerConfDir}${fileSeparator}flows.properties")
+	   def ignore = new File("${brokerConfDir}${fileSeparator}flows.properties.ignore")
+	   def combined = new File("${barPropertiesIn.path}${fileSeparator}combined.bar.properties")
+
+	   logger.info "Validating ${root.path}"
+       def rootUnusedFlowProps = validateProps(root, combined)
+       if(cleanFlowConfig && rootUnusedFlowProps.size > 0) {
+       		logger.info "Removing non existent configuration properties from ${root.path}" 
+       		cleanProps(root, rootUnusedFlowProps)
+       	}
+
+       logger.info "Validating ${ignore.path}"
+       def ignoreUnusedFlowProps = validateProps(ignore, combined)
+       if(cleanFlowConfig && ignoreUnusedFlowProps.size > 0) {
+            logger.info "Removing non existent configuration properties from ${ignore.path}" 
+        	cleanProps(ignore, ignoreUnusedFlowProps) 
+        }
+	}	   
+}
+
+ext {
+	validateProps = { flowProps, combinedFlowProps ->
+	
+		def unusedFlowProps = []
+		flowProps.eachLine { line ->
+			if(!line.trim() || line.trim().startsWith('#')) { return }
+			def linearr = line.split('=')
+			def key = linearr[0].trim()
+			def value = ''
+			if(linearr.length > 1) {value = linearr[1].trim()}
+			
+			if(!combinedFlowProps.text.contains(key)) { 
+				logger.warn "    Validation warning - Property does not exist:  '${line.trim()}'"
+				unusedFlowProps << key
+			}
+			else if (value == '') { logger.warn "    Validation warning - Property does not contain any value:  '${line.trim()}'" }
+		}
+		return unusedFlowProps
+	}
+	
+	cleanProps = { flowProps, unusedFlowProps ->
+		flowProps.eachLine { line ->
+			def key = line.split('=')[0].trim()
+			if(unusedFlowProps.contains(key)) {
+				logger.info "    Removing property '${line.trim()}'" 
+				flowProps.text = flowProps.text.replace(line + lineSeparator, '')
+	        }
+	        flowProps.write(flowProps.text);
+		}
+	}
+}
 
 
 

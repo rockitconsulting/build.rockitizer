@@ -64,6 +64,7 @@ def loadConfiguration() {
     project.ext.overrideSourceBars=hasProperty('overrideSourceBars')?true:false
     project.ext.parallel=parallelExecution.toBoolean()?'Parallel':''
     project.ext.decoupled= config.decoupled?'Decoupled':''
+    project.ext.cleanFlowConfig=( hasProperty('cleanFlowConfig') ? cleanFlowConfig : false ).toBoolean()
  	
  	project.ext.brokerToolkitDir=hasProperty('brokerToolkitDir') ? brokerToolkitDir : config.brokerToolkitDir
  	project.ext.testProjectDir=hasProperty('testProjectDir') ? testProjectDir : config.testProjectDir
