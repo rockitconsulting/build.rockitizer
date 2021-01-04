@@ -58,7 +58,8 @@ def loadConfiguration() {
     		
 	project.ext.assemblyFileName =hasProperty('assemblyFileName') ? assemblyFileName : config.deployApplicationName.split(' ')[0]
 	project.ext.assemblyFileVersion = hasProperty('assemblyFileVersion') ? project.assemblyFileVersion :'undefined-version'
-    
+	
+    project.ext.incrementalDeployment=( hasProperty('incrementalDeployment') ? incrementalDeployment : false ).toBoolean()
     project.ext.enableMonitoring=( hasProperty('enableMonitoring') ? enableMonitoring : false ).toBoolean()
     project.ext.parallelExecution=hasProperty('parallelExecution') ? parallelExecution : config.parallelExecution
     project.ext.overrideSourceBars=hasProperty('overrideSourceBars')?true:false
