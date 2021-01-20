@@ -54,7 +54,8 @@ Params:
 	assemblyFileName=<projName>                   -  Assembly file name, if not specified uses the name of the first Application
 	assemblyFileVersion=<projVersion>             -  Assembly file version, if not specified used 'unspecified-version'
 	enableMonitoring=<default:false|true>         -  Enables flow monitoring on local/remote BRK
-
+	validateFlowConfig=<default:false|true>       -  Enables validation of flows properties
+	cleanFlowConfig=<default:false|true>          -  Enables synchronisation of flows properties
 	
 """
 

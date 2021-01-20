@@ -65,6 +65,17 @@ Build can be triggered from any ide with gradle pluging or directly from command
 -PenableMonitoring=true  enable (default)/disable flow monitoring on local/remote broker  
 ```
 
+```bat
+-PincrementalDeployment=true  enable (default)/disable incremental deployment of bars  
+```
+
+```bat
+-PvalidateFlowConfig=false  enable/disable (default) validation of flows properties  
+```
+
+```bat
+-PcleanFlowConfig=false  enable/disable (default) synchronisation of flows properties  
+```
 
 **Gradle Tasks tab (see Tasks below):**
 ```bat

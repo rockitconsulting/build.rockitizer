@@ -126,12 +126,10 @@ task deltaBars(dependsOn:[readBars, stripBars, combineBars]) {
 	doLast {
 	   description "detectDelta : check for not yet controlled properties"
 	   new File("${barPropertiesOut}${fileSeparator}flows.properties.ignore").delete()
-	   def root = new File("${brokerConfDir}${fileSeparator}flows.properties").text
+	   def root = new File("${brokerConfDir}${fileSeparator}flows.properties").text.readLines().findAll { !it.startsWith ('#')}.join ("\n")
 	   def delta = new File("${barPropertiesOut}${fileSeparator}flows.properties.ignore")	
-	   def ignore = new File("${brokerConfDir}${fileSeparator}flows.properties.ignore").text   
+	   def ignore = new File("${brokerConfDir}${fileSeparator}flows.properties.ignore").text.readLines().findAll { !it.startsWith ('#')}.join ("\n")   
 
-	
-	
 	/*---------------------------------------   
 	   def subflowspath = allProjectFiles.findAll { file -> file.endsWith(".subflow") }
 	   def subflows = []
@@ -188,51 +186,48 @@ task syncConfig(dependsOn:[deltaBars]) {
 	   def ignore = new File("${brokerConfDir}${fileSeparator}flows.properties.ignore")
 	   def combined = new File("${barPropertiesIn.path}${fileSeparator}combined.bar.properties")
 
-	   logger.info "Validating ${root.path}"
-       def rootUnusedFlowProps = validateProps(root, combined)
-       if(cleanFlowConfig && rootUnusedFlowProps.size > 0) {
+ 	   if(validateFlowConfig) {
+	   		logger.info "Validating ${root.path}"
+       		validateProps(root, combined)
+       		logger.info "Validating ${ignore.path}"
+       		validateProps(ignore, combined)
+       }
+       
+       if(cleanFlowConfig) {
        		logger.info "Removing non existent configuration properties from ${root.path}" 
-       		cleanProps(root, rootUnusedFlowProps)
-       	}
-
-       logger.info "Validating ${ignore.path}"
-       def ignoreUnusedFlowProps = validateProps(ignore, combined)
-       if(cleanFlowConfig && ignoreUnusedFlowProps.size > 0) {
+       		cleanProps(root, combined)
             logger.info "Removing non existent configuration properties from ${ignore.path}" 
-        	cleanProps(ignore, ignoreUnusedFlowProps) 
-        }
+        	cleanProps(ignore, combined) 
+       }
 	}	   
 }
 
 ext {
 	validateProps = { flowProps, combinedFlowProps ->
+		getDiffFlowProps(flowProps, combinedFlowProps).each { line ->
+			logger.warn "    Validation warning - Property does not exist:  '${line.trim()}'"
+		}
+	}
 	
-		def unusedFlowProps = []
-		flowProps.eachLine { line ->
+	cleanProps = { flowProps, combinedFlowProps ->
+		getDiffFlowProps(flowProps, combinedFlowProps).each { line ->
+			logger.info "    Removing property '${line.trim()}'" 
+			flowProps.text = flowProps.text.replace(line + lineSeparator, '')
+	    }
+	    flowProps.write(flowProps.text);
+	}
+	
+	getDiffFlowProps = { flowProps1, flowProps2 ->
+		def diffFlowProps = []
+		flowProps1.eachLine { line ->
 			if(!line.trim() || line.trim().startsWith('#')) { return }
 			def linearr = line.split('=')
 			def key = linearr[0].trim()
-			def value = ''
-			if(linearr.length > 1) {value = linearr[1].trim()}
-			
-			if(!combinedFlowProps.text.contains(key)) { 
-				logger.warn "    Validation warning - Property does not exist:  '${line.trim()}'"
-				unusedFlowProps << key
+			if(!flowProps2.text.contains(key)) { 
+				diffFlowProps << line
 			}
-			else if (value == '') { logger.warn "    Validation warning - Property does not contain any value:  '${line.trim()}'" }
 		}
-		return unusedFlowProps
-	}
-	
-	cleanProps = { flowProps, unusedFlowProps ->
-		flowProps.eachLine { line ->
-			def key = line.split('=')[0].trim()
-			if(unusedFlowProps.contains(key)) {
-				logger.info "    Removing property '${line.trim()}'" 
-				flowProps.text = flowProps.text.replace(line + lineSeparator, '')
-	        }
-	        flowProps.write(flowProps.text);
-		}
+		return diffFlowProps
 	}
 }
 

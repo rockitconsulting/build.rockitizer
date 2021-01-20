@@ -168,6 +168,8 @@ allprojects {
   println "# buildDir              = ${buildDir}"  
   println "# incrementalDeployment = ${incrementalDeployment}"
   println "# enableMonitoring      = ${enableMonitoring}"
+  println "# validateFlowConfig    = ${validateFlowConfig}"
+  println "# cleanFlowConfig       = ${cleanFlowConfig}"
 //println "# overrideSourceBars    = ${overrideSourceBars}"
 //println "# parallelExecution     = ${parallelExecution}"
 //println "# parallel              = ${parallel}"
