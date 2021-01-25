@@ -92,6 +92,7 @@ createMqEnv packConfigDeployAssemble
 - task _**buildConfigDeploy**_: long runnning createBar and after that checkConfig, configure and deploy tasks
 - task _**packConfigDeploy**_: fast packageBar and after that checkConfig, configure and ceploy tasks
 - task _**packConfigDeployAssemble**_: fast packageBar and after that checkConfig, configure, deploy and packageDistribution tasks
+- task _**syncConfig**_: validate and clean flows configuration files
 
 ### Infrastructure
 
