@@ -28,9 +28,6 @@ task cleanPropsInBuild  {
 	}
 }
 
-
-
-
 task readBars(dependsOn:["doReadBars"]) 
 
 
@@ -120,118 +117,56 @@ task combineBars(dependsOn:[stripBars]) {
 	}	   
 }
 
+task loadProps(dependsOn:[readBars, stripBars, combineBars]) {
+	doLast {
+		 java.util.LinkedHashMap  m1 = loadPropsToMap(new File("${brokerConfDir}${fileSeparator}flows.properties"))
+		 java.util.LinkedHashMap  m2 = loadPropsToMap(new File("${brokerConfDir}${fileSeparator}flows.properties.ignore"))
+		 java.util.LinkedHashMap  m3 = loadPropsToMap(new File("${barPropertiesIn.path}${fileSeparator}combined.bar.properties"))
+		 java.util.LinkedHashMap  m4 = loadPropsToMap(new File("${barPropertiesOut}${fileSeparator}flows.properties"))
+		 
+		 project.ext.flowPropsMap = m1
+		 project.ext.flowPropsIgnoredMap = m2
+		 project.ext.combinedPropsMap = m3
+		 project.ext.flowPropsOutMap = m4
+	}
+}
+
+def	loadPropsToMap(propsFile) { 
+		def propsMap = [:]
+		propsFile.text.readLines().findAll { !it.startsWith ('#') && !it.isEmpty() && it.contains('=')}.each { line ->
+			logger.debug "line: $line"
+		
+			def linearr = line.split('=')
+			propsMap.put(linearr[0].trim(), linearr.length>1?linearr[1]?.trim():"")
+	    }
+		logger.debug "${propsFile.path}: ${propsMap}"
+		return propsMap
+}
+
 
 /* detect delta */
-task deltaBars(dependsOn:[readBars, stripBars, combineBars]) {
+task deltaBars(dependsOn:[loadProps]) {
 	doLast {
 	   description "detectDelta : check for not yet controlled properties"
 	   new File("${barPropertiesOut}${fileSeparator}flows.properties.ignore").delete()
-	   def root = new File("${brokerConfDir}${fileSeparator}flows.properties").text.readLines().findAll { !it.startsWith ('#')}.join ("\n")
-	   def delta = new File("${barPropertiesOut}${fileSeparator}flows.properties.ignore")	
-	   def ignore = new File("${brokerConfDir}${fileSeparator}flows.properties.ignore").text.readLines().findAll { !it.startsWith ('#')}.join ("\n")   
-
-	/*---------------------------------------   
-	   def subflowspath = allProjectFiles.findAll { file -> file.endsWith(".subflow") }
-	   def subflows = []
-	   subflowspath.each { subflow ->
-	   	subflows << file(subflow).name-'.subflow'
-	   } 
-	   
-	   def flowspath = allProjectFiles.findAll { file -> file.endsWith(".msgflow") }
-	   def flows = []
-	   flowspath.each { flow ->
-	   	 flows << file(flow).name-'.msgflow'
+	   def delta = new File("${barPropertiesOut}${fileSeparator}flows.properties.ignore")
+	   def deltaPropsMap = [:]
+	   if(delta.exists()){
+	   		deltaPropsMap = loadPropsToMap(delta)
 	   }
-	   
-	   
-	   
-	   if (flows.intersect(subflows)) {
-	   	  throw new  TaskExecutionException(it, new Throwable("identical names for flows and subflows are not allowed  ${flows.intersect(subflows)} "))
-	   }
-	   logger.debug "subflows $subflows"
-	*///---------------------------------------   
-	   
-	   new File("${barPropertiesIn.path}${fileSeparator}combined.bar.properties").eachLine { line ->
-	      def key = line.split('=')[0].trim()
-	
-	/*
-	      if ( subflows.contains( key.tokenize('#').first().tokenize('.').last()  )  ) {
-	       	 return
-	      }
-	*/
-	
-		  if( !root.contains(key) && !ignore.contains(key) ) {
-		   	     if( !delta.exists() || !delta.text.contains(key) )
-		   	     delta << line.trim() + lineSeparator
-		   	     logger.error " delta detected: ${line.trim()} " 
+	   	   
+	   combinedPropsMap.each { entry  ->
+		  if( !flowPropsMap.containsKey(entry.key) && !flowPropsIgnoredMap.containsKey(entry.key) ) {
+		   	     if( !delta.exists() || !deltaPropsMap.containsKey(entry.key) ){
+		   	     	delta << entry.toString() + lineSeparator
+		   	     } 
+		   	     logger.error " delta detected: ${entry} "
 		  }
 		  
 	   }
-	   
-	   
 	   if(delta.exists()) {
 	      throw new  TaskExecutionException(it, new Throwable("delta detected. please configure delta in ${configPath}${fileSeparator}flows.properties.ignore file.  "))
 	   }
 	   logger.info "no confguration deltas detected."
 	}	   
-   
 }
-
-/* syncConfig */
-task syncConfig(dependsOn:[deltaBars]) {
-	doLast {
-	   description "syncConfig : check for validity and clean configuration properties"
-
-	   def root = new File("${brokerConfDir}${fileSeparator}flows.properties")
-	   def ignore = new File("${brokerConfDir}${fileSeparator}flows.properties.ignore")
-	   def combined = new File("${barPropertiesIn.path}${fileSeparator}combined.bar.properties")
-
- 	   if(validateFlowConfig) {
-	   		logger.info "Validating ${root.path}"
-       		validateProps(root, combined)
-       		logger.info "Validating ${ignore.path}"
-       		validateProps(ignore, combined)
-       }
-       
-       if(cleanFlowConfig) {
-       		logger.info "Removing non existent configuration properties from ${root.path}" 
-       		cleanProps(root, combined)
-            logger.info "Removing non existent configuration properties from ${ignore.path}" 
-        	cleanProps(ignore, combined) 
-       }
-	}	   
-}
-
-ext {
-	validateProps = { flowProps, combinedFlowProps ->
-		getDiffFlowProps(flowProps, combinedFlowProps).each { line ->
-			logger.warn "    Validation warning - Property does not exist:  '${line.trim()}'"
-		}
-	}
-	
-	cleanProps = { flowProps, combinedFlowProps ->
-		getDiffFlowProps(flowProps, combinedFlowProps).each { line ->
-			logger.info "    Removing property '${line.trim()}'" 
-			flowProps.text = flowProps.text.replace(line + lineSeparator, '')
-	    }
-	    flowProps.write(flowProps.text);
-	}
-	
-	getDiffFlowProps = { flowProps1, flowProps2 ->
-		def diffFlowProps = []
-		flowProps1.eachLine { line ->
-			if(!line.trim() || line.trim().startsWith('#')) { return }
-			def linearr = line.split('=')
-			def key = linearr[0].trim()
-			if(!flowProps2.text.contains(key)) { 
-				diffFlowProps << line
-			}
-		}
-		return diffFlowProps
-	}
-}
-
-
-
-
-

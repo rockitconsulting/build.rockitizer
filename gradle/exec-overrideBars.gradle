@@ -27,18 +27,33 @@ task overrideBars(dependsOn:["doOverrideBars${parallel}"]) {
 	}
 } 
 
+task createOverrideProperties(dependsOn:[deltaBars]) {
+	doLast {
+		description "createOverrideProperties : create override properties"
+		
+		new File("${barPropertiesOut}${fileSeparator}override.properties").delete()
+		def override = new File("${barPropertiesOut}${fileSeparator}override.properties") 
+		def overridePropsKeys = flowPropsOutMap.keySet().intersect(combinedPropsMap.keySet())  
+		
+		overridePropsKeys.each{ k ->
+			if( flowPropsOutMap.containsKey(k) ){
+		 		override << flowPropsOutMap.find{it.key == k}.toString() + lineSeparator
+		 	}
+		}
+	} 
+}
 
 
-task doOverrideBars(dependsOn:[findBarFiles, prepareBroker, "configure${decoupled}", deltaBars])
+task doOverrideBars(dependsOn:[findBarFiles, prepareBroker, "configure${decoupled}", createOverrideProperties])
 
 bars.each { bar ->
     	task "overrideBar-${bar}" {
     		doLast {
 			  	def cmdArgs 
 			  	if(config.deployApplicationName) {
-				   cmdArgs = ["-runtime",'-b', "${barByName(bar)}", "-r", "-p", file {"${barPropertiesOut}${fileSeparator}flows.properties"}]
+				   cmdArgs = ["-runtime",'-b', "${barByName(bar)}", "-r", "-p", file {"${barPropertiesOut}${fileSeparator}override.properties"}]
 			  	} else {
-					cmdArgs = ["-runtime",'-b', "${barByName(bar)}", "-p", file {"${barPropertiesOut}${fileSeparator}flows.properties"}]
+					cmdArgs = ["-runtime",'-b', "${barByName(bar)}", "-p", file {"${barPropertiesOut}${fileSeparator}override.properties"}]
 				}
 				logger.lifecycle "[build:rockITizer] override bar " + cmdArgs.join(" ")
 				def result = javaexec {
@@ -53,16 +68,16 @@ bars.each { bar ->
 
 
 
-task doOverrideBarsParallel(dependsOn:[findBarFiles,prepareBroker, "configure${decoupled}", deltaBars]) {
+task doOverrideBarsParallel(dependsOn:[findBarFiles,prepareBroker, "configure${decoupled}", createOverrideProperties]) {
 	doLast {  
 	   // ant.parallel(threadsPerProcessor: 1) {
 				bars.each { bar ->
 				    (config.deployApplicationName?.split(' ')? config.deployApplicationName.split(' '):['dummy']).each { app ->
 			    		ant.java(fork:'true',failonerror:'yes',classname:"com.ibm.broker.config.util.ApplyBarOverride",classpath:sourceSets.main.runtimeClasspath.asPath) {
 							if(config.deployApplicationName) {
-							   arg(line:"-runtime -b ${barByName(bar)} -k ${app} -p  ${file {barPropertiesOut.path+fileSeparator+'flows.properties'}} -r")
+							   arg(line:"-runtime -b ${barByName(bar)} -k ${app} -p  ${file {barPropertiesOut.path+fileSeparator+'override.properties'}} -r")
 							} else { 
-								arg(line:"-runtime -b ${barByName(bar)} -p  ${file {barPropertiesOut.path+fileSeparator+'flows.properties'}}")
+								arg(line:"-runtime -b ${barByName(bar)} -p  ${file {barPropertiesOut.path+fileSeparator+'override.properties'}}")
 							}
 						}
 					}

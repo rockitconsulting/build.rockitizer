@@ -7,21 +7,23 @@
 * Build Framework 
 */
 
-task checkConfig(group:'build', dependsOn:["configure${decoupled}", syncConfig])
-task checkConfigDeploy(group:'build', dependsOn:[ "configure${decoupled}", syncConfig ,deployBars])
-task buildConfigDeploy(group:'build', dependsOn:[ createBars, "configure${decoupled}", syncConfig, deployBars])
-task packConfigDeploy(group:'build', dependsOn:[ packageBars, "configure${decoupled}", syncConfig, deployBars])
-task packConfigDeployAssemble(group:'build', dependsOn:[ packageBars, "configure${decoupled}", syncConfig, deployBars, packageDistribution])
-task packConfigAssemble(group:'build', dependsOn:[ packageBars, "configure${decoupled}", syncConfig, packageDistribution])
-task packConfigOverrideAssemble(group:'build', dependsOn:[ packageBars, "configure${decoupled}", syncConfig, overrideBars, packageDistribution])
+task checkConfig(group:'build', dependsOn:["configure${decoupled}", deltaBars])
+task checkConfigDeploy(group:'build', dependsOn:[ "configure${decoupled}", deltaBars ,deployBars])
+task buildConfigDeploy(group:'build', dependsOn:[ createBars, "configure${decoupled}", deltaBars, deployBars])
+task packConfigDeploy(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, deployBars])
+task packConfigDeployAssemble(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, deployBars, packageDistribution])
+task packConfigAssemble(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, packageDistribution])
+task packConfigOverrideAssemble(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, overrideBars, packageDistribution])
 task cleanBars(group:'build', dependsOn:[ "configure${decoupled}", cleanEG])
+task syncConfig(group:'build', dependsOn:[ packageBars, "configure${decoupled}", loadProps, syncFlowProps])
 
 packageBars.mustRunAfter  prepareJavaForBars
 prepareJavaForBars.mustRunAfter copyProjectsToBuildTarget
 configure.mustRunAfter  packageBars
-syncConfig.mustRunAfter  configure
-deployBars.mustRunAfter  syncConfig
+deltaBars.mustRunAfter  configure
+deployBars.mustRunAfter  deltaBars
 packageDistribution.mustRunAfter  overrideBars
+syncFlowProps.mustRunAfter  loadProps
 
 
 /*
@@ -46,6 +48,7 @@ Tasks:
 	packConfigDeployAssemble -  configure, validate, package, deploy and assemble apps: iib-style (fast)
 	packConfigAssemble       -  configure, validate, package and assemble apps: iib-style (fast)
 	cleanBars                -  cleans EG
+	syncConfig               -  validate and clean flows configuration files
 
 Params:
 	incrementalDeployment=<default:true|false>    -  Incremental or FullDeployment (delete all resources) mode
@@ -54,7 +57,6 @@ Params:
 	assemblyFileName=<projName>                   -  Assembly file name, if not specified uses the name of the first Application
 	assemblyFileVersion=<projVersion>             -  Assembly file version, if not specified used 'unspecified-version'
 	enableMonitoring=<default:false|true>         -  Enables flow monitoring on local/remote BRK
-	validateFlowConfig=<default:false|true>       -  Enables validation of flows properties
 	cleanFlowConfig=<default:false|true>          -  Enables synchronisation of flows properties
 	
 """

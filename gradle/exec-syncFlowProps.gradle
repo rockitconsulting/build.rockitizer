@@ -1,0 +1,66 @@
+/*
+*	Copyright 2015 rockit.consulting GbR  (www.rockit.consulting)
+*
+*/
+
+
+
+
+
+
+
+
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*        					Validate and Sync Flows Properties                                                 	  */
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/* syncFlowProps */
+task syncFlowProps(dependsOn:["loadProps"]) {
+	doLast {
+	   description "syncFlowProps : check for validity and clean configuration properties"
+
+	   	logger.info "Validating flows.properties"
+       	validateProps(flowPropsMap, combinedPropsMap)
+       	logger.info "Validating flows.properties.ignore"
+       	validateProps(flowPropsIgnoredMap, combinedPropsMap)
+
+       if(cleanFlowConfig) {
+       		logger.info "Removing non existent configuration properties from flows.properties"
+       		def flowProps = new File("${brokerConfDir}${fileSeparator}flows.properties")
+       		cleanProps(flowPropsMap, combinedPropsMap, flowProps)
+            logger.info "Removing non existent configuration properties from flows.properties.ignore"
+            def flowPropsIgnore = new File("${brokerConfDir}${fileSeparator}flows.properties.ignore")
+        	cleanProps(flowPropsIgnoredMap, combinedPropsMap, flowPropsIgnore) 
+       }
+	}	   
+}
+
+
+def	validateProps(flowProps1, flowProps2) {
+	getDiffProps(flowProps1, flowProps2).each { entry ->
+		logger.warn "    Validation warning - Property does not exist:  '${entry.key}'"
+	}
+}
+	
+def	cleanProps(flowProps1, flowProps2, file) {	
+	List linesList = file.text.readLines()
+	logger.debug "        linesList:  '${linesList}'"
+	
+	getDiffProps(flowProps1, flowProps2).entrySet().each { entry ->
+		logger.debug "        entry:  '${entry}'"
+		def line = linesList.find{it.startsWith(entry.key)}
+		if(line){
+			logger.info "        removing parameter:  '${line}'"
+			file.text = file.text.replace(line + lineSeparator, '')
+			file.text = file.text.replace(line, '')
+		}
+	}
+	file.write(file.text);
+}
+	
+def	getDiffProps(flowProps1, flowProps2) {
+	flowProps1.findAll {!flowProps2.containsKey(it.key)}
+}
+
