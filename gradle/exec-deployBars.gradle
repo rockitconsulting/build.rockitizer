@@ -62,12 +62,14 @@ config.barToExecutionGroup.flatten().each { bar, exgroups  ->
 	    task "deployBar-${bar}-${exgroup}" (dependsOn:overrideBars) {
 	    	doLast {
 			    new ByteArrayOutputStream().withStream { os ->
-			    
-		      		def cmdArgs = "-n ${configPath}${fileSeparator}${config.broker} -e ${exgroup} -a ${barByName(bar)} ${!incrementalDeployment.toBoolean()?'-m':''} -w 600"
-		    		logger.lifecycle "[build:rockITizer] ${!incrementalDeployment.toBoolean()?'cleanAndDeploy':'incrementalDeployment'} " + cmdArgs
-		    		ant.java(fork:'true',failonerror:'true',classname:"com.ibm.broker.config.util.Deploy", classpath:sourceSets.main.runtimeClasspath.asPath) {
-						arg(line:cmdArgs)
-					}
+		      		def cmdArgs = ["-n","${configPath}${fileSeparator}${config.broker}","-e","${exgroup}","-a","${barByName(bar)}","${!incrementalDeployment.toBoolean()?'-m':''}","-w","600"]
+		    		logger.lifecycle "[build:rockITizer] ${!incrementalDeployment.toBoolean()?'cleanAndDeploy':'incrementalDeployment'} " + cmdArgs.join(" ")
+
+			        def result = javaexec {
+		    			classpath sourceSets.main.runtimeClasspath.asPath
+	   					main = "com.ibm.broker.config.util.Deploy"
+	               		args = cmdArgs
+		    		}
 		    		ext."deployBar-${bar}-${exgroup}" = os.toString()
 		    	}
 			}		    	
