@@ -70,10 +70,6 @@ Build can be triggered from any ide with gradle pluging or directly from command
 ```
 
 ```bat
--PvalidateFlowConfig=false  enable/disable (default) validation of flows properties  
-```
-
-```bat
 -PcleanFlowConfig=false  enable/disable (default) synchronisation of flows properties  
 ```
 
