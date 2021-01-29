@@ -1,44 +1,7 @@
-import com.ibm.broker.config.proxy.*;
-
-
-apply plugin: 'java'
-
-buildscript {
-   dependencies {
-      classpath fileTree(dir: 'lib', include: '*.jar')
-   }
-}
-
 /*
 *	Copyright 2015 rockit.consulting GbR  (www.rockit.consulting)
 *
 */
-
-
-def enableMonitoring() { 
-					
-
-			def root = new XmlSlurper().parseText(new File("${configPath}/${config.broker}").text)
-			logger.lifecycle "[build:rockITizer] Enabling monitoring for BRK  uri://'${root.@host}':'${root.@listenerPort}'"
-            BrokerConnectionParameters bcp = new IntegrationNodeConnectionParameters( "${root.@host}".toString() , Integer.valueOf("${root.@listenerPort}") );
-        	BrokerProxy b = BrokerProxy.getInstance(bcp);
-	        
-	        b.getExecutionGroups(null).each { eg ->
-	        	eg.getApplications(null).each { app ->
-	        	  logger.lifecycle "[build:rockITizer] Enabled monitoring for Application: '${app.name}'"
-	        	  app.setAllMessageFlowsRuntimeProperty("This/monitoring", "active");
-	        	}
-	        	eg.getMessageFlows(null).each { flow -> 
-	          	    logger.lifecycle "[build:rockITizer] Enabled monitoring for Flow: '${flow.name}'"
-	        		flow.setRuntimeProperty("This/monitoring", "active"); 
-	        	}
-           }
-        
-            
-}
-
-
-
 
 task deployBars {
 	doLast {
@@ -48,12 +11,7 @@ task deployBars {
 	          	logger.lifecycle ext."deployBar-${bar}-${exgroup}" //captured output from console
 	          }
 		   }
-		}   
-		
-		
-		if( enableMonitoring ) {
-			enableMonitoring()
-	    }
+		}
 	}            
 }
 

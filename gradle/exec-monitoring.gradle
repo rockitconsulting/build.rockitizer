@@ -1,0 +1,68 @@
+/*
+*	Copyright 2015 rockit.consulting GbR  (www.rockit.consulting)
+*
+*/
+
+
+
+
+
+
+
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*        					Enable monitoring for the deployed Applications                                       */
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+import com.ibm.broker.config.proxy.*;
+
+buildscript {
+   dependencies {
+      classpath fileTree(dir: 'lib', include: '*.jar')
+   }
+}
+
+task monitoring {
+	doLast {
+		if(enableMonitoring){
+			doEnableMonitoring()
+		}
+		else{
+			logger.info "Monitoring will not be enabled. enableMonitoring: ${enableMonitoring}"
+		}
+	}	   
+}
+
+def doEnableMonitoring() {
+	def root = new XmlSlurper().parseText(new File("${configPath}/${config.broker}").text)
+	logger.lifecycle "[build:rockITizer] Enabling monitoring for BRK  uri://'${root.@host}':'${root.@listenerPort}'"
+	BrokerConnectionParameters bcp = new IntegrationNodeConnectionParameters( "${root.@host}".toString() , Integer.valueOf("${root.@listenerPort}") );
+	BrokerProxy b = BrokerProxy.getInstance(bcp);
+	def activeFlag = "active"
+
+	logger.debug "config.barToExecutionGroup: ${config.barToExecutionGroup}"
+	def exGroups = config.barToExecutionGroup.flatten().collect { bar, exgroups  -> return exgroups }.flatten()
+	logger.debug "exGroups: ${exGroups}"
+
+	b.getExecutionGroups(null).each { eg ->
+		if(exGroups.contains(eg.name)){
+			logger.lifecycle "[build:rockITizer] Enabling monitoring on ExecutionGroup: '${eg.name}'"
+			eg.getApplications(null).each { app ->
+				if(config.deployApplicationName.contains(app.name)){
+					logger.lifecycle "	Enabled monitoring for Application: '${app.name}'"
+					app.setAllMessageFlowsRuntimeProperty("This/monitoring", activeFlag);
+				}
+			}
+			eg.getRestApis(null).each { api ->
+				if(config.deployApplicationName.contains(api.name)){
+					logger.lifecycle "	Enabled monitoring for Rest-API: '${api.name}'"
+					api.setAllMessageFlowsRuntimeProperty("This/monitoring", activeFlag);
+				}
+			}
+			eg.getMessageFlows(null).each { flow ->
+				logger.lifecycle "	Enabled monitoring for Flow: '${flow.name}'"
+				flow.setRuntimeProperty("This/monitoring", activeFlag);
+			}
+		}
+	}
+}

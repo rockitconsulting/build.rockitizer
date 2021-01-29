@@ -8,10 +8,10 @@
 */
 
 task checkConfig(group:'build', dependsOn:["configure${decoupled}", deltaBars])
-task checkConfigDeploy(group:'build', dependsOn:[ "configure${decoupled}", deltaBars ,deployBars])
-task buildConfigDeploy(group:'build', dependsOn:[ createBars, "configure${decoupled}", deltaBars, deployBars])
-task packConfigDeploy(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, deployBars])
-task packConfigDeployAssemble(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, deployBars, packageDistribution])
+task checkConfigDeploy(group:'build', dependsOn:[ "configure${decoupled}", deltaBars ,deployBars, monitoring])
+task buildConfigDeploy(group:'build', dependsOn:[ createBars, "configure${decoupled}", deltaBars, deployBars, monitoring])
+task packConfigDeploy(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, deployBars, monitoring])
+task packConfigDeployAssemble(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, deployBars, monitoring, packageDistribution])
 task packConfigAssemble(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, packageDistribution])
 task packConfigOverrideAssemble(group:'build', dependsOn:[ packageBars, "configure${decoupled}", deltaBars, overrideBars, packageDistribution])
 task cleanBars(group:'build', dependsOn:[ "configure${decoupled}", cleanEG])
@@ -24,7 +24,7 @@ deltaBars.mustRunAfter  configure
 deployBars.mustRunAfter  deltaBars
 packageDistribution.mustRunAfter  overrideBars
 syncFlowProps.mustRunAfter  loadProps
-
+monitoring.mustRunAfter  deployBars
 
 /*
 * Environment Framework 
