@@ -226,7 +226,7 @@ barToProjects.each {bar, prj ->
 	
 			task "copy${new File(projDir).name.capitalize()}${idx}ToBuildTarget-${bar}-Task"(type:Copy)  {
 			    from "${file(projDir).absolutePath}"
-				exclude '**/*.metadata','**/*.svn', "**/${file(buildDir).parentFile.name}/**"
+				exclude '**/*.metadata','**/*.svn','**/*.lock', "**/${file(buildDir).parentFile.name}/**"
 			    into ("${brokerProjectsTargetDir}${fileSeparator}${bar}")
 			}
 	copyProjectsToBuildTarget.dependsOn "copy${new File(projDir).name.capitalize()}${idx}ToBuildTarget-${bar}-Task"			
