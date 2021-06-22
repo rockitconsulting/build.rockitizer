@@ -20,11 +20,10 @@ config.barToExecutionGroup.flatten().each { bar, exgroups  ->
 	    task "cleanEG-${bar}-${exgroup}" () {
 	    	doLast {
 			    new ByteArrayOutputStream().withStream { os ->
-			        def result = javaexec {
-	               	    def cmdArgs = ["-n", "${configPath}${fileSeparator}${config.broker}", "-e", "${exgroup}", "-a","conf.sample/empty.bar","-m", "-w","600"]
-		    			classpath sourceSets.main.runtimeClasspath.asPath
-	   					main = "com.ibm.broker.config.util.Deploy"
-	               		args = cmdArgs
+					def cmdArgs = "mqsideploy -n ${configPath}${fileSeparator}${config.broker} -e ${exgroup} -a conf.sample/empty.bar -m -w 600"
+
+			        def result = exec {
+						commandLine cmdArgs.split()
 		    		}
 		    		ext."cleanEG-${bar}-${exgroup}" = os.toString()
 		    	}

@@ -36,8 +36,16 @@ def enhanceProjWithJar(dir) {
     	JarOutputStream  jarOs = new JarOutputStream (new FileOutputStream( jarFile ))
 		
 		files.each { clz ->
-			logger.info "[build:rockITizer] adding ${clz} to ${jarFile} under package ${dir.toPath().relativize( clz.toPath() ).toFile().path.replace('\\','/')}"
-			jarOs.putNextEntry( new JarEntry( dir.toPath().relativize( clz.toPath() ).toFile().path.replace('\\','/') ) )
+			def packagePath = dir.toPath().relativize( clz.toPath() ).toFile().path.replace('\\','/') 
+			['bin/','class/','target/','clazz/'].each {trg -> 
+				if(packagePath.startsWith(trg)) {
+					packagePath = packagePath.replaceFirst(trg,'')
+					logger.info "[build:rockITizer] stripped output folder $trg from package $packagePath"
+				}
+			}
+			
+			logger.info "[build:rockITizer] adding ${clz} to ${jarFile} under package $packagePath"
+			jarOs.putNextEntry( new JarEntry( packagePath ) )
 			jarOs << clz.bytes
 			jarOs.closeEntry()
 		}

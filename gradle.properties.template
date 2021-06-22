@@ -14,5 +14,5 @@ brokerVersion = ib9
 
 incrementalDeployment=true
 parallelExecution=true    
-enableMonitoring=true
+enableMonitoring=false
 cleanFlowConfig=false

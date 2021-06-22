@@ -20,13 +20,13 @@ config.barToExecutionGroup.flatten().each { bar, exgroups  ->
 	    task "deployBar-${bar}-${exgroup}" (dependsOn:overrideBars) {
 	    	doLast {
 			    new ByteArrayOutputStream().withStream { os ->
-		      		def cmdArgs = ["-n","${configPath}${fileSeparator}${config.broker}","-e","${exgroup}","-a","${barByName(bar)}","${!incrementalDeployment.toBoolean()?'-m':''}","-w","600"]
-		    		logger.lifecycle "[build:rockITizer] ${!incrementalDeployment.toBoolean()?'cleanAndDeploy':'incrementalDeployment'} " + cmdArgs.join(" ")
+		      		def cmdArgs = "mqsideploy -n ${configPath}${fileSeparator}${config.broker} -e ${exgroup} -a ${barByName(bar)} ${!incrementalDeployment.toBoolean()?'-m':''} -w 600"
+		    		logger.lifecycle "[build:rockITizer] ${!incrementalDeployment.toBoolean()?'cleanAndDeploy':'incrementalDeployment'} " + cmdArgs 
 
-			        def result = javaexec {
-		    			classpath sourceSets.main.runtimeClasspath.asPath
-	   					main = "com.ibm.broker.config.util.Deploy"
-	               		args = cmdArgs
+			        def result = exec {
+		    			//commandLine 'mqsideploy', '-n', 'C:\\rockit\\projects\\test.rockitizer.demo-master\\RockitizerDemo\\conf\\demo.broker','-e','TEST_SERVER','-a','C:\\rockit\\gradle_build\\RockitizerDemo.demo\\bar.target\\RockitizerDemo.bar','-w','600'
+		    			//logger.lifecycle "[build:rockITizer] commandLine " +"'" + cmdArgs.join("\',\'") + "'"
+		    			commandLine cmdArgs.split()
 		    		}
 		    		ext."deployBar-${bar}-${exgroup}" = os.toString()
 		    	}
