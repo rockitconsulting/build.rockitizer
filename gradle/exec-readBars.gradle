@@ -90,8 +90,10 @@ task stripBars(dependsOn:[readBars]) {
 	doLast {
 	   barPropertiesIn.listFiles().each { file ->
 	   	  def strip =  new File(barPropertiesIn.path+fileSeparator+file.name+'.strip') 
+	   	  
+	   	   //TODO needs better and performanter solution. One property for one app. No combining. Using all properties and not only thel ines containing equals.
 	   	  file.eachLine { line ->
-	   	     if(line.contains('=')) { strip << line + lineSeparator }
+	   	     if(line.contains('#')) { strip << line + lineSeparator }
 	   	  }
 	   	  file.delete()
 	   	  strip.renameTo(new File(file.path)) 
@@ -109,7 +111,8 @@ task combineBars(dependsOn:[stripBars]) {
 	   
 	   barPropertiesIn.listFiles().each { file ->
 	   	  file.eachLine { line ->
-	   	     if(line.contains('=') && (result.length()==0 || !result.text.contains(line)) ) { 
+	   	     //if(line.contains('=') && (result.length()==0 || !result.text.contains(line)) ) { 
+	   	     if( (result.length()==0 || !result.text.contains(line)) ) {
 	   	     	result << line + lineSeparator 
 	   	     }
 	   	  }
@@ -133,11 +136,11 @@ task loadProps(dependsOn:[readBars, stripBars, combineBars]) {
 
 def	loadPropsToMap(propsFile) { 
 		def propsMap = [:]
-		propsFile.text.readLines().findAll { !it.startsWith ('#') && !it.isEmpty() && it.contains('=')}.each { line ->
+		propsFile.text.readLines().findAll { !it.startsWith ('#') && !it.isEmpty() && it.contains('#')}.each { line ->
 			logger.debug "line: $line"
 		
 			def linearr = line.split('=')
-			propsMap.put(linearr[0].trim(), linearr.length>1?linearr[1]?.trim():"")
+			propsMap.put(linearr[0].trim(), linearr.length>1?linearr[1]?.trim():"DEFAULT_NULL_IGNORE")
 	    }
 		logger.debug "${propsFile.path}: ${propsMap}"
 		return propsMap
@@ -156,7 +159,7 @@ task deltaBars(dependsOn:[loadProps]) {
 	   }
 	   	   
 	   combinedPropsMap.each { entry  ->
-		  if( !flowPropsMap.containsKey(entry.key) && !flowPropsIgnoredMap.containsKey(entry.key) ) {
+		  if(entry.value!="DEFAULT_NULL_IGNORE"  && !flowPropsMap.containsKey(entry.key) && !flowPropsIgnoredMap.containsKey(entry.key) ) {
 		   	     if( !delta.exists() || !deltaPropsMap.containsKey(entry.key) ){
 		   	     	delta << entry.toString() + lineSeparator
 		   	     } 
